@@ -134,7 +134,7 @@ const translations = {
     festSetsubun: {
         en: 'The bean-throwing festival marking the beginning of spring. People throw roasted soybeans shouting "Oni wa soto! Fuku wa uchi!" to drive away evil spirits.',
         ja: "春の始まりを告げる豆まきの祭り。「鬼は外！福は内！」と叫びながら炒り豆を投げて邪気を払います。",
-        zh: "标志着春天开始的撒豆节。人们一边喊着"鬼は外！福は内！"（鬼出去！福进来！），一边投掷炒大豆驱除邪气。"
+        zh: '标志着春天开始的撒豆节。人们一边喊着"鬼は外！福は内！"（鬼出去！福进来！），一边投掷炒大豆驱除邪气。'
     },
     festHinaTitle: {
         en: "Doll Festival (ひな祭り)",
