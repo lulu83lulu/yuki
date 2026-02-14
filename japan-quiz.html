@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Knowledge Quiz | 日本ローカルネタクイズ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#C41E3A;--secondary:#264653;--accent:#D4A843;--bg:#F5F0E8;--text:#2C2C2C;--shadow:rgba(0,0,0,0.1)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Serif','Noto Serif JP','Noto Serif SC',serif;background:var(--bg);color:var(--text);min-height:100vh}
+        .header{background:linear-gradient(135deg,var(--secondary),#1a3040);color:#fff;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+        .header h1{font-size:1.3rem} .header-right{display:flex;align-items:center;gap:15px}
+        .header a{color:var(--accent);text-decoration:none;font-size:.9rem}
+        .lang-sw{display:flex;gap:4px}
+        .lang-sw button{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 10px;font-size:.8rem;font-family:inherit;border-radius:4px;cursor:pointer}
+        .lang-sw button:hover{background:rgba(255,255,255,.25)}
+        .lang-sw button.active{background:var(--accent);border-color:var(--accent);font-weight:bold}
+        .container{max-width:850px;margin:40px auto;padding:0 20px}
+        .sel-screen{text-align:center}
+        .sel-screen h2{font-size:1.8rem;color:var(--secondary);margin-bottom:10px}
+        .sel-screen>p{color:#666;margin-bottom:30px}
+        .sec-label{color:var(--secondary);margin-bottom:15px;font-size:1.1rem}
+        .cat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:35px}
+        .cat-card{background:#fff;border-radius:12px;padding:22px 15px;cursor:pointer;transition:all .3s;box-shadow:0 3px 12px var(--shadow);border:3px solid transparent;text-align:center}
+        .cat-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.13)}
+        .cat-card.selected{border-color:var(--primary)}
+        .cat-card .cat-icon{font-size:2.2rem;margin-bottom:8px}
+        .cat-card h3{font-size:.95rem;color:var(--secondary)}
+        .cat-card p{font-size:.78rem;color:#999;margin-top:4px}
+        .level-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:30px}
+        .level-card{background:#fff;border-radius:12px;padding:22px 15px;cursor:pointer;transition:all .3s;box-shadow:0 3px 12px var(--shadow);border:3px solid transparent;text-align:center}
+        .level-card:hover{transform:translateY(-4px)} .level-card.selected{border-color:var(--accent)}
+        .level-card .lv-icon{font-size:2rem;margin-bottom:6px}
+        .level-card .lv-jp{font-size:1.3rem;color:var(--primary);margin-bottom:4px}
+        .level-card h3{font-size:.95rem;color:var(--secondary)}
+        .start-btn{background:var(--primary);color:#fff;border:none;padding:15px 50px;font-size:1.1rem;font-family:inherit;border-radius:8px;cursor:pointer;transition:all .3s;margin-top:10px}
+        .start-btn:hover{background:#a0182f;transform:scale(1.03)} .start-btn:disabled{background:#ccc;cursor:not-allowed;transform:none}
+        .quiz-screen{display:none}
+        .quiz-progress{display:flex;align-items:center;gap:15px;margin-bottom:25px}
+        .prog-bg{flex:1;height:10px;background:#ddd;border-radius:5px;overflow:hidden}
+        .prog-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:5px;transition:width .4s}
+        .prog-text{font-size:.9rem;color:#888;white-space:nowrap}
+        .q-card{background:#fff;border-radius:12px;padding:35px;box-shadow:0 3px 15px var(--shadow);margin-bottom:20px}
+        .q-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:bold;margin-bottom:15px;color:#fff;background:var(--primary)}
+        .q-text{font-size:1.2rem;color:var(--secondary);margin-bottom:20px;line-height:1.5}
+        .choices{display:grid;gap:12px}
+        .ch-btn{background:#fff;border:2px solid #e0d8cc;border-radius:8px;padding:14px 20px;font-size:1rem;font-family:inherit;cursor:pointer;transition:all .2s;text-align:left}
+        .ch-btn:hover{border-color:var(--accent);background:#faf6ef}
+        .ch-btn.correct{border-color:#2ecc71;background:#eafaf1;color:#27ae60}
+        .ch-btn.wrong{border-color:#e74c3c;background:#fdecea;color:#c0392b}
+        .ch-btn:disabled{cursor:default}
+        .feedback{margin-top:15px;padding:12px 18px;border-radius:8px;font-size:.95rem;display:none}
+        .feedback.correct{display:block;background:#eafaf1;color:#27ae60;border:1px solid #2ecc71}
+        .feedback.wrong{display:block;background:#fdecea;color:#c0392b;border:1px solid #e74c3c}
+        .trivia{margin-top:15px;padding:15px 18px;border-radius:8px;background:#f0eadf;border-left:4px solid var(--accent);font-size:.9rem;color:#555;display:none;line-height:1.5}
+        .trivia.show{display:block}
+        .trivia-label{font-weight:bold;color:var(--accent);margin-bottom:5px}
+        .next-btn{display:none;margin-top:20px;background:var(--accent);color:#fff;border:none;padding:12px 35px;font-size:1rem;font-family:inherit;border-radius:8px;cursor:pointer}
+        .next-btn:hover{background:#b8912e}
+        .results-screen{display:none;text-align:center}
+        .res-card{background:#fff;border-radius:16px;padding:50px 40px;box-shadow:0 5px 25px var(--shadow)}
+        .res-icon{font-size:4rem;margin-bottom:15px}
+        .res-card h2{font-size:1.8rem;color:var(--secondary);margin-bottom:10px}
+        .res-score{font-size:3.5rem;font-weight:bold;color:var(--primary);margin:15px 0}
+        .res-detail{font-size:1rem;color:#888;margin-bottom:25px}
+        .res-msg{font-size:1.05rem;color:var(--text);margin-bottom:30px;padding:15px;background:var(--bg);border-radius:8px}
+        .res-btns{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+        .res-btns button{padding:12px 30px;font-size:1rem;font-family:inherit;border-radius:8px;cursor:pointer;border:none;transition:all .3s}
+        .retry-btn{background:var(--primary);color:#fff} .retry-btn:hover{background:#a0182f}
+        .back-btn{background:var(--secondary);color:#fff} .back-btn:hover{background:#1a3040}
+        @media(max-width:600px){.cat-cards,.level-cards{grid-template-columns:1fr}.header{flex-direction:column;align-items:flex-start}}
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 id="pageTitle">Japan Knowledge Quiz</h1>
+    <div class="header-right">
+        <div class="lang-sw">
+            <button onclick="setLang('en')" id="langEn" class="active">EN</button>
+            <button onclick="setLang('zh')" id="langZh">中文</button>
+            <button onclick="setLang('ja')" id="langJa">日本語</button>
+            <button onclick="setLang('es')" id="langEs">ES</button>
+        </div>
+        <a href="index.html" id="backLink">← Back</a>
+    </div>
+</div>
+<div class="container">
+    <div class="sel-screen" id="selScreen">
+        <h2 id="mainTitle"></h2><p id="mainSub"></p>
+        <h3 class="sec-label" id="catLabel"></h3>
+        <div class="cat-cards" id="catCards"></div>
+        <h3 class="sec-label" id="lvLabel"></h3>
+        <div class="level-cards">
+            <div class="level-card" onclick="selLevel('beginner')"><div class="lv-icon">🌸</div><div class="lv-jp">初級</div><h3 id="lBeg">Beginner</h3></div>
+            <div class="level-card" onclick="selLevel('intermediate')"><div class="lv-icon">🎋</div><div class="lv-jp">中級</div><h3 id="lMid">Intermediate</h3></div>
+            <div class="level-card" onclick="selLevel('advanced')"><div class="lv-icon">🏯</div><div class="lv-jp">上級</div><h3 id="lAdv">Advanced</h3></div>
+        </div>
+        <button class="start-btn" id="startBtn" disabled onclick="startQuiz()"></button>
+    </div>
+    <div class="quiz-screen" id="quizScreen">
+        <div class="quiz-progress"><div class="prog-bg"><div class="prog-fill" id="progBar"></div></div><div class="prog-text" id="progText"></div></div>
+        <div id="qArea"></div>
+        <button class="next-btn" id="nextBtn" onclick="nextQ()"></button>
+    </div>
+    <div class="results-screen" id="resScreen">
+        <div class="res-card">
+            <div class="res-icon" id="resIcon"></div><h2 id="resTitle"></h2>
+            <div class="res-score" id="resScore"></div><div class="res-detail" id="resDetail"></div>
+            <div class="res-msg" id="resMsg"></div>
+            <div class="res-btns">
+                <button class="retry-btn" id="retryBtn" onclick="startQuiz()"></button>
+                <button class="back-btn" id="backBtn" onclick="backToSel()"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/japan-quiz-data.js"></script>
+<script>
+const UI={
+en:{pageTitle:"Japan Knowledge Quiz",backLink:"← Back to Club Site",mainTitle:"How well do you know Japan?",mainSub:"Choose a category and difficulty level",catLabel:"Category",lvLabel:"Level",lBeg:"Beginner",lMid:"Intermediate",lAdv:"Advanced",startBtn:"Start Quiz",nextBtn:"Next →",seeRes:"See Results →",resTitle:"Results",retryBtn:"Retry",backBtn:"Change Category",excellent:"Amazing! You're a true Japan expert!",great:"Great job! You know Japan well!",notBad:"Not bad! Keep exploring Japan!",keepGoing:"Keep learning — Japan has so much to discover!",correct:" correct",triviaLabel:"Did you know?"},
+zh:{pageTitle:"日本知识问答",backLink:"← 返回社团网站",mainTitle:"你有多了解日本？",mainSub:"选择一个类别和难度等级",catLabel:"类别",lvLabel:"等级",lBeg:"初级",lMid:"中级",lAdv:"高级",startBtn:"开始答题",nextBtn:"下一题 →",seeRes:"查看结果 →",resTitle:"测试结果",retryBtn:"再试一次",backBtn:"更换类别",excellent:"太棒了！你是真正的日本通！",great:"很好！你对日本很了解！",notBad:"还不错！继续探索日本吧！",keepGoing:"继续学习吧——日本有太多值得发现的！",correct:" 题正确",triviaLabel:"你知道吗？"},
+ja:{pageTitle:"日本ローカルネタクイズ",backLink:"← サイトに戻る",mainTitle:"日本をどれだけ知ってる？",mainSub:"カテゴリと難易度を選んでください",catLabel:"カテゴリ",lvLabel:"レベル",lBeg:"初級",lMid:"中級",lAdv:"上級",startBtn:"クイズ開始",nextBtn:"次へ →",seeRes:"結果を見る →",resTitle:"クイズ結果",retryBtn:"もう一度",backBtn:"カテゴリ変更",excellent:"素晴らしい！日本通ですね！",great:"よくできました！日本に詳しいですね！",notBad:"悪くないです！もっと日本を探検しましょう！",keepGoing:"学び続けましょう！日本にはまだまだ発見がたくさん！",correct:" 問正解",triviaLabel:"豆知識"},
+es:{pageTitle:"Quiz sobre Japón",backLink:"← Volver al sitio",mainTitle:"¿Cuánto sabes de Japón?",mainSub:"Elige una categoría y nivel de dificultad",catLabel:"Categoría",lvLabel:"Nivel",lBeg:"Principiante",lMid:"Intermedio",lAdv:"Avanzado",startBtn:"Iniciar quiz",nextBtn:"Siguiente →",seeRes:"Ver resultados →",resTitle:"Resultados",retryBtn:"Reintentar",backBtn:"Cambiar categoría",excellent:"¡Increíble! ¡Eres un experto en Japón!",great:"¡Buen trabajo! ¡Conoces bien Japón!",notBad:"¡No está mal! ¡Sigue explorando Japón!",keepGoing:"¡Sigue aprendiendo! ¡Japón tiene mucho por descubrir!",correct:" correctas",triviaLabel:"¿Sabías que...?"}
+};
+const CATS=[
+{id:"current",icon:"📰",en:"Current Events",zh:"时事热点",ja:"時事ネタ",es:"Actualidad"},
+{id:"tourism",icon:"🗾",en:"Tourism",zh:"观光旅游",ja:"観光ネタ",es:"Turismo"},
+{id:"history",icon:"⛩️",en:"History",zh:"历史",ja:"歴史",es:"Historia"},
+{id:"entertainment",icon:"🎭",en:"Entertainment",zh:"娱乐",ja:"エンタメ",es:"Entretenimiento"},
+{id:"manga",icon:"📚",en:"Manga & Anime",zh:"漫画动漫",ja:"漫画・アニメ",es:"Manga y Anime"},
+{id:"food",icon:"🍣",en:"Food",zh:"美食",ja:"食べ物",es:"Comida"}
+];
+let lang='en',selCat=null,selLv=null,qs=[],qi=0,score=0,answered=false;
+function t(k){return UI[lang][k]||UI.en[k]||k}
+function setLang(l){lang=l;document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.remove('active'));document.getElementById('lang'+l.charAt(0).toUpperCase()+l.slice(1)).classList.add('active');updateUI()}
+function updateUI(){
+['pageTitle','backLink','mainTitle','mainSub','catLabel','lvLabel','lBeg','lMid','lAdv','startBtn','retryBtn','backBtn','resTitle'].forEach(k=>{const e=document.getElementById(k);if(e)e.textContent=t(k)});
+renderCats();
+}
+function renderCats(){
+const c=document.getElementById('catCards');
+c.innerHTML=CATS.map(cat=>`<div class="cat-card${selCat===cat.id?' selected':''}" onclick="selCategory('${cat.id}')"><div class="cat-icon">${cat.icon}</div><h3>${cat[lang]||cat.en}</h3></div>`).join('');
+}
+function selCategory(id){selCat=id;renderCats();updateStart()}
+function selLevel(lv){selLv=lv;document.querySelectorAll('.level-card').forEach((c,i)=>c.classList.toggle('selected',['beginner','intermediate','advanced'][i]===lv));updateStart()}
+function updateStart(){document.getElementById('startBtn').disabled=!(selCat&&selLv)}
+function startQuiz(){
+const pool=QUIZDATA[selCat]&&QUIZDATA[selCat][selLv];
+if(!pool||!pool.length){alert('No questions available');return}
+qs=shuffle([...pool]).slice(0,10);qi=0;score=0;
+document.getElementById('selScreen').style.display='none';
+document.getElementById('quizScreen').style.display='block';
+document.getElementById('resScreen').style.display='none';
+showQ();
+}
+function showQ(){
+answered=false;const q=qs[qi],total=qs.length;
+document.getElementById('progBar').style.width=(qi/total*100)+'%';
+document.getElementById('progText').textContent=(qi+1)+' / '+total;
+document.getElementById('nextBtn').style.display='none';
+const qText=q.q[lang]||q.q.en;
+const catObj=CATS.find(c=>c.id===selCat);
+let h=`<div class="q-card"><span class="q-badge">${catObj?catObj.icon+' '+(catObj[lang]||catObj.en):''}</span><p class="q-text">${esc(qText)}</p><div class="choices">`;
+q.c.forEach((c,i)=>{const lb=c[lang]||c.en;h+=`<button class="ch-btn" onclick="check(${i},${q.a},this)" data-i="${i}">${esc(lb)}</button>`});
+h+=`</div><div class="feedback" id="fb"></div><div class="trivia" id="trivia"><div class="trivia-label">${t('triviaLabel')}</div><div id="triviaText"></div></div></div>`;
+document.getElementById('qArea').innerHTML=h;
+}
+function check(s,a,btn){
+if(answered)return;answered=true;
+document.querySelectorAll('.ch-btn').forEach(b=>{b.disabled=true;const i=+b.dataset.i;if(i===a)b.classList.add('correct');if(i===s&&s!==a)b.classList.add('wrong')});
+const fb=document.getElementById('fb'),q=qs[qi];
+if(s===a){score++;fb.className='feedback correct';fb.textContent=t('correctFeedback')||'✓ Correct!';}
+else{const cl=q.c[a][lang]||q.c[a].en;fb.className='feedback wrong';fb.textContent=(t('wrongFeedback')||'✗ Incorrect. Answer: ')+cl}
+if(q.trivia){const tr=q.trivia[lang]||q.trivia.en;document.getElementById('triviaText').textContent=tr;document.getElementById('trivia').classList.add('show')}
+const nb=document.getElementById('nextBtn');nb.style.display='inline-block';nb.textContent=qi<qs.length-1?t('nextBtn'):t('seeRes');
+}
+function nextQ(){qi++;if(qi>=qs.length)showRes();else showQ()}
+function showRes(){
+document.getElementById('quizScreen').style.display='none';
+document.getElementById('resScreen').style.display='block';
+const total=qs.length,pct=Math.round(score/total*100);
+document.getElementById('resScore').textContent=pct+'%';
+document.getElementById('resDetail').textContent=score+' / '+total+t('correct');
+document.getElementById('resTitle').textContent=t('resTitle');
+document.getElementById('retryBtn').textContent=t('retryBtn');
+document.getElementById('backBtn').textContent=t('backBtn');
+let icon,msg;
+if(pct>=90){icon='🎉';msg=t('excellent')}else if(pct>=70){icon='😊';msg=t('great')}else if(pct>=50){icon='📚';msg=t('notBad')}else{icon='💪';msg=t('keepGoing')}
+document.getElementById('resIcon').textContent=icon;document.getElementById('resMsg').textContent=msg;
+}
+function backToSel(){selCat=null;selLv=null;document.querySelectorAll('.level-card,.cat-card').forEach(c=>c.classList.remove('selected'));document.getElementById('startBtn').disabled=true;document.getElementById('selScreen').style.display='block';document.getElementById('quizScreen').style.display='none';document.getElementById('resScreen').style.display='none';renderCats()}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+updateUI();
+</script>
+</body>
+</html>
