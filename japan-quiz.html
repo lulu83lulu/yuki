@@ -117,8 +117,25 @@
         </div>
     </div>
 </div>
-<script src="js/japan-quiz-data.js"></script>
 <script>
+let QUIZDATA = {};
+let dataLoaded = false;
+
+// Load questions from JSON
+fetch('data/quiz-questions.json')
+  .then(r => r.json())
+  .then(data => {
+    const meta = data._meta;
+    delete data._meta;
+    QUIZDATA = data;
+    dataLoaded = true;
+    updateUI();
+  })
+  .catch(e => {
+    console.error('Failed to load quiz data:', e);
+    document.getElementById('mainSub').textContent = 'Error loading quiz data. Please refresh.';
+  });
+
 const UI={
 en:{pageTitle:"Japan Knowledge Quiz",backLink:"← Back to Club Site",mainTitle:"How well do you know Japan?",mainSub:"Choose a category and difficulty level",catLabel:"Category",lvLabel:"Level",lBeg:"Beginner",lMid:"Intermediate",lAdv:"Advanced",startBtn:"Start Quiz",nextBtn:"Next →",seeRes:"See Results →",resTitle:"Results",retryBtn:"Retry",backBtn:"Change Category",excellent:"Amazing! You're a true Japan expert!",great:"Great job! You know Japan well!",notBad:"Not bad! Keep exploring Japan!",keepGoing:"Keep learning — Japan has so much to discover!",correct:" correct",triviaLabel:"Did you know?"},
 zh:{pageTitle:"日本知识问答",backLink:"← 返回社团网站",mainTitle:"你有多了解日本？",mainSub:"选择一个类别和难度等级",catLabel:"类别",lvLabel:"等级",lBeg:"初级",lMid:"中级",lAdv:"高级",startBtn:"开始答题",nextBtn:"下一题 →",seeRes:"查看结果 →",resTitle:"测试结果",retryBtn:"再试一次",backBtn:"更换类别",excellent:"太棒了！你是真正的日本通！",great:"很好！你对日本很了解！",notBad:"还不错！继续探索日本吧！",keepGoing:"继续学习吧——日本有太多值得发现的！",correct:" 题正确",triviaLabel:"你知道吗？"},
@@ -134,6 +151,16 @@ const CATS=[
 {id:"food",icon:"🍣",en:"Food",zh:"美食",ja:"食べ物",es:"Comida"}
 ];
 let lang='en',selCat=null,selLv=null,qs=[],qi=0,score=0,answered=false;
+
+// Session tracking - prevent repeat questions within same browser session
+function getSeenIds(){
+  try{const s=sessionStorage.getItem('quizSeenIds');return s?JSON.parse(s):[];}catch(e){return[];}
+}
+function markSeen(id){
+  const seen=getSeenIds();
+  if(id&&!seen.includes(id)){seen.push(id);sessionStorage.setItem('quizSeenIds',JSON.stringify(seen));}
+}
+
 function t(k){return UI[lang][k]||UI.en[k]||k}
 function setLang(l){lang=l;document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.remove('active'));document.getElementById('lang'+l.charAt(0).toUpperCase()+l.slice(1)).classList.add('active');updateUI()}
 function updateUI(){
@@ -150,7 +177,14 @@ function updateStart(){document.getElementById('startBtn').disabled=!(selCat&&se
 function startQuiz(){
 const pool=QUIZDATA[selCat]&&QUIZDATA[selCat][selLv];
 if(!pool||!pool.length){alert('No questions available');return}
-qs=shuffle([...pool]).slice(0,10);qi=0;score=0;
+// Session tracking: prioritize unseen questions
+const seen=getSeenIds();
+const unseen=pool.filter(q=>!seen.includes(q.id));
+const seenPool=pool.filter(q=>seen.includes(q.id));
+let selected;
+if(unseen.length>=10){selected=shuffle([...unseen]).slice(0,10);}
+else{selected=[...shuffle([...unseen]),...shuffle([...seenPool])].slice(0,10);}
+qs=selected;qi=0;score=0;
 document.getElementById('selScreen').style.display='none';
 document.getElementById('quizScreen').style.display='block';
 document.getElementById('resScreen').style.display='none';
@@ -170,8 +204,10 @@ document.getElementById('qArea').innerHTML=h;
 }
 function check(s,a,btn){
 if(answered)return;answered=true;
+const q=qs[qi];
+markSeen(q.id);
 document.querySelectorAll('.ch-btn').forEach(b=>{b.disabled=true;const i=+b.dataset.i;if(i===a)b.classList.add('correct');if(i===s&&s!==a)b.classList.add('wrong')});
-const fb=document.getElementById('fb'),q=qs[qi];
+const fb=document.getElementById('fb');
 if(s===a){score++;fb.className='feedback correct';fb.textContent=t('correctFeedback')||'✓ Correct!';}
 else{const cl=q.c[a][lang]||q.c[a].en;fb.className='feedback wrong';fb.textContent=(t('wrongFeedback')||'✗ Incorrect. Answer: ')+cl}
 if(q.trivia){const tr=q.trivia[lang]||q.trivia.en;document.getElementById('triviaText').textContent=tr;document.getElementById('trivia').classList.add('show')}
