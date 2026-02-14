@@ -517,6 +517,104 @@
             background: var(--primary);
         }
 
+        /* Quiz Management Styles */
+        .quiz-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .quiz-stat {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0d8cc;
+        }
+        .quiz-stat .qs-num { font-size: 1.6rem; font-weight: 700; color: var(--secondary); }
+        .quiz-stat .qs-label { font-size: .75rem; color: #888; margin-top: 3px; }
+        .quiz-stat.warning .qs-num { color: var(--primary); }
+        .size-bar-bg { width: 100%; height: 8px; background: #ddd; border-radius: 4px; margin-top: 8px; }
+        .size-bar-fill { height: 100%; border-radius: 4px; background: var(--secondary); transition: width .3s; }
+        .size-bar-fill.warn { background: #e67e22; }
+        .size-bar-fill.danger { background: var(--primary); }
+        .quiz-toolbar {
+            display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+            margin-bottom: 20px; padding: 15px; background: var(--bg);
+            border-radius: 8px; border: 1px solid #e0d8cc;
+        }
+        .quiz-toolbar select, .quiz-toolbar input {
+            padding: 8px 12px; border: 2px solid #ddd; border-radius: 6px;
+            font-family: inherit; font-size: .85rem;
+        }
+        .quiz-toolbar select:focus, .quiz-toolbar input:focus { outline: none; border-color: var(--primary); }
+        .quiz-toolbar .spacer { flex: 1; }
+        .quiz-toolbar button {
+            padding: 8px 16px; border: none; border-radius: 6px;
+            cursor: pointer; font-family: inherit; font-size: .85rem;
+            font-weight: 700; transition: all var(--transition);
+        }
+        .btn-add { background: var(--primary); color: #fff; }
+        .btn-add:hover { background: #a01830; }
+        .btn-export-quiz { background: var(--secondary); color: #fff; }
+        .btn-export-quiz:hover { background: #1a3040; }
+        .quiz-list { max-height: 600px; overflow-y: auto; }
+        .q-item {
+            background: #fff; border: 1px solid #e0d8cc; border-radius: 8px;
+            padding: 15px 18px; margin-bottom: 10px; transition: all .2s;
+        }
+        .q-item:hover { box-shadow: 0 3px 12px var(--shadow); }
+        .q-item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+        .q-item-meta { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+        .q-badge-sm {
+            display: inline-block; padding: 2px 8px; border-radius: 10px;
+            font-size: .7rem; font-weight: 700; color: #fff;
+        }
+        .q-badge-cat { background: var(--secondary); }
+        .q-badge-lv { background: var(--accent); color: #2C2C2C; }
+        .q-item-text { font-size: .9rem; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+        .q-item-actions { display: flex; gap: 6px; }
+        .q-item-actions button {
+            padding: 4px 10px; border: none; border-radius: 4px;
+            cursor: pointer; font-family: inherit; font-size: .75rem;
+        }
+        .q-no-items { text-align: center; padding: 40px; color: #888; }
+        /* Quiz Edit Modal */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,.5); z-index: 10000;
+            justify-content: center; align-items: center; padding: 20px;
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: #fff; border-radius: 12px; padding: 30px;
+            max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,.3);
+        }
+        .modal h3 { color: var(--secondary); margin-bottom: 20px; font-size: 1.2rem; }
+        .modal-field { margin-bottom: 14px; }
+        .modal-field label { display: block; font-size: .8rem; color: #666; font-weight: 700; margin-bottom: 4px; }
+        .modal-field input, .modal-field textarea, .modal-field select {
+            width: 100%; padding: 10px 14px; border: 2px solid #ddd; border-radius: 6px;
+            font-family: inherit; font-size: .9rem;
+        }
+        .modal-field textarea { min-height: 60px; resize: vertical; }
+        .modal-field input:focus, .modal-field textarea:focus { outline: none; border-color: var(--primary); }
+        .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .modal-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+        .modal-btns button {
+            padding: 10px 24px; border: none; border-radius: 6px; cursor: pointer;
+            font-family: inherit; font-size: .9rem; font-weight: 700;
+        }
+        .modal-save { background: var(--primary); color: #fff; }
+        .modal-save:hover { background: #a01830; }
+        .modal-cancel { background: #ddd; color: var(--text); }
+        .modal-cancel:hover { background: #ccc; }
+        .choices-editor { margin-top: 8px; }
+        .choice-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+        .choice-row input { flex: 1; padding: 8px 10px; }
+        .choice-row .choice-num { font-size: .8rem; color: #888; min-width: 20px; }
+
         /* Responsive */
         @media (max-width: 768px) {
             .dash-grid {
@@ -551,6 +649,14 @@
 
             .admin-header h1 {
                 font-size: 1rem;
+            }
+
+            .quiz-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -596,6 +702,7 @@
                     <nav class="sidebar-nav">
                         <button class="active" data-panel="overview">📊 Overview</button>
                         <button data-panel="activities">🗳️ Activities</button>
+                        <button data-panel="quiz">🧠 Quiz Manager</button>
                         <button data-panel="settings">⚙️ Settings</button>
                     </nav>
                     <div class="sidebar-user">
@@ -620,8 +727,8 @@
                                 <div class="stat-label">Open Votes</div>
                             </div>
                             <div class="stat-card gold">
-                                <div class="stat-number" id="statVotes">0</div>
-                                <div class="stat-label">Total Votes</div>
+                                <div class="stat-number" id="statQuizQ">0</div>
+                                <div class="stat-label">Quiz Questions</div>
                             </div>
                         </div>
 
@@ -671,6 +778,141 @@
                             <div class="no-activities" id="noActivitiesMsg">
                                 <div class="icon">🗳️</div>
                                 <p>No activities created yet.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Management Panel -->
+                    <div class="dash-panel" id="panel-quiz">
+                        <h2>🧠 Quiz Management — クイズ管理</h2>
+
+                        <div class="quiz-stats">
+                            <div class="quiz-stat">
+                                <div class="qs-num" id="qsTotalQ">—</div>
+                                <div class="qs-label">Total Questions 問題数</div>
+                            </div>
+                            <div class="quiz-stat">
+                                <div class="qs-num" id="qsCats">—</div>
+                                <div class="qs-label">Categories カテゴリ</div>
+                            </div>
+                            <div class="quiz-stat" id="qsSizeCard">
+                                <div class="qs-num" id="qsSize">—</div>
+                                <div class="qs-label">Data Size / 50MB</div>
+                                <div class="size-bar-bg"><div class="size-bar-fill" id="qsSizeBar" style="width:0%"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-toolbar">
+                            <select id="qFilterCat">
+                                <option value="">All Categories</option>
+                                <option value="current">📰 Current Events</option>
+                                <option value="tourism">🗾 Tourism</option>
+                                <option value="history">⛩️ History</option>
+                                <option value="entertainment">🎭 Entertainment</option>
+                                <option value="manga">📚 Manga & Anime</option>
+                                <option value="food">🍣 Food</option>
+                            </select>
+                            <select id="qFilterLv">
+                                <option value="">All Levels</option>
+                                <option value="beginner">🌸 Beginner</option>
+                                <option value="intermediate">🎋 Intermediate</option>
+                                <option value="advanced">🏯 Advanced</option>
+                            </select>
+                            <input type="text" id="qSearch" placeholder="Search questions...">
+                            <div class="spacer"></div>
+                            <button class="btn-add" onclick="openAddModal()">+ Add Question</button>
+                            <button class="btn-export-quiz" onclick="exportQuizJSON()">⬇ Export JSON</button>
+                        </div>
+
+                        <div class="quiz-list" id="quizList">
+                            <div class="q-no-items">Loading quiz data...</div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Edit/Add Modal -->
+                    <div class="modal-overlay" id="qModal">
+                        <div class="modal">
+                            <h3 id="qModalTitle">Add Question</h3>
+                            <input type="hidden" id="qEditId">
+
+                            <div class="modal-row">
+                                <div class="modal-field">
+                                    <label>Category カテゴリ</label>
+                                    <select id="qmCat">
+                                        <option value="current">📰 Current Events</option>
+                                        <option value="tourism">🗾 Tourism</option>
+                                        <option value="history">⛩️ History</option>
+                                        <option value="entertainment">🎭 Entertainment</option>
+                                        <option value="manga">📚 Manga & Anime</option>
+                                        <option value="food">🍣 Food</option>
+                                    </select>
+                                </div>
+                                <div class="modal-field">
+                                    <label>Level レベル</label>
+                                    <select id="qmLv">
+                                        <option value="beginner">🌸 Beginner</option>
+                                        <option value="intermediate">🎋 Intermediate</option>
+                                        <option value="advanced">🏯 Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="modal-field">
+                                <label>Question (English)</label>
+                                <input type="text" id="qmQen" placeholder="Enter question in English">
+                            </div>
+                            <div class="modal-row">
+                                <div class="modal-field">
+                                    <label>Question (日本語)</label>
+                                    <input type="text" id="qmQja" placeholder="日本語で質問">
+                                </div>
+                                <div class="modal-field">
+                                    <label>Question (中文)</label>
+                                    <input type="text" id="qmQzh" placeholder="中文问题">
+                                </div>
+                            </div>
+                            <div class="modal-field">
+                                <label>Question (Español)</label>
+                                <input type="text" id="qmQes" placeholder="Pregunta en español">
+                            </div>
+
+                            <div class="modal-field">
+                                <label>Choices (4 options — enter for each language)</label>
+                                <div class="choices-editor" id="choicesEditor"></div>
+                            </div>
+
+                            <div class="modal-field">
+                                <label>Correct Answer 正解</label>
+                                <select id="qmAns">
+                                    <option value="0">Choice 1</option>
+                                    <option value="1">Choice 2</option>
+                                    <option value="2">Choice 3</option>
+                                    <option value="3">Choice 4</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-field">
+                                <label>Trivia / 豆知識 (English)</label>
+                                <textarea id="qmTen" placeholder="Fun fact about this question"></textarea>
+                            </div>
+                            <div class="modal-row">
+                                <div class="modal-field">
+                                    <label>Trivia (日本語)</label>
+                                    <textarea id="qmTja" placeholder="豆知識"></textarea>
+                                </div>
+                                <div class="modal-field">
+                                    <label>Trivia (中文)</label>
+                                    <textarea id="qmTzh" placeholder="趣味知识"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-field">
+                                <label>Trivia (Español)</label>
+                                <textarea id="qmTes" placeholder="Dato curioso"></textarea>
+                            </div>
+
+                            <div class="modal-btns">
+                                <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+                                <button class="modal-save" onclick="saveQuestion()">Save 保存</button>
                             </div>
                         </div>
                     </div>
@@ -882,7 +1124,7 @@
 
         document.getElementById('statTotal').textContent = ids.length;
         document.getElementById('statOpen').textContent = openCount;
-        document.getElementById('statVotes').textContent = totalVotes;
+        document.getElementById('statQuizQ').textContent = countQuestions();
 
         // Recent Activities (overview)
         const recentDiv = document.getElementById('recentActivities');
@@ -996,8 +1238,326 @@
         return div.innerHTML;
     }
 
+    /* ========================================
+       Quiz Management Logic
+       ======================================== */
+    const QUIZ_JSON_PATH = 'data/quiz-questions.json';
+    const QUIZ_LOCAL_KEY = 'jcc-quiz-data';
+    const MAX_SIZE_BYTES = 50 * 1024 * 1024; // 50MB
+    const CAT_NAMES = {
+        current: '📰 Current Events',
+        tourism: '🗾 Tourism',
+        history: '⛩️ History',
+        entertainment: '🎭 Entertainment',
+        manga: '📚 Manga & Anime',
+        food: '🍣 Food'
+    };
+    const LV_NAMES = { beginner: '🌸 Beginner', intermediate: '🎋 Intermediate', advanced: '🏯 Advanced' };
+    let quizData = null; // working copy
+
+    function loadQuizData() {
+        // Try localStorage first (admin edits), then fetch JSON
+        const local = localStorage.getItem(QUIZ_LOCAL_KEY);
+        if (local) {
+            try {
+                quizData = JSON.parse(local);
+                renderQuizPanel();
+                return;
+            } catch(e) { /* fall through */ }
+        }
+        fetch(QUIZ_JSON_PATH)
+            .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(data => {
+                delete data._meta;
+                quizData = data;
+                localStorage.setItem(QUIZ_LOCAL_KEY, JSON.stringify(quizData));
+                renderQuizPanel();
+            })
+            .catch(e => {
+                console.error('Failed to load quiz data:', e);
+                document.getElementById('quizList').innerHTML = '<div class="q-no-items">Failed to load quiz data. Check data/quiz-questions.json</div>';
+            });
+    }
+
+    function saveQuizLocal() {
+        localStorage.setItem(QUIZ_LOCAL_KEY, JSON.stringify(quizData));
+    }
+
+    function getQuizSizeBytes() {
+        return new Blob([JSON.stringify(quizData)]).size;
+    }
+
+    function countQuestions() {
+        let total = 0;
+        if (!quizData) return 0;
+        Object.keys(quizData).forEach(cat => {
+            Object.keys(quizData[cat]).forEach(lv => {
+                total += quizData[cat][lv].length;
+            });
+        });
+        return total;
+    }
+
+    function getAllQuestions() {
+        const all = [];
+        if (!quizData) return all;
+        Object.keys(quizData).forEach(cat => {
+            Object.keys(quizData[cat]).forEach(lv => {
+                quizData[cat][lv].forEach(q => {
+                    all.push({ ...q, _cat: cat, _lv: lv });
+                });
+            });
+        });
+        return all;
+    }
+
+    function renderQuizPanel() {
+        if (!quizData) return;
+        const total = countQuestions();
+        const cats = Object.keys(quizData).length;
+        const sizeBytes = getQuizSizeBytes();
+        const sizeMB = (sizeBytes / (1024 * 1024)).toFixed(2);
+        const pct = Math.min((sizeBytes / MAX_SIZE_BYTES) * 100, 100);
+
+        document.getElementById('qsTotalQ').textContent = total;
+        document.getElementById('qsCats').textContent = cats;
+        document.getElementById('qsSize').textContent = sizeMB + ' MB';
+
+        const sizeBar = document.getElementById('qsSizeBar');
+        sizeBar.style.width = pct + '%';
+        sizeBar.className = 'size-bar-fill' + (pct > 90 ? ' danger' : pct > 70 ? ' warn' : '');
+
+        const sizeCard = document.getElementById('qsSizeCard');
+        if (pct > 90) {
+            sizeCard.classList.add('warning');
+            showToast('⚠️ Quiz data is near 50MB limit! (' + sizeMB + ' MB)', 'error');
+        } else {
+            sizeCard.classList.remove('warning');
+        }
+
+        renderQuizList();
+    }
+
+    function renderQuizList() {
+        const filterCat = document.getElementById('qFilterCat').value;
+        const filterLv = document.getElementById('qFilterLv').value;
+        const search = document.getElementById('qSearch').value.toLowerCase().trim();
+        let items = getAllQuestions();
+
+        if (filterCat) items = items.filter(q => q._cat === filterCat);
+        if (filterLv) items = items.filter(q => q._lv === filterLv);
+        if (search) items = items.filter(q => {
+            const text = (q.q.en || '') + (q.q.ja || '') + (q.q.zh || '') + (q.q.es || '');
+            return text.toLowerCase().includes(search);
+        });
+
+        const container = document.getElementById('quizList');
+        if (items.length === 0) {
+            container.innerHTML = '<div class="q-no-items">No questions found.</div>';
+            return;
+        }
+
+        let html = '';
+        items.forEach(q => {
+            const qText = q.q.en || q.q.ja || '(no text)';
+            const choices = q.c.map((c, i) => {
+                const label = c.en || c.ja || '';
+                return (i === q.a ? '<strong>' + escapeHtml(label) + ' ✓</strong>' : escapeHtml(label));
+            }).join(' / ');
+            html += `<div class="q-item">
+                <div class="q-item-meta">
+                    <span class="q-badge-sm q-badge-cat">${CAT_NAMES[q._cat] || q._cat}</span>
+                    <span class="q-badge-sm q-badge-lv">${LV_NAMES[q._lv] || q._lv}</span>
+                    <span style="font-size:.7rem;color:#aaa">${escapeHtml(q.id || '')}</span>
+                </div>
+                <div class="q-item-header">
+                    <div class="q-item-text">${escapeHtml(qText)}</div>
+                    <div class="q-item-actions">
+                        <button class="btn-toggle" onclick="openEditModal('${q.id}')">Edit</button>
+                        <button class="btn-delete" onclick="deleteQuestion('${q.id}')">Delete</button>
+                    </div>
+                </div>
+                <div style="font-size:.78rem;color:#888">${choices}</div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    // Filters
+    document.getElementById('qFilterCat').addEventListener('change', renderQuizList);
+    document.getElementById('qFilterLv').addEventListener('change', renderQuizList);
+    document.getElementById('qSearch').addEventListener('input', renderQuizList);
+
+    // Build choices editor HTML
+    function buildChoicesEditor(choices) {
+        const langs = ['en', 'ja', 'zh', 'es'];
+        const langLabels = { en: 'EN', ja: 'JA', zh: 'ZH', es: 'ES' };
+        let html = '';
+        for (let i = 0; i < 4; i++) {
+            html += `<div style="margin-bottom:10px;padding:8px;background:var(--bg);border-radius:6px"><strong style="font-size:.8rem">Choice ${i + 1}</strong><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">`;
+            langs.forEach(l => {
+                const val = choices && choices[i] ? (choices[i][l] || '') : '';
+                html += `<input type="text" id="qmC${i}${l}" placeholder="${langLabels[l]}" value="${escapeHtml(val)}" style="padding:6px 8px;font-size:.82rem">`;
+            });
+            html += '</div></div>';
+        }
+        document.getElementById('choicesEditor').innerHTML = html;
+    }
+
+    // Modal
+    function openAddModal() {
+        document.getElementById('qModalTitle').textContent = 'Add Question 問題追加';
+        document.getElementById('qEditId').value = '';
+        document.getElementById('qmCat').value = 'current';
+        document.getElementById('qmLv').value = 'beginner';
+        document.getElementById('qmQen').value = '';
+        document.getElementById('qmQja').value = '';
+        document.getElementById('qmQzh').value = '';
+        document.getElementById('qmQes').value = '';
+        document.getElementById('qmTen').value = '';
+        document.getElementById('qmTja').value = '';
+        document.getElementById('qmTzh').value = '';
+        document.getElementById('qmTes').value = '';
+        document.getElementById('qmAns').value = '0';
+        buildChoicesEditor(null);
+        document.getElementById('qModal').classList.add('show');
+    }
+
+    function openEditModal(id) {
+        const q = findQuestionById(id);
+        if (!q) { showToast('Question not found', 'error'); return; }
+        document.getElementById('qModalTitle').textContent = 'Edit Question 問題編集';
+        document.getElementById('qEditId').value = id;
+        document.getElementById('qmCat').value = q._cat;
+        document.getElementById('qmLv').value = q._lv;
+        document.getElementById('qmQen').value = q.q.en || '';
+        document.getElementById('qmQja').value = q.q.ja || '';
+        document.getElementById('qmQzh').value = q.q.zh || '';
+        document.getElementById('qmQes').value = q.q.es || '';
+        document.getElementById('qmTen').value = (q.trivia && q.trivia.en) || '';
+        document.getElementById('qmTja').value = (q.trivia && q.trivia.ja) || '';
+        document.getElementById('qmTzh').value = (q.trivia && q.trivia.zh) || '';
+        document.getElementById('qmTes').value = (q.trivia && q.trivia.es) || '';
+        document.getElementById('qmAns').value = String(q.a);
+        buildChoicesEditor(q.c);
+        document.getElementById('qModal').classList.add('show');
+    }
+
+    function closeModal() {
+        document.getElementById('qModal').classList.remove('show');
+    }
+
+    function findQuestionById(id) {
+        if (!quizData) return null;
+        for (const cat of Object.keys(quizData)) {
+            for (const lv of Object.keys(quizData[cat])) {
+                const q = quizData[cat][lv].find(q => q.id === id);
+                if (q) return { ...q, _cat: cat, _lv: lv };
+            }
+        }
+        return null;
+    }
+
+    function removeQuestionById(id) {
+        for (const cat of Object.keys(quizData)) {
+            for (const lv of Object.keys(quizData[cat])) {
+                const idx = quizData[cat][lv].findIndex(q => q.id === id);
+                if (idx >= 0) { quizData[cat][lv].splice(idx, 1); return true; }
+            }
+        }
+        return false;
+    }
+
+    function saveQuestion() {
+        const cat = document.getElementById('qmCat').value;
+        const lv = document.getElementById('qmLv').value;
+        const qEn = document.getElementById('qmQen').value.trim();
+        if (!qEn) { showToast('English question text is required', 'error'); return; }
+
+        // Build choices
+        const choices = [];
+        for (let i = 0; i < 4; i++) {
+            choices.push({
+                en: document.getElementById('qmC' + i + 'en').value.trim(),
+                ja: document.getElementById('qmC' + i + 'ja').value.trim(),
+                zh: document.getElementById('qmC' + i + 'zh').value.trim(),
+                es: document.getElementById('qmC' + i + 'es').value.trim()
+            });
+        }
+        if (!choices[0].en || !choices[1].en) { showToast('At least 2 choices required (English)', 'error'); return; }
+
+        const editId = document.getElementById('qEditId').value;
+        const qObj = {
+            id: editId || (cat + '_' + lv + '_' + Date.now()),
+            q: {
+                en: qEn,
+                ja: document.getElementById('qmQja').value.trim(),
+                zh: document.getElementById('qmQzh').value.trim(),
+                es: document.getElementById('qmQes').value.trim()
+            },
+            c: choices.filter(c => c.en || c.ja),
+            a: parseInt(document.getElementById('qmAns').value),
+            trivia: {
+                en: document.getElementById('qmTen').value.trim(),
+                ja: document.getElementById('qmTja').value.trim(),
+                zh: document.getElementById('qmTzh').value.trim(),
+                es: document.getElementById('qmTes').value.trim()
+            }
+        };
+
+        // Remove old if editing (may change category/level)
+        if (editId) removeQuestionById(editId);
+
+        // Ensure category/level arrays exist
+        if (!quizData[cat]) quizData[cat] = {};
+        if (!quizData[cat][lv]) quizData[cat][lv] = [];
+        quizData[cat][lv].push(qObj);
+
+        // Check size
+        const sizeBytes = getQuizSizeBytes();
+        if (sizeBytes > MAX_SIZE_BYTES) {
+            showToast('⚠️ Data exceeds 50MB! Question saved but please reduce data size.', 'error');
+        }
+
+        saveQuizLocal();
+        renderQuizPanel();
+        closeModal();
+        showToast(editId ? 'Question updated! 更新しました' : 'Question added! 追加しました', 'success');
+    }
+
+    function deleteQuestion(id) {
+        if (!confirm('Delete this question? この問題を削除しますか？')) return;
+        if (removeQuestionById(id)) {
+            saveQuizLocal();
+            renderQuizPanel();
+            showToast('Question deleted 削除しました', 'success');
+        }
+    }
+
+    function exportQuizJSON() {
+        if (!quizData) { showToast('No data to export', 'error'); return; }
+        const exportData = {
+            _meta: {
+                version: 1,
+                lastUpdated: new Date().toISOString().split('T')[0],
+                totalQuestions: countQuestions()
+            },
+            ...quizData
+        };
+        const json = JSON.stringify(exportData, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'quiz-questions.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Quiz data exported! Replace data/quiz-questions.json and commit.', 'success');
+    }
+
     /* --- Init --- */
     checkSession();
+    loadQuizData();
     </script>
 
     <!-- Firebase config (for status check) -->

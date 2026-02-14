@@ -121,20 +121,30 @@
 let QUIZDATA = {};
 let dataLoaded = false;
 
-// Load questions from JSON
-fetch('data/quiz-questions.json')
-  .then(r => r.json())
-  .then(data => {
-    const meta = data._meta;
-    delete data._meta;
-    QUIZDATA = data;
-    dataLoaded = true;
-    updateUI();
-  })
-  .catch(e => {
-    console.error('Failed to load quiz data:', e);
-    document.getElementById('mainSub').textContent = 'Error loading quiz data. Please refresh.';
-  });
+// Load questions: check localStorage (admin edits) first, then fetch JSON
+(function loadData(){
+  const local = localStorage.getItem('jcc-quiz-data');
+  if (local) {
+    try {
+      QUIZDATA = JSON.parse(local);
+      dataLoaded = true;
+      updateUI();
+      return;
+    } catch(e) { /* fall through to fetch */ }
+  }
+  fetch('data/quiz-questions.json')
+    .then(r => r.json())
+    .then(data => {
+      delete data._meta;
+      QUIZDATA = data;
+      dataLoaded = true;
+      updateUI();
+    })
+    .catch(e => {
+      console.error('Failed to load quiz data:', e);
+      document.getElementById('mainSub').textContent = 'Error loading quiz data. Please refresh.';
+    });
+})();
 
 const UI={
 en:{pageTitle:"Japan Knowledge Quiz",backLink:"← Back to Club Site",mainTitle:"How well do you know Japan?",mainSub:"Choose a category and difficulty level",catLabel:"Category",lvLabel:"Level",lBeg:"Beginner",lMid:"Intermediate",lAdv:"Advanced",startBtn:"Start Quiz",nextBtn:"Next →",seeRes:"See Results →",resTitle:"Results",retryBtn:"Retry",backBtn:"Change Category",excellent:"Amazing! You're a true Japan expert!",great:"Great job! You know Japan well!",notBad:"Not bad! Keep exploring Japan!",keepGoing:"Keep learning — Japan has so much to discover!",correct:" correct",triviaLabel:"Did you know?"},
