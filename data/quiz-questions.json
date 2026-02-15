@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-14",
-    "totalQuestions": 69
+    "lastUpdated": "2026-02-15",
+    "totalQuestions": 70
   },
   "current": {
     "beginner": [
@@ -2860,6 +2860,48 @@
           "zh": "怀石料理源于茶道餐。通常有7-14道菜按特定顺序上菜。摆盘与味道同样重要——每道菜都是艺术品。",
           "ja": "懐石は茶道の食事が起源。通常7〜14品を決まった順序で提供。盛り付けは味と同じくらい重要で、一皿一皿が芸術作品です。",
           "es": "El kaiseki se originó en las comidas de la ceremonia del té. Tiene 7-14 platos en orden específico. La presentación es tan importante como el sabor."
+        }
+      },
+      {
+        "id": "food_intermediate_rs9cxg",
+        "q": {
+          "en": "What is 'umami' — the fifth basic taste discovered in Japan?",
+          "zh": "'鲜味'是什么——在日本发现的第五种基本味道？",
+          "ja": "日本で発見された第五の基本味「うま味」とは？",
+          "es": "¿Qué es 'umami', el quinto sabor básico descubierto en Japón?"
+        },
+        "c": [
+          {
+            "en": "Spicy taste",
+            "zh": "辣味",
+            "ja": "辛味",
+            "es": "Sabor picante"
+          },
+          {
+            "en": "Savory taste",
+            "zh": "鲜味",
+            "ja": "うま味（旨味）",
+            "es": "Sabor sabroso"
+          },
+          {
+            "en": "Smoky taste",
+            "zh": "烟熏味",
+            "ja": "燻製の味",
+            "es": "Sabor ahumado"
+          },
+          {
+            "en": "Metallic taste",
+            "zh": "金属味",
+            "ja": "金属味",
+            "es": "Sabor metálico"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Umami was discovered by Professor Kikunae Ikeda in 1908. He found glutamate in kombu seaweed was responsible for this savory taste.",
+          "zh": "鲜味由池田菊苗教授于1908年发现。他发现昆布海带中的谷氨酸是这种鲜味的来源。",
+          "ja": "うま味は1908年に池田菊苗教授が発見しました。昆布に含まれるグルタミン酸がこの旨味の正体だと突き止めました。",
+          "es": "El umami fue descubierto por el Profesor Kikunae Ikeda en 1908. Descubrió que el glutamato en el alga kombu era responsable de este sabor sabroso."
         }
       }
     ],
