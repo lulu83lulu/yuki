@@ -6,20 +6,22 @@
     <title>Admin Panel | JCC ウェッブ日本文化部</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <style>
         /* --- Admin Page Specific Styles --- */
         body {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            font-family: 'Patrick Hand', 'Noto Serif JP', 'Noto Serif SC', cursive, serif;
         }
 
         .admin-header {
-            background: linear-gradient(180deg, #1a0a00 0%, #2d1810 50%, #3d2317 100%);
+            background: #222;
+            border-bottom: 3px solid #333;
             padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: none;
         }
 
         .admin-header .container {
@@ -35,9 +37,8 @@
             align-items: center;
             gap: 10px;
         }
-
         .admin-header .back-link {
-            color: var(--accent);
+            color: #ccc;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
@@ -58,11 +59,11 @@
         }
 
         .login-box {
-            background: var(--card-bg);
+            background: #fff;
             border-radius: 16px;
             padding: 50px 40px;
-            box-shadow: 0 8px 30px var(--shadow);
-            border: 1px solid rgba(212, 168, 67, 0.2);
+            box-shadow: 4px 4px 0px #333;
+            border: 2.5px solid #333;
             max-width: 420px;
             width: 100%;
             text-align: center;
@@ -74,7 +75,7 @@
         }
 
         .login-box h2 {
-            color: var(--secondary);
+            color: #333;
             margin-bottom: 8px;
             font-size: 1.5rem;
         }
@@ -110,35 +111,36 @@
             border-radius: 8px;
             font-family: inherit;
             font-size: 0.95rem;
-            transition: border-color var(--transition);
+            transition: border-color 0.3s;
         }
 
         .input-group input:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #333;
         }
 
         .login-btn {
             padding: 14px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
+            background: #FFD1DC;
+            color: #333;
+            border: 2.5px solid #333;
+            border-radius: 30px;
             cursor: pointer;
             font-family: inherit;
             font-size: 1rem;
             font-weight: 700;
-            transition: all var(--transition);
+            transition: all 0.3s;
             margin-top: 10px;
         }
 
         .login-btn:hover {
-            background: #a01830;
+            background: #E8A0B0;
             transform: translateY(-1px);
+            box-shadow: 3px 3px 0px #333;
         }
 
         .login-error {
-            color: var(--primary);
+            color: #666;
             font-size: 0.85rem;
             margin-top: 10px;
             display: none;
@@ -163,21 +165,21 @@
 
         /* Sidebar */
         .dash-sidebar {
-            background: var(--card-bg);
+            background: #fff;
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 4px 15px var(--shadow);
-            border: 1px solid rgba(212, 168, 67, 0.15);
+            box-shadow: 4px 4px 0px #333;
+            border: 2.5px solid #333;
             height: fit-content;
             position: sticky;
             top: 20px;
         }
 
         .dash-sidebar h3 {
-            color: var(--secondary);
+            color: #333;
             margin-bottom: 15px;
             font-size: 1rem;
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 2px dashed #333;
             padding-bottom: 8px;
         }
 
@@ -192,22 +194,25 @@
             padding: 10px 15px;
             background: transparent;
             border: none;
-            border-radius: 6px;
+            border-radius: 30px;
             cursor: pointer;
             font-family: inherit;
             font-size: 0.9rem;
-            color: var(--text);
-            transition: all var(--transition);
+            color: #222;
+            transition: all 0.3s;
         }
 
         .sidebar-nav button:hover {
-            background: rgba(196, 30, 58, 0.08);
-            color: var(--primary);
+            background: rgba(0,0,0,0.05);
+            color: #333;
         }
 
         .sidebar-nav button.active {
-            background: var(--primary);
-            color: #fff;
+            background: #BDE0FE;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 30px;
+            font-weight: 700;
         }
 
         .sidebar-user {
@@ -219,7 +224,7 @@
         }
 
         .sidebar-user strong {
-            color: var(--secondary);
+            color: #333;
         }
 
         .logout-btn {
@@ -229,11 +234,11 @@
             background: #666;
             color: #fff;
             border: none;
-            border-radius: 6px;
+            border-radius: 30px;
             cursor: pointer;
             font-family: inherit;
             font-size: 0.8rem;
-            transition: all var(--transition);
+            transition: all 0.3s;
         }
 
         .logout-btn:hover {
@@ -247,11 +252,11 @@
 
         .dash-panel {
             display: none;
-            background: var(--card-bg);
+            background: #fff;
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 4px 15px var(--shadow);
-            border: 1px solid rgba(212, 168, 67, 0.15);
+            box-shadow: 4px 4px 0px #333;
+            border: 2.5px solid #333;
         }
 
         .dash-panel.active {
@@ -259,10 +264,10 @@
         }
 
         .dash-panel h2 {
-            color: var(--secondary);
+            color: #333;
             margin-bottom: 20px;
             font-size: 1.4rem;
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 2px dashed #333;
             padding-bottom: 10px;
         }
 
@@ -275,43 +280,48 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, var(--secondary), #1a3a4a);
-            border-radius: 10px;
+            background: #fff;
+            border: 2.5px solid #333;
+            border-radius: 12px;
             padding: 20px;
-            color: #fff;
+            color: #333;
             text-align: center;
+            border-top: 4px solid #BDE0FE;
         }
 
         .stat-card.red {
-            background: linear-gradient(135deg, var(--primary), #8B0000);
+            background: #fff;
+            border-top-color: #FFD1DC;
         }
 
         .stat-card.gold {
-            background: linear-gradient(135deg, #8B6914, var(--accent));
+            background: #fff;
+            border-top-color: #FFF3B0;
         }
 
         .stat-number {
             font-size: 2.2rem;
             font-weight: 700;
+                    color: #333;
         }
 
         .stat-label {
             font-size: 0.8rem;
-            opacity: 0.85;
+            color: rgba(51,51,51,0.7);
             margin-top: 5px;
         }
 
         /* Activity Management */
         .create-form {
-            background: rgba(245, 240, 232, 0.5);
-            border-radius: 10px;
+            background: #fafafa;
+            border-radius: 16px;
             padding: 25px;
             margin-bottom: 25px;
-            border: 1px dashed var(--accent);
+            border: 1px dashed #999;
         }
 
         .create-form h3 {
-            color: var(--primary);
+            color: #333;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
@@ -336,13 +346,13 @@
             border-radius: 6px;
             font-family: inherit;
             font-size: 0.9rem;
-            transition: border-color var(--transition);
+            transition: border-color 0.3s;
         }
 
         .create-form input:focus,
         .create-form textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #333;
         }
 
         .create-form textarea {
@@ -352,19 +362,20 @@
 
         .create-form .submit-btn {
             padding: 12px 30px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
+            background: #C1F0DB;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 30px;
             cursor: pointer;
             font-family: inherit;
             font-size: 0.95rem;
             font-weight: 700;
-            transition: all var(--transition);
+            transition: all 0.3s;
         }
 
         .create-form .submit-btn:hover {
-            background: #a01830;
+            background: #7CC9A3;
+            box-shadow: 3px 3px 0px #333;
         }
 
         /* Activity List Table */
@@ -376,10 +387,11 @@
         .activity-table th {
             text-align: left;
             padding: 12px 15px;
-            background: var(--secondary);
-            color: #fff;
+            background: #E8D5F5;
+            color: #333;
             font-size: 0.85rem;
             font-weight: 700;
+            border-bottom: 2px solid #333;
         }
 
         .activity-table th:first-child {
@@ -397,7 +409,7 @@
         }
 
         .activity-table tr:hover td {
-            background: rgba(245, 240, 232, 0.5);
+            background: #fafafa;
         }
 
         .table-status {
@@ -416,29 +428,31 @@
         .table-actions button {
             padding: 5px 12px;
             border: none;
-            border-radius: 4px;
+            border-radius: 30px;
             cursor: pointer;
             font-family: inherit;
             font-size: 0.78rem;
-            transition: all var(--transition);
+            transition: all 0.3s;
         }
 
         .btn-toggle {
-            background: var(--secondary);
-            color: #fff;
+            background: #BDE0FE;
+            color: #333;
+            border: 1.5px solid #333;
         }
 
         .btn-toggle:hover {
-            background: #1a3040;
+            background: #89B4D4;
         }
 
         .btn-delete {
-            background: #ff5252;
-            color: #fff;
+            background: #FFD1DC;
+            color: #333;
+            border: 1.5px solid #333;
         }
 
         .btn-delete:hover {
-            background: #d32f2f;
+            background: #E8A0B0;
         }
 
         /* Site Settings */
@@ -447,7 +461,7 @@
         }
 
         .settings-section h3 {
-            color: var(--primary);
+            color: #333;
             margin-bottom: 10px;
         }
 
@@ -467,7 +481,7 @@
 
         .settings-item label {
             font-size: 0.9rem;
-            color: var(--text);
+            color: #222;
         }
 
         .settings-item .hint {
@@ -492,12 +506,12 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--secondary);
+            background: #555;
             color: #fff;
             padding: 14px 24px;
-            border-radius: 8px;
+            border-radius: 30px;
             font-size: 0.9rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 4px 4px 0px #333;
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.4s ease;
@@ -510,11 +524,11 @@
         }
 
         .toast.success {
-            background: #2E7D32;
+            background: #555;
         }
 
         .toast.error {
-            background: var(--primary);
+            background: #333;
         }
 
         /* Quiz Management Styles */
@@ -525,57 +539,57 @@
             margin-bottom: 20px;
         }
         .quiz-stat {
-            background: var(--bg);
-            border-radius: 8px;
+            background: #fff;
+            border-radius: 12px;
             padding: 15px;
             text-align: center;
-            border: 1px solid #e0d8cc;
+            border: 1px solid #ddd;
         }
-        .quiz-stat .qs-num { font-size: 1.6rem; font-weight: 700; color: var(--secondary); }
+        .quiz-stat .qs-num { font-size: 1.6rem; font-weight: 700; color: #333; }
         .quiz-stat .qs-label { font-size: .75rem; color: #888; margin-top: 3px; }
-        .quiz-stat.warning .qs-num { color: var(--primary); }
+        .quiz-stat.warning .qs-num { color: #c00; }
         .size-bar-bg { width: 100%; height: 8px; background: #ddd; border-radius: 4px; margin-top: 8px; }
-        .size-bar-fill { height: 100%; border-radius: 4px; background: var(--secondary); transition: width .3s; }
-        .size-bar-fill.warn { background: #e67e22; }
-        .size-bar-fill.danger { background: var(--primary); }
+        .size-bar-fill { height: 100%; border-radius: 4px; background: #555; transition: width .3s; }
+        .size-bar-fill.warn { background: #999; }
+        .size-bar-fill.danger { background: #c00; }
         .quiz-toolbar {
             display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
-            margin-bottom: 20px; padding: 15px; background: var(--bg);
-            border-radius: 8px; border: 1px solid #e0d8cc;
+            margin-bottom: 20px; padding: 15px; background: #fafafa;
+            border-radius: 12px; border: 1px solid #ddd;
         }
         .quiz-toolbar select, .quiz-toolbar input {
             padding: 8px 12px; border: 2px solid #ddd; border-radius: 6px;
             font-family: inherit; font-size: .85rem;
         }
-        .quiz-toolbar select:focus, .quiz-toolbar input:focus { outline: none; border-color: var(--primary); }
+        .quiz-toolbar select:focus, .quiz-toolbar input:focus { outline: none; border-color: #333; }
         .quiz-toolbar .spacer { flex: 1; }
         .quiz-toolbar button {
-            padding: 8px 16px; border: none; border-radius: 6px;
+            padding: 8px 16px; border: none; border-radius: 30px;
             cursor: pointer; font-family: inherit; font-size: .85rem;
-            font-weight: 700; transition: all var(--transition);
+            font-weight: 700; transition: all 0.3s;
         }
-        .btn-add { background: var(--primary); color: #fff; }
-        .btn-add:hover { background: #a01830; }
-        .btn-export-quiz { background: var(--secondary); color: #fff; }
-        .btn-export-quiz:hover { background: #1a3040; }
+        .btn-add { background: #C1F0DB; color: #333; border: 2px solid #333; }
+        .btn-add:hover { background: #7CC9A3; box-shadow: 2px 2px 0px #333; }
+        .btn-export-quiz { background: #BDE0FE; color: #333; border: 2px solid #333; }
+        .btn-export-quiz:hover { background: #89B4D4; box-shadow: 2px 2px 0px #333; }
         .quiz-list { max-height: 600px; overflow-y: auto; }
         .q-item {
-            background: #fff; border: 1px solid #e0d8cc; border-radius: 8px;
+            background: #fff; border: 1px solid #ddd; border-radius: 12px;
             padding: 15px 18px; margin-bottom: 10px; transition: all .2s;
         }
-        .q-item:hover { box-shadow: 0 3px 12px var(--shadow); }
+        .q-item:hover { box-shadow: 4px 4px 0px #333; }
         .q-item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
         .q-item-meta { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
         .q-badge-sm {
             display: inline-block; padding: 2px 8px; border-radius: 10px;
             font-size: .7rem; font-weight: 700; color: #fff;
         }
-        .q-badge-cat { background: var(--secondary); }
-        .q-badge-lv { background: var(--accent); color: #2C2C2C; }
-        .q-item-text { font-size: .9rem; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+        .q-badge-cat { background: #E8D5F5; color: #333; border: 1px solid #333; }
+        .q-badge-lv { background: #FFF3B0; color: #333; border: 1px solid #333; }
+        .q-item-text { font-size: .9rem; color: #222; margin-bottom: 8px; line-height: 1.4; }
         .q-item-actions { display: flex; gap: 6px; }
         .q-item-actions button {
-            padding: 4px 10px; border: none; border-radius: 4px;
+            padding: 4px 10px; border: none; border-radius: 30px;
             cursor: pointer; font-family: inherit; font-size: .75rem;
         }
         .q-no-items { text-align: center; padding: 40px; color: #888; }
@@ -587,11 +601,11 @@
         }
         .modal-overlay.show { display: flex; }
         .modal {
-            background: #fff; border-radius: 12px; padding: 30px;
+            background: #fff; border-radius: 16px; padding: 30px;
             max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,.3);
+            box-shadow: 6px 6px 0px #333;
         }
-        .modal h3 { color: var(--secondary); margin-bottom: 20px; font-size: 1.2rem; }
+        .modal h3 { color: #333; margin-bottom: 20px; font-size: 1.2rem; }
         .modal-field { margin-bottom: 14px; }
         .modal-field label { display: block; font-size: .8rem; color: #666; font-weight: 700; margin-bottom: 4px; }
         .modal-field input, .modal-field textarea, .modal-field select {
@@ -599,17 +613,17 @@
             font-family: inherit; font-size: .9rem;
         }
         .modal-field textarea { min-height: 60px; resize: vertical; }
-        .modal-field input:focus, .modal-field textarea:focus { outline: none; border-color: var(--primary); }
+        .modal-field input:focus, .modal-field textarea:focus { outline: none; border-color: #333; }
         .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .modal-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
         .modal-btns button {
-            padding: 10px 24px; border: none; border-radius: 6px; cursor: pointer;
+            padding: 10px 24px; border: none; border-radius: 30px; cursor: pointer;
             font-family: inherit; font-size: .9rem; font-weight: 700;
         }
-        .modal-save { background: var(--primary); color: #fff; }
-        .modal-save:hover { background: #a01830; }
-        .modal-cancel { background: #ddd; color: var(--text); }
-        .modal-cancel:hover { background: #ccc; }
+        .modal-save { background: #C1F0DB; color: #333; border: 2px solid #333; }
+        .modal-save:hover { background: #7CC9A3; box-shadow: 2px 2px 0px #333; }
+        .modal-cancel { background: #FFD1DC; color: #333; border: 2px solid #333; }
+        .modal-cancel:hover { background: #E8A0B0; }
         .choices-editor { margin-top: 8px; }
         .choice-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
         .choice-row input { flex: 1; padding: 8px 10px; }
@@ -839,7 +853,7 @@
                             </div>
                         </div>
 
-                        <h3 style="color: var(--secondary); margin-bottom: 15px;">Recent Activities</h3>
+                        <h3 style="color: #333; margin-bottom: 15px;">Recent Activities</h3>
                         <div id="recentActivities">
                             <div class="no-activities">
                                 <div class="icon">📋</div>
@@ -1501,7 +1515,7 @@
         const langLabels = { en: 'EN', ja: 'JA', zh: 'ZH', es: 'ES' };
         let html = '';
         for (let i = 0; i < 4; i++) {
-            html += `<div style="margin-bottom:10px;padding:8px;background:var(--bg);border-radius:6px"><strong style="font-size:.8rem">Choice ${i + 1}</strong><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:4px;margin-top:4px">`;
+            html += `<div style="margin-bottom:10px;padding:8px;background:#fff;border-radius:6px"><strong style="font-size:.8rem">Choice ${i + 1}</strong><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:4px;margin-top:4px">`;
             langs.forEach(l => {
                 const val = choices && choices[i] ? (choices[i][l] || '') : '';
                 html += `<input type="text" id="qmC${i}${l}" placeholder="${langLabels[l]}" value="${escapeHtml(val)}" style="padding:6px 8px;font-size:.82rem">`;

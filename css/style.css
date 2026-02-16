@@ -1,21 +1,33 @@
 /* ========================================
    The Webb Schools Japanese Culture Club
-   和風 (Wa-fu) Style CSS
+   Black & White Cute Illustration Style
+   黒白可愛い簡体画風
    ======================================== */
 
 /* --- CSS Variables --- */
 :root {
-    --primary: #C41E3A;       /* 朱红 Torii Red */
-    --secondary: #264653;     /* 靛蓝 Indigo */
-    --accent: #D4A843;        /* 金色 Gold */
-    --bg: #F5F0E8;            /* 和纸米白 Washi */
-    --text: #2C2C2C;          /* 墨黑 Ink Black */
+    --primary: #333333;        /* Charcoal ink */
+    --secondary: #555555;      /* Medium gray */
+    --accent: #999999;         /* Soft gray accent */
+    --bg: #F0F6FF;             /* Soft pastel blue tint */
+    --text: #222222;           /* Dark ink text */
     --white: #FFFFFF;
-    --card-bg: #FDFAF3;
-    --shadow: rgba(44, 44, 44, 0.1);
-    --shadow-hover: rgba(44, 44, 44, 0.2);
+    --card-bg: #F8FBFF;
+    --shadow: rgba(0, 0, 0, 0.06);
+    --shadow-hover: rgba(0, 0, 0, 0.12);
     --nav-height: 70px;
     --transition: 0.3s ease;
+    /* Pastel candy colors */
+    --pink: #FFD1DC;           /* Pastel pink */
+    --pink-dark: #E8A0B0;
+    --blue: #BDE0FE;           /* Pastel blue */
+    --blue-dark: #89B4D4;
+    --mint: #C1F0DB;           /* Mint green */
+    --mint-dark: #7CC9A3;
+    --yellow: #FFF3B0;         /* Pastel yellow */
+    --yellow-dark: #E0D08A;
+    --lavender: #E8D5F5;       /* Pastel lavender */
+    --peach: #FFDAB9;          /* Pastel peach */
 }
 
 /* --- Reset & Base --- */
@@ -33,14 +45,14 @@ html {
 }
 
 body {
-    font-family: 'Noto Serif', 'Noto Serif JP', 'Noto Serif SC', Georgia, serif;
+    font-family: 'Patrick Hand', 'Noto Serif JP', 'Noto Serif SC', cursive, serif;
     color: var(--text);
     background-color: var(--bg);
     line-height: 1.8;
     overflow-x: hidden;
 }
 
-/* Asanoha pattern overlay on body */
+/* Japanese cartoon pattern overlay on body */
 body::before {
     content: '';
     position: fixed;
@@ -50,16 +62,9 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.03;
-    background-image:
-        linear-gradient(30deg, var(--secondary) 12%, transparent 12.5%, transparent 87%, var(--secondary) 87.5%, var(--secondary)),
-        linear-gradient(150deg, var(--secondary) 12%, transparent 12.5%, transparent 87%, var(--secondary) 87.5%, var(--secondary)),
-        linear-gradient(30deg, var(--secondary) 12%, transparent 12.5%, transparent 87%, var(--secondary) 87.5%, var(--secondary)),
-        linear-gradient(150deg, var(--secondary) 12%, transparent 12.5%, transparent 87%, var(--secondary) 87.5%, var(--secondary)),
-        linear-gradient(60deg, rgba(38, 70, 83, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(38, 70, 83, 0.5) 75%, rgba(38, 70, 83, 0.5)),
-        linear-gradient(60deg, rgba(38, 70, 83, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(38, 70, 83, 0.5) 75%, rgba(38, 70, 83, 0.5));
-    background-size: 40px 70px;
-    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23555' stroke-width='1.2' stroke-linecap='round'%3E%3C!-- Paw print 1 --%3E%3Ccircle cx='30' cy='30' r='5' fill='%23555'/%3E%3Ccircle cx='20' cy='18' r='3' fill='%23555'/%3E%3Ccircle cx='30' cy='14' r='3' fill='%23555'/%3E%3Ccircle cx='40' cy='18' r='3' fill='%23555'/%3E%3C!-- Sakura 1 --%3E%3Cpath d='M120 35c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M132 27c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M126 20c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M118 27c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M125 35c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Ccircle cx='129' cy='30' r='3' fill='%23FFD1DC'/%3E%3C!-- Daruma 1 --%3E%3Cellipse cx='250' cy='55' rx='18' ry='22' fill='%23FFD1DC' stroke='%23555'/%3E%3Cellipse cx='250' cy='48' rx='12' ry='10' fill='%23FFF' stroke='%23555'/%3E%3Ccircle cx='245' cy='48' r='3' fill='%23555'/%3E%3Ccircle cx='255' cy='48' r='3' fill='%23555'/%3E%3Cpath d='M244 55c3 3 9 3 12 0' stroke='%23555'/%3E%3Cpath d='M237 40c3-5 8-8 13-8s10 3 13 8' stroke='%23E8A0B0' fill='none'/%3E%3C!-- Torii gate --%3E%3Cpath d='M340 70V30M370 70V30M335 32h40M335 42h40' stroke='%23E8A0B0' stroke-width='2'/%3E%3Cpath d='M332 28l2 4h42l2-4' stroke='%23E8A0B0' stroke-width='2' fill='none'/%3E%3C!-- Cat face 1 --%3E%3Ccircle cx='60' cy='130' r='14' fill='%23FFF' stroke='%23555'/%3E%3Cpath d='M48 120l5 10M72 120l-5 10' stroke='%23555' stroke-width='1.5'/%3E%3Ccircle cx='55' cy='128' r='2' fill='%23555'/%3E%3Ccircle cx='65' cy='128' r='2' fill='%23555'/%3E%3Cpath d='M57 133c2 2 4 2 6 0' stroke='%23555'/%3E%3Cpath d='M44 130h8M68 130h8' stroke='%23555' stroke-width='0.8'/%3E%3C!-- Fan (扇子) --%3E%3Cpath d='M180 120a25 25 0 0 1 40 0' fill='%23BDE0FE' stroke='%23555'/%3E%3Cline x1='200' y1='120' x2='200' y2='145' stroke='%23555' stroke-width='1.5'/%3E%3Cpath d='M185 112l15 8M200 110v10M215 112l-15 8' stroke='%23555' stroke-width='0.6'/%3E%3C!-- Paw print 2 --%3E%3Ccircle cx='310' cy='130' r='5' fill='%23555'/%3E%3Ccircle cx='300' cy='118' r='3' fill='%23555'/%3E%3Ccircle cx='310' cy='114' r='3' fill='%23555'/%3E%3Ccircle cx='320' cy='118' r='3' fill='%23555'/%3E%3C!-- Onigiri --%3E%3Cpath d='M30 210l15-25 15 25z' fill='%23FFF' stroke='%23555'/%3E%3Cpath d='M32 210c0 5 26 5 26 0' fill='%23555' stroke='%23555'/%3E%3Ccircle cx='40' cy='200' r='1' fill='%23555'/%3E%3Ccircle cx='45' cy='202' r='1' fill='%23555'/%3E%3Ccircle cx='50' cy='199' r='1' fill='%23555'/%3E%3C!-- Sakura 2 scattered petals --%3E%3Cellipse cx='150' cy='200' rx='5' ry='8' fill='%23FFD1DC' stroke='%23E8A0B0' transform='rotate(30 150 200)'/%3E%3Cellipse cx='160' cy='210' rx='4' ry='7' fill='%23FFD1DC' stroke='%23E8A0B0' transform='rotate(-20 160 210)'/%3E%3Cellipse cx='140' cy='215' rx='4' ry='7' fill='%23FFD1DC' stroke='%23E8A0B0' transform='rotate(50 140 215)'/%3E%3C!-- Lucky cat (maneki-neko) face --%3E%3Ccircle cx='270' cy='210' r='16' fill='%23FFF3B0' stroke='%23555'/%3E%3Cpath d='M256 198l6 10M284 198l-6 10' stroke='%23555' stroke-width='1.5'/%3E%3Ccircle cx='264' cy='208' r='2' fill='%23555'/%3E%3Ccircle cx='276' cy='208' r='2' fill='%23555'/%3E%3Cpath d='M267 214c2 2 4 2 6 0' stroke='%23555'/%3E%3Ccircle cx='260' cy='205' r='3' fill='%23FFD1DC' opacity='0.5'/%3E%3Ccircle cx='280' cy='205' r='3' fill='%23FFD1DC' opacity='0.5'/%3E%3Cpath d='M286 195l8-12 2 14' stroke='%23555' fill='%23FFF3B0'/%3E%3C!-- Daruma 2 small --%3E%3Cellipse cx='370' cy='200' rx='12' ry='15' fill='%23BDE0FE' stroke='%23555'/%3E%3Cellipse cx='370' cy='195' rx='8' ry='7' fill='%23FFF' stroke='%23555'/%3E%3Ccircle cx='367' cy='195' r='2' fill='%23555'/%3E%3Ccircle cx='373' cy='195' r='2' fill='%23555'/%3E%3Cpath d='M366 201c2 2 6 2 8 0' stroke='%23555'/%3E%3C!-- Paw print 3 --%3E%3Ccircle cx='100' cy='300' r='5' fill='%23555'/%3E%3Ccircle cx='90' cy='288' r='3' fill='%23555'/%3E%3Ccircle cx='100' cy='284' r='3' fill='%23555'/%3E%3Ccircle cx='110' cy='288' r='3' fill='%23555'/%3E%3C!-- Japanese lantern (提灯) --%3E%3Cellipse cx='200' cy='300' rx='12' ry='18' fill='%23FFD1DC' stroke='%23555'/%3E%3Cline x1='200' y1='282' x2='200' y2='275' stroke='%23555' stroke-width='1.5'/%3E%3Cpath d='M188 300h24' stroke='%23555' stroke-width='0.6'/%3E%3Cpath d='M190 293h20' stroke='%23555' stroke-width='0.6'/%3E%3Cpath d='M190 307h20' stroke='%23555' stroke-width='0.6'/%3E%3Crect x='195' y='318' width='10' height='5' rx='1' fill='%23FFF3B0' stroke='%23555'/%3E%3C!-- Sakura 3 --%3E%3Cpath d='M320 295c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M332 287c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M326 280c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M318 287c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Cpath d='M325 295c-4-8 4-16 8-8s12 0 8 8-4 8-8 8-12 0-8-8z' fill='%23E8A0B0' stroke='%23D4889A'/%3E%3Ccircle cx='329' cy='290' r='3' fill='%23FFD1DC'/%3E%3C!-- Cat sitting silhouette --%3E%3Cpath d='M40 380c0-12 5-20 12-25s10-15 8-22l6 0c-2 7 2 17 8 22s12 13 12 25c0 8-4 12-12 15h-22c-8-3-12-7-12-15z' fill='%23555' opacity='0.4'/%3E%3Cpath d='M44 360l-6-14 10 8M68 360l6-14-10 8' stroke='%23555' stroke-width='1'/%3E%3C!-- Mount Fuji small --%3E%3Cpath d='M170 380l20-35 20 35z' fill='%23BDE0FE' stroke='%23555'/%3E%3Cpath d='M178 360l12-15 12 15' fill='%23FFF' stroke='none'/%3E%3C!-- Fish (鯛) --%3E%3Cellipse cx='290' cy='370' rx='16' ry='8' fill='%23FFD1DC' stroke='%23555'/%3E%3Cpath d='M306 370l10-8v16z' fill='%23FFD1DC' stroke='%23555'/%3E%3Ccircle cx='280' cy='368' r='2' fill='%23555'/%3E%3C!-- Paw print 4 --%3E%3Ccircle cx='370' cy='360' r='4' fill='%23555'/%3E%3Ccircle cx='362' cy='350' r='2.5' fill='%23555'/%3E%3Ccircle cx='370' cy='347' r='2.5' fill='%23555'/%3E%3Ccircle cx='378' cy='350' r='2.5' fill='%23555'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 400px 400px;
 }
 
 a {
@@ -69,7 +74,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--secondary);
 }
 
 img {
@@ -97,14 +102,14 @@ ul {
     width: 100%;
     height: var(--nav-height);
     z-index: 1000;
-    background: linear-gradient(180deg, #1a0a00 0%, #2d1810 50%, #3d2317 100%);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: #222;
+    border-bottom: 3px solid #333;
     transition: all var(--transition);
 }
 
 #navbar.scrolled {
     height: 60px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -141,7 +146,7 @@ ul {
 }
 
 .brand-leader {
-    color: var(--accent);
+    color: #ccc;
     font-size: 0.7rem;
     opacity: 0.9;
 }
@@ -161,7 +166,7 @@ ul {
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.85rem;
     padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: all var(--transition);
     white-space: nowrap;
 }
@@ -169,7 +174,7 @@ ul {
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--white);
-    background: rgba(196, 30, 58, 0.3);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 /* Language Switcher */
@@ -187,21 +192,21 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 4px 10px;
     font-size: 0.75rem;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all var(--transition);
     font-family: inherit;
 }
 
 .lang-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--white);
+    color: var(--white);
 }
 
 .lang-btn.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--white);
+    background: var(--white);
+    border-color: var(--white);
+    color: #222;
 }
 
 /* Mobile Nav Toggle */
@@ -230,9 +235,9 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background:
-        linear-gradient(135deg, var(--secondary) 0%, #1a3a4a 30%, var(--primary) 70%, #8B0000 100%);
+    background: #FFFFFF;
     overflow: hidden;
+    border-bottom: 3px solid #333;
 }
 
 .hero::before {
@@ -243,25 +248,47 @@ ul {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(212, 168, 67, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(196, 30, 58, 0.2) 0%, transparent 50%);
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg opacity='0.5'%3E%3C!-- Paw --%3E%3Ccircle cx='30' cy='30' r='4' fill='%23E8A0B0'/%3E%3Ccircle cx='22' cy='20' r='2.5' fill='%23E8A0B0'/%3E%3Ccircle cx='30' cy='17' r='2.5' fill='%23E8A0B0'/%3E%3Ccircle cx='38' cy='20' r='2.5' fill='%23E8A0B0'/%3E%3C!-- Sakura petal --%3E%3Cellipse cx='100' cy='25' rx='4' ry='7' fill='%23FFD1DC' transform='rotate(15 100 25)'/%3E%3Cellipse cx='108' cy='20' rx='3' ry='6' fill='%23FFD1DC' transform='rotate(-25 108 20)'/%3E%3C!-- Star --%3E%3Cpath d='M170 25l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z' fill='%23BDE0FE'/%3E%3C!-- Cat whisker face --%3E%3Ccircle cx='50' cy='110' r='8' fill='none' stroke='%23E8A0B0' stroke-width='1'/%3E%3Ccircle cx='47' cy='108' r='1.5' fill='%23555'/%3E%3Ccircle cx='53' cy='108' r='1.5' fill='%23555'/%3E%3Cpath d='M48 113c1.5 1.5 2.5 1.5 4 0' stroke='%23555' fill='none' stroke-width='0.8'/%3E%3C!-- Paw 2 --%3E%3Ccircle cx='140' cy='100' r='4' fill='%2389B4D4'/%3E%3Ccircle cx='132' cy='90' r='2.5' fill='%2389B4D4'/%3E%3Ccircle cx='140' cy='87' r='2.5' fill='%2389B4D4'/%3E%3Ccircle cx='148' cy='90' r='2.5' fill='%2389B4D4'/%3E%3C!-- Heart --%3E%3Cpath d='M170 105c0-4 3-7 6-7s6 3 6 7c0 5-6 9-6 9s-6-4-6-9z' fill='%23FFD1DC'/%3E%3C!-- Daruma mini --%3E%3Cellipse cx='30' cy='175' rx='8' ry='10' fill='%23FFD1DC' stroke='%23E8A0B0' stroke-width='0.8'/%3E%3Ccircle cx='28' cy='172' r='1.5' fill='%23555'/%3E%3Ccircle cx='32' cy='172' r='1.5' fill='%23555'/%3E%3C!-- Sakura 2 --%3E%3Cellipse cx='110' cy='165' rx='4' ry='7' fill='%23FFD1DC' transform='rotate(-10 110 165)'/%3E%3Cellipse cx='118' cy='170' rx='3' ry='6' fill='%23FFD1DC' transform='rotate(30 118 170)'/%3E%3Cellipse cx='104' cy='172' rx='3' ry='6' fill='%23FFD1DC' transform='rotate(-40 104 172)'/%3E%3Ccircle cx='110' cy='170' r='2' fill='%23FFF3B0'/%3E%3C!-- Paw 3 --%3E%3Ccircle cx='175' cy='170' r='3.5' fill='%237CC9A3'/%3E%3Ccircle cx='168' cy='162' r='2' fill='%237CC9A3'/%3E%3Ccircle cx='175' cy='159' r='2' fill='%237CC9A3'/%3E%3Ccircle cx='182' cy='162' r='2' fill='%237CC9A3'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    opacity: 0.6;
 }
 
-/* Cherry blossom petals decoration */
+/* Sparkle star decoration on hero */
 .hero::after {
-    content: '🌸';
+    content: '✦  ✧  ✦';
     position: absolute;
-    font-size: 3rem;
-    top: 15%;
-    right: 10%;
+    font-size: 1.2rem;
+    top: 12%;
+    right: 8%;
     animation: floatPetal 6s ease-in-out infinite;
+    opacity: 0.2;
+    z-index: 2;
+    letter-spacing: 8px;
+    color: #333;
+}
+
+/* Stars & sparkles around hero */
+.hero-content::before {
+    content: '✧ ☆ ✧';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #999;
+    letter-spacing: 15px;
     opacity: 0.4;
 }
 
+@keyframes catBounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* Floating paw prints */
 @keyframes floatPetal {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(20px) rotate(15deg); }
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+    50% { transform: translateY(15px) rotate(10deg); opacity: 0.35; }
 }
 
 .hero-overlay {
@@ -270,16 +297,15 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Wave pattern at bottom */
     background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23F5F0E8' d='M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,74.7C672,75,768,53,864,48C960,43,1056,53,1152,58.7C1248,64,1344,64,1392,64L1440,64L1440,100L0,100Z'/%3E%3C/svg%3E") no-repeat bottom center;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23F0F6FF' d='M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,74.7C672,75,768,53,864,48C960,43,1056,53,1152,58.7C1248,64,1344,64,1392,64L1440,64L1440,100L0,100Z'/%3E%3C/svg%3E") no-repeat bottom center;
     background-size: 100% auto;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    color: var(--white);
+    color: var(--text);
     padding: 0 20px;
     max-width: 800px;
 }
@@ -288,20 +314,22 @@ ul {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     line-height: 1.3;
+    color: #222;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 0.7;
     margin-bottom: 10px;
     font-style: italic;
+    color: #555;
 }
 
 .hero-jp {
     font-size: 1.1rem;
-    color: var(--accent);
+    color: #666;
     margin-bottom: 30px;
     letter-spacing: 2px;
 }
@@ -316,21 +344,30 @@ ul {
 .hero-btn {
     display: inline-block;
     padding: 14px 40px;
-    background: var(--primary);
-    color: var(--white) !important;
-    border-radius: 4px;
+    background: var(--pink);
+    color: #333 !important;
+    border-radius: 30px;
     font-size: 1rem;
     font-weight: 700;
     transition: all var(--transition);
-    border: 2px solid var(--primary);
+    border: 2.5px solid #333;
     text-align: center;
 }
 
 .hero-btn:hover {
-    background: transparent;
-    border-color: var(--white);
-    color: var(--white) !important;
+    background: var(--pink-dark);
+    color: #333 !important;
     transform: translateY(-2px);
+    box-shadow: 3px 3px 0px #333;
+}
+
+.hero-btn-secondary {
+    border-style: dashed;
+    background: var(--blue);
+}
+
+.hero-btn-secondary:hover {
+    background: var(--blue-dark);
 }
 
 .hero-scroll-indicator {
@@ -344,15 +381,15 @@ ul {
 .scroll-arrow {
     width: 30px;
     height: 30px;
-    border-right: 2px solid rgba(255, 255, 255, 0.6);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    border-right: 2px solid rgba(51, 51, 51, 0.4);
+    border-bottom: 2px solid rgba(51, 51, 51, 0.4);
     transform: rotate(45deg);
     animation: scrollBounce 2s ease-in-out infinite;
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.6; }
-    50% { transform: rotate(45deg) translate(5px, 5px); opacity: 1; }
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.4; }
+    50% { transform: rotate(45deg) translate(5px, 5px); opacity: 0.8; }
 }
 
 /* --- Section Styles --- */
@@ -363,7 +400,10 @@ ul {
 }
 
 .section-alt {
-    background: linear-gradient(180deg, #EDE8DD 0%, var(--bg) 100%);
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg opacity='0.06'%3E%3Ccircle cx='20' cy='20' r='4' fill='%23E8A0B0'/%3E%3Ccircle cx='13' cy='12' r='2.5' fill='%23E8A0B0'/%3E%3Ccircle cx='20' cy='9' r='2.5' fill='%23E8A0B0'/%3E%3Ccircle cx='27' cy='12' r='2.5' fill='%23E8A0B0'/%3E%3Cellipse cx='80' cy='20' rx='4' ry='7' fill='%23FFD1DC' transform='rotate(20 80 20)'/%3E%3Cellipse cx='88' cy='16' rx='3' ry='6' fill='%23FFD1DC' transform='rotate(-30 88 16)'/%3E%3Ccircle cx='140' cy='25' r='4' fill='%2389B4D4'/%3E%3Ccircle cx='133' cy='17' r='2.5' fill='%2389B4D4'/%3E%3Ccircle cx='140' cy='14' r='2.5' fill='%2389B4D4'/%3E%3Ccircle cx='147' cy='17' r='2.5' fill='%2389B4D4'/%3E%3Cellipse cx='40' cy='90' rx='7' ry='9' fill='%23BDE0FE' stroke='%2389B4D4' stroke-width='0.5'/%3E%3Ccircle cx='38' cy='87' r='1.5' fill='%23555'/%3E%3Ccircle cx='42' cy='87' r='1.5' fill='%23555'/%3E%3Cellipse cx='120' cy='80' rx='4' ry='7' fill='%23FFD1DC' transform='rotate(-15 120 80)'/%3E%3Cellipse cx='112' cy='85' rx='3' ry='6' fill='%23FFD1DC' transform='rotate(35 112 85)'/%3E%3Ccircle cx='116' cy='83' r='2' fill='%23FFF3B0'/%3E%3Ccircle cx='80' cy='130' r='3.5' fill='%237CC9A3'/%3E%3Ccircle cx='73' cy='122' r='2' fill='%237CC9A3'/%3E%3Ccircle cx='80' cy='119' r='2' fill='%237CC9A3'/%3E%3Ccircle cx='87' cy='122' r='2' fill='%237CC9A3'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(180deg, #EBF2FF 0%, #E8EFF8 50%, #F0F6FF 100%);
+    background-size: 160px 160px, 100% 100%;
 }
 
 .section-header {
@@ -373,7 +413,7 @@ ul {
 
 .section-title {
     font-size: 2.2rem;
-    color: var(--secondary);
+    color: #333;
     margin-bottom: 15px;
 }
 
@@ -398,25 +438,23 @@ ul {
     top: 50%;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), var(--accent), var(--primary), transparent);
-    border-radius: 2px;
+    height: 0;
+    border-top: 2px dashed #333;
 }
 
 .wave-divider::after {
-    content: '◆';
+    content: '🐾';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--accent);
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     background: var(--bg);
     padding: 0 8px;
 }
 
 .section-alt .wave-divider::after {
-    background: #EDE8DD;
+    background: transparent;
 }
 
 /* --- About Grid --- */
@@ -428,17 +466,27 @@ ul {
 
 .about-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 35px 25px;
     text-align: center;
-    box-shadow: 0 4px 15px var(--shadow);
+    box-shadow: none;
     transition: all var(--transition);
-    border: 1px solid rgba(212, 168, 67, 0.15);
+    border: 2.5px solid #333;
+}
+
+.about-card:nth-child(1) {
+    background: linear-gradient(135deg, #fff 60%, var(--pink) 100%);
+}
+.about-card:nth-child(2) {
+    background: linear-gradient(135deg, #fff 60%, var(--blue) 100%);
+}
+.about-card:nth-child(3) {
+    background: linear-gradient(135deg, #fff 60%, var(--mint) 100%);
 }
 
 .about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--shadow-hover);
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px #333;
 }
 
 .about-icon {
@@ -446,8 +494,29 @@ ul {
     margin-bottom: 15px;
 }
 
+.president-avatar {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.president-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #333;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.president-avatar img:hover {
+    transform: scale(1.1) rotate(-3deg);
+    filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+}
+
 .about-card h3 {
-    color: var(--primary);
+    color: #333;
     margin-bottom: 12px;
     font-size: 1.2rem;
 }
@@ -467,11 +536,11 @@ ul {
 
 .festival-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 4px 15px var(--shadow);
+    box-shadow: none;
     transition: all var(--transition);
-    border: 1px solid rgba(212, 168, 67, 0.15);
+    border: 2.5px solid #333;
     position: relative;
     overflow: hidden;
 }
@@ -481,28 +550,39 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
+    width: 5px;
     height: 100%;
-    background: linear-gradient(180deg, var(--primary), var(--accent));
+    background: var(--pink);
 }
+.festival-card:nth-child(2)::before { background: var(--blue); }
+.festival-card:nth-child(3)::before { background: var(--mint); }
+.festival-card:nth-child(4)::before { background: var(--yellow); }
+.festival-card:nth-child(5)::before { background: var(--lavender); }
+.festival-card:nth-child(6)::before { background: var(--peach); }
+.festival-card:nth-child(7)::before { background: var(--pink); }
+.festival-card:nth-child(8)::before { background: var(--blue); }
+.festival-card:nth-child(9)::before { background: var(--mint); }
+.festival-card:nth-child(10)::before { background: var(--yellow); }
 
 .festival-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow-hover);
+    box-shadow: 4px 4px 0px #333;
 }
 
 .festival-month {
     display: inline-block;
-    background: var(--primary);
-    color: var(--white);
+    background: var(--pink);
+    color: #333;
     padding: 3px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     margin-bottom: 10px;
+    border: 2px solid #333;
+    font-weight: 700;
 }
 
 .festival-card h3 {
-    color: var(--secondary);
+    color: #333;
     margin-bottom: 8px;
     font-size: 1.1rem;
 }
@@ -528,7 +608,7 @@ ul {
 
 .video-section h3 {
     text-align: center;
-    color: var(--secondary);
+    color: #333;
     margin-bottom: 20px;
     font-size: 1.3rem;
 }
@@ -541,10 +621,11 @@ ul {
 .video-embed {
     width: 280px;
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 10px var(--shadow);
+    box-shadow: none;
     background: #000;
+    border: 2.5px solid #333;
 }
 
 .video-embed iframe {
@@ -561,6 +642,7 @@ ul {
     background: var(--card-bg);
     font-size: 0.8rem;
     color: var(--text);
+    border-top: 1px dashed #ccc;
 }
 
 /* Festival card embeds (smaller) */
@@ -574,9 +656,10 @@ ul {
 
 .video-thumb {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 10px var(--shadow);
+    box-shadow: none;
+    border: 2.5px solid #333;
     transition: all var(--transition);
     display: block;
     width: 280px;
@@ -584,7 +667,7 @@ ul {
 
 .video-thumb:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px var(--shadow-hover);
+    box-shadow: 4px 4px 0px #333;
 }
 
 .video-thumb img {
@@ -605,7 +688,7 @@ ul {
     transform: translate(-50%, -60%);
     width: 50px;
     height: 50px;
-    background: rgba(196, 30, 58, 0.85);
+    background: rgba(51, 51, 51, 0.85);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -616,7 +699,7 @@ ul {
 }
 
 .video-thumb:hover .play-btn {
-    background: var(--primary);
+    background: #333;
     transform: translate(-50%, -60%) scale(1.1);
 }
 
@@ -646,20 +729,26 @@ ul {
 
 .content-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 4px 15px var(--shadow);
+    box-shadow: none;
     transition: all var(--transition);
-    border: 1px solid rgba(212, 168, 67, 0.15);
+    border: 2.5px solid #333;
+    border-top: 4px solid var(--pink);
 }
+.content-card:nth-child(2) { border-top-color: var(--blue); }
+.content-card:nth-child(3) { border-top-color: var(--mint); }
+.content-card:nth-child(4) { border-top-color: var(--yellow); }
+.content-card:nth-child(5) { border-top-color: var(--lavender); }
+.content-card:nth-child(6) { border-top-color: var(--peach); }
 
 .content-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow-hover);
+    box-shadow: 4px 4px 0px #333;
 }
 
 .content-card h3 {
-    color: var(--primary);
+    color: #333;
     margin-bottom: 12px;
     font-size: 1.1rem;
 }
@@ -679,17 +768,18 @@ ul {
     padding: 6px 0;
     font-size: 0.88rem;
     color: #555;
-    border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+    border-bottom: 1px dashed #ddd;
     position: relative;
     padding-left: 18px;
 }
 
 .content-card li::before {
-    content: '•';
-    color: var(--primary);
+    content: '♡';
+    color: var(--pink-dark);
     position: absolute;
     left: 0;
     font-weight: bold;
+    font-size: 0.7rem;
 }
 
 .content-card li:last-child {
@@ -707,14 +797,18 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background: rgba(245, 240, 232, 0.5);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 8px;
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--pink);
 }
+.phrase:nth-child(2) { border-left-color: var(--blue); }
+.phrase:nth-child(3) { border-left-color: var(--mint); }
+.phrase:nth-child(4) { border-left-color: var(--lavender); }
+.phrase:nth-child(5) { border-left-color: var(--peach); }
 
 .jp-text {
     font-size: 1.2rem;
-    color: var(--secondary);
+    color: #333;
     font-weight: 700;
 }
 
@@ -726,7 +820,7 @@ ul {
 
 .meaning {
     font-size: 0.85rem;
-    color: var(--primary);
+    color: #555;
 }
 
 /* --- Voting Section --- */
@@ -737,11 +831,11 @@ ul {
 }
 
 .admin-toggle-btn {
-    background: var(--secondary);
+    background: #333;
     color: var(--white);
-    border: none;
+    border: 2.5px solid #333;
     padding: 10px 25px;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.9rem;
@@ -749,7 +843,8 @@ ul {
 }
 
 .admin-toggle-btn:hover {
-    background: #1a3040;
+    background: transparent;
+    color: #333;
 }
 
 .admin-login {
@@ -761,8 +856,8 @@ ul {
 
 .admin-login input {
     padding: 10px 15px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
+    border: 2.5px solid #333;
+    border-radius: 12px;
     font-family: inherit;
     font-size: 0.9rem;
     width: 250px;
@@ -770,30 +865,30 @@ ul {
 
 .admin-login button {
     padding: 10px 20px;
-    background: var(--primary);
+    background: #333;
     color: var(--white);
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     transition: all var(--transition);
 }
 
 .admin-login button:hover {
-    background: #a01830;
+    background: #555;
 }
 
 .admin-controls {
     margin-top: 20px;
     padding: 25px;
     background: var(--card-bg);
-    border-radius: 12px;
-    border: 2px solid var(--accent);
-    box-shadow: 0 4px 15px var(--shadow);
+    border-radius: 16px;
+    border: 2.5px solid #333;
+    box-shadow: none;
 }
 
 .admin-controls h3 {
-    color: var(--secondary);
+    color: #333;
     margin-bottom: 15px;
 }
 
@@ -808,8 +903,8 @@ ul {
 .admin-form input,
 .admin-form textarea {
     padding: 10px 15px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
+    border: 2.5px solid #333;
+    border-radius: 12px;
     font-family: inherit;
     font-size: 0.9rem;
     transition: border-color var(--transition);
@@ -818,7 +913,7 @@ ul {
 .admin-form input:focus,
 .admin-form textarea:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: #555;
 }
 
 .admin-form textarea {
@@ -828,10 +923,10 @@ ul {
 
 .admin-form button {
     padding: 12px;
-    background: var(--primary);
+    background: #333;
     color: var(--white);
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
@@ -840,16 +935,16 @@ ul {
 }
 
 .admin-form button:hover {
-    background: #a01830;
+    background: #555;
 }
 
 .admin-logout-btn {
     margin-top: 15px;
-    background: #666;
+    background: #888;
     color: var(--white);
     border: none;
     padding: 8px 20px;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.85rem;
@@ -857,7 +952,7 @@ ul {
 }
 
 .admin-logout-btn:hover {
-    background: #444;
+    background: #666;
 }
 
 /* Voting Container */
@@ -882,26 +977,30 @@ ul {
 /* Voting Card */
 .voting-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 4px 15px var(--shadow);
-    border: 1px solid rgba(212, 168, 67, 0.15);
+    box-shadow: none;
+    border: 2.5px solid #333;
+    border-bottom: 4px solid var(--lavender);
     transition: all var(--transition);
 }
+.voting-card:nth-child(2) { border-bottom-color: var(--mint); }
+.voting-card:nth-child(3) { border-bottom-color: var(--yellow); }
+.voting-card:nth-child(4) { border-bottom-color: var(--peach); }
 
 .voting-card:hover {
-    box-shadow: 0 8px 25px var(--shadow-hover);
+    box-shadow: 4px 4px 0px #333;
 }
 
 .voting-card h4 {
-    color: var(--secondary);
+    color: #333;
     font-size: 1.15rem;
     margin-bottom: 8px;
 }
 
 .voting-card .voting-date {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: #888;
     margin-bottom: 10px;
 }
 
@@ -922,8 +1021,8 @@ ul {
     flex: 1;
     padding: 12px 10px;
     min-height: 44px;
-    border: 2px solid;
-    border-radius: 6px;
+    border: 2.5px solid;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.9rem;
@@ -933,25 +1032,27 @@ ul {
 }
 
 .vote-btn.vote-for {
-    border-color: #4CAF50;
-    color: #4CAF50;
+    border-color: var(--blue-dark);
+    color: var(--blue-dark);
 }
 
 .vote-btn.vote-for:hover,
 .vote-btn.vote-for.voted {
-    background: #4CAF50;
-    color: var(--white);
+    background: var(--blue);
+    border-color: var(--blue-dark);
+    color: #333;
 }
 
 .vote-btn.vote-against {
-    border-color: var(--primary);
-    color: var(--primary);
+    border-color: var(--pink-dark);
+    color: var(--pink-dark);
 }
 
 .vote-btn.vote-against:hover,
 .vote-btn.vote-against.voted {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--pink);
+    border-color: var(--pink-dark);
+    color: #333;
 }
 
 .vote-btn:disabled {
@@ -967,33 +1068,34 @@ ul {
 .progress-bar {
     width: 100%;
     height: 24px;
-    background: #eee;
+    background: #f0f0f0;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
+    border: 1.5px solid #ddd;
 }
 
 .progress-for {
-    background: linear-gradient(90deg, #66BB6A, #4CAF50);
+    background: var(--blue);
     height: 100%;
     transition: width 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: #333;
     font-size: 0.7rem;
     font-weight: 700;
     min-width: 0;
 }
 
 .progress-against {
-    background: linear-gradient(90deg, var(--primary), #a01830);
+    background: var(--pink);
     height: 100%;
     transition: width 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: #333;
     font-size: 0.7rem;
     font-weight: 700;
     min-width: 0;
@@ -1009,11 +1111,11 @@ ul {
 
 .admin-delete-btn {
     margin-top: 12px;
-    background: #ff5252;
+    background: #888;
     color: var(--white);
     border: none;
     padding: 6px 16px;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.8rem;
@@ -1021,34 +1123,36 @@ ul {
 }
 
 .admin-delete-btn:hover {
-    background: #d32f2f;
+    background: #666;
 }
 
 .voting-status {
     display: inline-block;
     padding: 2px 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 0.7rem;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
 .status-open {
-    background: #E8F5E9;
-    color: #2E7D32;
+    background: #eee;
+    color: #333;
+    border: 1.5px solid #333;
 }
 
 .status-closed {
-    background: #FFEBEE;
-    color: #C62828;
+    background: #eee;
+    color: #999;
+    border: 1.5px solid #999;
 }
 
 .admin-status-btn {
-    background: var(--secondary);
+    background: #333;
     color: var(--white);
     border: none;
     padding: 6px 16px;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.8rem;
@@ -1058,27 +1162,544 @@ ul {
 }
 
 .admin-status-btn:hover {
-    background: #1a3040;
+    background: #555;
+}
+
+/* --- Cute Doodle Decorations --- */
+
+/* Floating sakura petals animation */
+@keyframes sakuraFall {
+    0% { transform: translateY(-10px) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(100vh) rotate(360deg) translateX(80px); opacity: 0; }
+}
+
+@keyframes sakuraFall2 {
+    0% { transform: translateY(-10px) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { transform: translateY(100vh) rotate(-300deg) translateX(-60px); opacity: 0; }
+}
+
+@keyframes sakuraSway {
+    0%, 100% { transform: rotate(-5deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.1); }
+}
+
+/* Body floating sakura petals */
+body::after {
+    content: '🌸';
+    position: fixed;
+    top: -20px;
+    left: 15%;
+    font-size: 1.2rem;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    animation: sakuraFall 8s ease-in-out infinite;
+}
+
+/* Additional sakura petals via section decorations */
+.section:nth-child(3)::after {
+    content: '🌸';
+    position: absolute;
+    top: 30px;
+    right: 8%;
+    font-size: 1.4rem;
+    opacity: 0.25;
+    animation: sakuraSway 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+.section:nth-child(5)::after {
+    content: '🌸';
+    position: absolute;
+    bottom: 40px;
+    left: 6%;
+    font-size: 1.2rem;
+    opacity: 0.2;
+    animation: sakuraSway 5s ease-in-out infinite 1s;
+    z-index: 0;
+}
+
+.section:nth-child(7)::after {
+    content: '🌸';
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    font-size: 1rem;
+    opacity: 0.2;
+    animation: sakuraSway 3.5s ease-in-out infinite 0.5s;
+    z-index: 0;
+}
+
+/* Cat peeking from card corners */
+.about-card:nth-child(1)::after {
+    content: '🐱';
+    position: absolute;
+    bottom: -12px;
+    right: -8px;
+    font-size: 1.4rem;
+    transform: rotate(15deg);
+    opacity: 0.5;
+    transition: all var(--transition);
+}
+.about-card:nth-child(1):hover::after {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.2);
+}
+
+/* Sakura on second about card */
+.about-card:nth-child(2)::after {
+    content: '🌸';
+    position: absolute;
+    bottom: -10px;
+    right: -6px;
+    font-size: 1.2rem;
+    opacity: 0.4;
+    transition: all var(--transition);
+    animation: sakuraSway 3s ease-in-out infinite;
+}
+.about-card:nth-child(2):hover::after {
+    opacity: 0.8;
+}
+
+/* Sleeping cat on third about card */
+.about-card:nth-child(3)::after {
+    content: '😸';
+    position: absolute;
+    bottom: -10px;
+    left: -6px;
+    font-size: 1.2rem;
+    opacity: 0.4;
+    transition: all var(--transition);
+}
+.about-card:nth-child(3):hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.about-card {
+    position: relative;
+    overflow: visible;
+}
+
+/* Sakura + cat on section dividers */
+.section-header::after {
+    content: '🌸 🐾 🌸';
+    display: block;
+    margin: 12px auto 0;
+    font-size: 0.7rem;
+    color: #bbb;
+    letter-spacing: 5px;
+    opacity: 0.5;
+}
+
+/* Cat silhouette peeking from footer top */
+#footer::after {
+    content: '🌸 🐈 🌸';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    background: #222;
+    padding: 0 15px;
+    color: #666;
+    letter-spacing: 4px;
+}
+
+/* Doodle-style sakura + star decorations on sections */
+.section:nth-child(odd) .section-title::before {
+    content: '🌸 ';
+    opacity: 0.45;
+}
+.section:nth-child(odd) .section-title::after {
+    content: ' 🌸';
+    opacity: 0.45;
+}
+.section:nth-child(even) .section-title::before {
+    content: '🐾 ';
+    opacity: 0.35;
+}
+.section:nth-child(even) .section-title::after {
+    content: ' 🐾';
+    opacity: 0.35;
+}
+
+/* Cute paw + sakura trail between festival cards */
+.festival-card:nth-child(even)::after {
+    content: '🐾';
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    font-size: 0.9rem;
+    opacity: 0.3;
+    transform: rotate(-20deg);
+}
+.festival-card:nth-child(odd)::after {
+    content: '🌸';
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    font-size: 0.85rem;
+    opacity: 0.25;
+    animation: sakuraSway 4s ease-in-out infinite;
+}
+/* Override first card (no top overlap with month badge) */
+.festival-card:nth-child(1)::after {
+    left: auto;
+    right: 15px;
+}
+.festival-card {
+    overflow: visible;
+}
+
+/* Voting card cat emoji */
+.voting-card::after {
+    content: '😺';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: all var(--transition);
+}
+.voting-card:hover::after {
+    opacity: 0.6;
+    top: -14px;
+}
+.voting-card:nth-child(even)::after {
+    content: '🌸';
+    left: auto;
+    right: 15px;
+}
+.voting-card {
+    position: relative;
+    overflow: visible;
+}
+
+/* Content card doodle marks - alternating cat and sakura */
+.content-card:nth-child(3n+1)::before {
+    content: '~(=^‥^)';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 0.65rem;
+    color: #ccc;
+    font-family: monospace;
+}
+.content-card:nth-child(3n+2)::before {
+    content: '🌸';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 0.9rem;
+    opacity: 0.3;
+    animation: sakuraSway 3.5s ease-in-out infinite;
+}
+.content-card:nth-child(3n)::before {
+    content: '🐱';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 0.9rem;
+    opacity: 0.3;
+}
+.content-card:nth-child(3n):hover::before {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+.content-card {
+    position: relative;
+    overflow: visible;
+}
+
+/* Sakura scatter decoration on video sections */
+.video-section::before {
+    content: '✿';
+    position: absolute;
+    top: -5px;
+    right: 10%;
+    font-size: 0.9rem;
+    color: var(--pink);
+    opacity: 0.4;
+}
+.video-section {
+    position: relative;
+}
+
+/* Hero doodle cat & paw positions */
+.hero-doodle-left {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    z-index: 2;
+    animation: catBounce 3s ease-in-out infinite;
+}
+
+.hero-doodle-right {
+    position: absolute;
+    top: 18%;
+    right: 6%;
+    z-index: 2;
+    animation: floatPetal 5s ease-in-out infinite;
+}
+
+/* Sakura branch decoration on hero */
+.hero-doodle-sakura {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    z-index: 2;
+    opacity: 0.15;
+    animation: sakuraSway 6s ease-in-out infinite;
+}
+
+/* Footer cat text art */
+.visit-counter {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Patrick Hand', cursive;
+    letter-spacing: 0.5px;
+}
+
+.visit-counter-icon {
+    font-size: 1rem;
+    animation: pawBounce 2s ease-in-out infinite;
+}
+
+.visit-counter-icon:last-child {
+    animation-delay: 1s;
+}
+
+@keyframes pawBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+#visit-count {
+    font-weight: bold;
+    color: #FFD1DC;
+    font-size: 1rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.footer-cat {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* Hero cat walking + sakura animation */
+.hero-scroll-indicator::before {
+    content: '🌸 🐾 🌸 🐾 🌸';
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    opacity: 0.25;
+    animation: pawWalk 2s ease-in-out infinite;
+}
+
+@keyframes pawWalk {
+    0%, 100% { opacity: 0.15; letter-spacing: 6px; }
+    50% { opacity: 0.35; letter-spacing: 10px; }
+}
+
+/* Dashed border corner decorations for cards */
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid #333;
+    border-left: 3px solid #333;
+    border-radius: 8px 0 0 0;
+    opacity: 0;
+    transition: all var(--transition);
+}
+.about-card:hover::before {
+    opacity: 0.5;
+}
+
+/* Wave divider sakura variant */
+.section:nth-child(even) .wave-divider::after {
+    content: '🌸';
+}
+
+/* Sakura petals floating on page edges */
+.section:nth-child(4)::before {
+    content: '🌸';
+    position: absolute;
+    top: 60px;
+    right: 3%;
+    font-size: 1.5rem;
+    opacity: 0.15;
+    animation: sakuraFall2 12s ease-in-out infinite 2s;
+    z-index: 0;
+}
+
+.section:nth-child(6)::before {
+    content: '🌸';
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    font-size: 1.3rem;
+    opacity: 0.15;
+    animation: sakuraFall 10s ease-in-out infinite 4s;
+    z-index: 0;
+}
+
+/* Paw print trail decoration */
+@keyframes pawTrail {
+    0% { opacity: 0; transform: translateX(-20px) rotate(-15deg); }
+    20% { opacity: 0.3; }
+    80% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateX(20px) rotate(15deg); }
+}
+
+/* Paw prints walking across sections */
+.section:nth-child(2)::after {
+    content: '🐾  🐾  🐾  🐾';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    font-size: 0.8rem;
+    letter-spacing: 15px;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+.section:nth-child(4)::after {
+    content: '🐾  🐾  🐾';
+    position: absolute;
+    bottom: 30px;
+    right: 5%;
+    font-size: 0.9rem;
+    letter-spacing: 20px;
+    opacity: 0.1;
+    transform: rotate(12deg);
+    z-index: 0;
+}
+
+.section:nth-child(8)::after {
+    content: '🐾 🐾 🐾 🐾 🐾';
+    position: absolute;
+    top: 30px;
+    left: 3%;
+    font-size: 0.7rem;
+    letter-spacing: 12px;
+    opacity: 0.1;
+    transform: rotate(-5deg);
+    z-index: 0;
+}
+
+/* Diagonal paw walk across about section */
+.about-grid::after {
+    content: '🐾';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    opacity: 0.2;
+    animation: pawTrail 3s ease-in-out infinite;
+}
+.about-grid {
+    position: relative;
+}
+
+/* Paw prints on voting container */
+.voting-container::before {
+    content: '🐾 · 🐾 · 🐾';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    opacity: 0.15;
+}
+.voting-container {
+    position: relative;
+}
+
+/* Cat face on video section titles */
+.video-section h3::after {
+    content: ' 🐱';
+    font-size: 0.8rem;
+    opacity: 0.3;
+}
+
+/* Paw + sakura trail on content grid */
+.content-grid::after {
+    content: '🐾 🌸 🐾 🌸 🐾';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    letter-spacing: 8px;
+    opacity: 0.15;
+}
+.content-grid {
+    position: relative;
+}
+
+/* --- Test Link Button --- */
+.test-link-btn {
+    display: inline-block;
+    background: var(--mint);
+    color: #333;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2.5px solid #333;
+    font-weight: 700;
+}
+
+.test-link-btn:hover {
+    background: var(--mint-dark);
+    color: #333;
+    box-shadow: 3px 3px 0px #333;
 }
 
 /* --- Footer --- */
 #footer {
-    background: linear-gradient(180deg, #1a0a00, #2d1810);
+    background: #222;
     color: rgba(255, 255, 255, 0.8);
     padding: 50px 0 20px;
     position: relative;
     z-index: 1;
+    border-top: 3px solid #333;
 }
 
 #footer::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 30'%3E%3Cpath fill='%231a0a00' d='M0,0L60,5C120,10,240,20,360,22C480,25,600,20,720,17C840,15,960,17,1080,20C1200,22,1320,25,1380,27L1440,30L1440,30L0,30Z'/%3E%3C/svg%3E") no-repeat bottom center;
-    background-size: 100% 100%;
+    display: none;
 }
 
 .footer-grid {
@@ -1089,7 +1710,7 @@ ul {
 }
 
 .footer-col h3 {
-    color: var(--accent);
+    color: #ccc;
     margin-bottom: 12px;
     font-size: 1rem;
 }
@@ -1110,7 +1731,7 @@ ul {
 }
 
 .footer-links a:hover {
-    color: var(--accent);
+    color: #fff;
     padding-left: 5px;
 }
 
@@ -1123,7 +1744,7 @@ ul {
 
 .footer-credit {
     margin-top: 8px;
-    color: var(--accent);
+    color: #aaa;
 }
 
 /* --- Fade In Animation --- */
@@ -1160,6 +1781,19 @@ ul {
         --nav-height: 60px;
     }
 
+    .hero-doodle-left {
+        bottom: 8%;
+        left: 2%;
+    }
+    .hero-doodle-left svg {
+        width: 50px;
+        height: 56px;
+    }
+
+    .hero-doodle-right {
+        display: none;
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -1169,7 +1803,7 @@ ul {
         top: var(--nav-height);
         left: 0;
         width: 100%;
-        background: #2d1810;
+        background: #222;
         flex-direction: column;
         padding: 20px;
         gap: 15px;

@@ -6,8 +6,8 @@
     <title>The Webb Schools Japanese Culture Club | ウェッブ日本文化部</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -49,13 +49,61 @@
     <!-- ===== Hero Section ===== -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
+        <div class="hero-doodle-left" aria-hidden="true">
+            <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.15">
+                <!-- Cute sitting cat silhouette -->
+                <ellipse cx="40" cy="65" rx="22" ry="18" stroke="#333" stroke-width="2.5" fill="none" stroke-dasharray="4 3"/>
+                <circle cx="40" cy="40" r="16" stroke="#333" stroke-width="2.5" fill="none"/>
+                <polygon points="26,32 22,15 34,28" stroke="#333" stroke-width="2.5" fill="none"/>
+                <polygon points="54,32 58,15 46,28" stroke="#333" stroke-width="2.5" fill="none"/>
+                <circle cx="34" cy="38" r="2" fill="#333"/>
+                <circle cx="46" cy="38" r="2" fill="#333"/>
+                <path d="M37,43 Q40,46 43,43" stroke="#333" stroke-width="1.5" fill="none"/>
+                <line x1="25" y1="40" x2="15" y2="38" stroke="#333" stroke-width="1.5"/>
+                <line x1="25" y1="42" x2="15" y2="44" stroke="#333" stroke-width="1.5"/>
+                <line x1="55" y1="40" x2="65" y2="38" stroke="#333" stroke-width="1.5"/>
+                <line x1="55" y1="42" x2="65" y2="44" stroke="#333" stroke-width="1.5"/>
+                <path d="M58,60 Q68,55 65,70" stroke="#333" stroke-width="2.5" fill="none" stroke-dasharray="4 3"/>
+            </svg>
+        </div>
+        <div class="hero-doodle-right" aria-hidden="true">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12">
+                <!-- Paw print -->
+                <ellipse cx="30" cy="38" rx="12" ry="10" stroke="#333" stroke-width="2" fill="none"/>
+                <circle cx="20" cy="22" r="5" stroke="#333" stroke-width="2" fill="none"/>
+                <circle cx="30" cy="18" r="5" stroke="#333" stroke-width="2" fill="none"/>
+                <circle cx="40" cy="22" r="5" stroke="#333" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        <div class="hero-doodle-sakura" aria-hidden="true">
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Sakura branch -->
+                <path d="M10,60 Q25,40 35,35 Q45,30 60,10" stroke="#E8A0B0" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- Sakura flowers -->
+                <circle cx="25" cy="42" r="6" fill="none" stroke="#FFD1DC" stroke-width="1.5"/>
+                <circle cx="22" cy="39" r="2.5" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="28" cy="39" r="2.5" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="22" cy="45" r="2.5" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="28" cy="45" r="2.5" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="25" cy="42" r="2" fill="#E8A0B0" opacity="0.4"/>
+                <!-- Second flower -->
+                <circle cx="45" cy="25" r="5" fill="none" stroke="#FFD1DC" stroke-width="1.5"/>
+                <circle cx="42.5" cy="22.5" r="2" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="47.5" cy="22.5" r="2" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="42.5" cy="27.5" r="2" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="47.5" cy="27.5" r="2" fill="#FFD1DC" opacity="0.5"/>
+                <circle cx="45" cy="25" r="1.8" fill="#E8A0B0" opacity="0.4"/>
+                <!-- Falling petal -->
+                <ellipse cx="55" cy="18" rx="3" ry="1.5" fill="#FFD1DC" opacity="0.4" transform="rotate(30 55 18)"/>
+            </svg>
+        </div>
         <div class="hero-content">
             <h1 class="hero-title" data-i18n="heroTitle">Discover the Beauty of Japanese Culture</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">Join us on a journey through traditions, art, and modern creativity</p>
             <div class="hero-jp">日本文化の美しさを発見しよう</div>
             <div class="hero-buttons">
                 <a href="#about" class="hero-btn" data-i18n="heroBtn">Explore More</a>
-                <a href="japan-quiz.html" class="hero-btn" style="background:var(--accent);" data-i18n="japanQuizBtn">Japan Quiz</a>
+                <a href="japan-quiz.html" class="hero-btn hero-btn-secondary" data-i18n="japanQuizBtn">Japan Quiz</a>
             </div>
         </div>
         <div class="hero-scroll-indicator">
@@ -82,7 +130,9 @@
                     <p data-i18n="aboutActivities">From tea ceremonies and calligraphy workshops to anime screenings and J-Pop listening sessions, our club offers a wide range of activities throughout the school year. We also celebrate traditional Japanese festivals and holidays together.</p>
                 </div>
                 <div class="about-card fade-in">
-                    <div class="about-icon">👤</div>
+                    <div class="about-icon president-avatar">
+                        <img src="images/president-avatar.jpg" alt="Yuki Suto" width="120" height="120">
+                    </div>
                     <h3 data-i18n="aboutPresidentTitle">Club President</h3>
                     <p data-i18n="aboutPresident">Yuki Suto (須藤優輝) founded this club to share his love for Japanese culture with fellow students at The Webb Schools. As a bridge between Japanese and Western cultures, Yuki leads our exploration of everything from ancient traditions to contemporary pop culture.</p>
                 </div>
@@ -322,7 +372,7 @@
                 </div>
             </div>
             <div style="text-align:center;margin:30px 0;" class="fade-in">
-                <a href="japanese-test.html" style="display:inline-block;background:#C41E3A;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1rem;font-family:inherit;transition:all 0.3s;max-width:100%;box-sizing:border-box;text-align:center;" onmouseover="this.style.background='#a0182f'" onmouseout="this.style.background='#C41E3A'" data-i18n="japaneseTestBtn">Take the Japanese Test! / 日本語テストに挑戦！</a>
+                <a href="japanese-test.html" class="test-link-btn" data-i18n="japaneseTestBtn">Take the Japanese Test! / 日本語テストに挑戦！</a>
             </div>
             <div class="video-section fade-in">
                 <h3 data-i18n="japaneseVideosTitle">Learning Resources</h3>
@@ -401,6 +451,13 @@
             <div class="footer-bottom">
                 <p>© 2026 The Webb Schools Japanese Culture Club. <span data-i18n="footerRights">All rights reserved.</span></p>
                 <p class="footer-credit" data-i18n="footerCredit">Made with ❤️ by Yuki Suto</p>
+                <div class="visit-counter">
+                    <span class="visit-counter-icon">🐾</span>
+                    <span data-i18n="visitorCount">Visitors</span>:
+                    <span id="visit-count">---</span>
+                    <span class="visit-counter-icon">🐾</span>
+                </div>
+                <p class="footer-cat" aria-hidden="true">🐾 ∧,,,∧  (  ̳• · • ̳)  /    づ♡ 🐾</p>
             </div>
         </div>
     </footer>
@@ -410,5 +467,22 @@
     <script src="js/main.js?v=2"></script>
     <script src="js/firebase-config.js?v=2"></script>
     <script src="js/voting.js?v=2"></script>
+    <script>
+    // Visit counter
+    (function() {
+        var key = 'jcc-visit-count';
+        var todayKey = 'jcc-visit-date';
+        var count = parseInt(localStorage.getItem(key)) || 0;
+        var today = new Date().toDateString();
+        var lastVisit = localStorage.getItem(todayKey);
+        if (lastVisit !== today) {
+            count++;
+            localStorage.setItem(key, count);
+            localStorage.setItem(todayKey, today);
+        }
+        var el = document.getElementById('visit-count');
+        if (el) el.textContent = count;
+    })();
+    </script>
 </body>
 </html>

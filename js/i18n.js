@@ -687,6 +687,11 @@ const translations = {
         en: "Made with ❤️ by Yuki Suto",
         ja: "須藤優輝が❤️を込めて制作",
         zh: "由须藤优辉 ❤️ 制作"
+    },
+    visitorCount: {
+        en: "Visitors",
+        ja: "訪問者数",
+        zh: "访问量"
     }
 };
 
