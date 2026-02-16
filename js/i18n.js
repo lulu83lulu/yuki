@@ -55,6 +55,11 @@ const translations = {
         ja: "旅行",
         zh: "旅行"
     },
+    navAdmin: {
+        en: "🔒 Admin",
+        ja: "🔒 管理者",
+        zh: "🔒 管理"
+    },
 
     // --- Hero ---
     heroTitle: {
