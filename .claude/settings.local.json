@@ -26,7 +26,9 @@
       "Bash(gh auth status:*)",
       "Bash(git remote set-url:*)",
       "WebFetch(domain:lulu83lulu.github.io)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(git submodule:*)"
     ]
   }
 }
