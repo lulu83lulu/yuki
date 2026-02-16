@@ -1471,8 +1471,10 @@ body::after {
 }
 
 .nav-visit-icon {
-    font-size: 1.2rem;
-    filter: drop-shadow(0 0 3px rgba(255, 209, 220, 0.6));
+    width: 20px;
+    height: 20px;
+    color: var(--pink);
+    filter: drop-shadow(0 0 4px rgba(255, 209, 220, 0.8));
     animation: pawBounce 2s ease-in-out infinite;
 }
 
