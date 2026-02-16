@@ -555,19 +555,19 @@ const translations = {
         zh: "学习资源"
     },
     jpVid1: {
-        en: "Japanese for Beginners",
-        ja: "初心者向け日本語",
-        zh: "日语入门"
+        en: "Hiragana AIUEO Song",
+        ja: "あいうえおのうた",
+        zh: "五十音图儿歌"
     },
     jpVid2: {
-        en: "Learn Hiragana",
-        ja: "ひらがなを学ぶ",
-        zh: "学习平假名"
+        en: "Daily Japanese Conversation",
+        ja: "日常日本語会話",
+        zh: "日常日语会话"
     },
     jpVid3: {
-        en: "Daily Phrases",
-        ja: "日常フレーズ",
-        zh: "日常用语"
+        en: "Travel Japanese Phrases",
+        ja: "旅行で使える日本語",
+        zh: "旅游日语教学"
     },
 
     // --- Travel ---
