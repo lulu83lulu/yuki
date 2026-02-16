@@ -42,6 +42,10 @@
                     <button class="lang-btn" data-lang="ja">日本語</button>
                     <button class="lang-btn" data-lang="zh">中文</button>
                 </div>
+                <div class="nav-visit-counter">
+                    <span class="nav-visit-icon">🐾</span>
+                    <span id="visit-count">---</span>
+                </div>
             </div>
         </div>
     </nav>
@@ -451,12 +455,6 @@
             <div class="footer-bottom">
                 <p>© 2026 The Webb Schools Japanese Culture Club. <span data-i18n="footerRights">All rights reserved.</span></p>
                 <p class="footer-credit" data-i18n="footerCredit">Made with ❤️ by Yuki Suto</p>
-                <div class="visit-counter">
-                    <span class="visit-counter-icon">🐾</span>
-                    <span data-i18n="visitorCount">Visitors</span>:
-                    <span id="visit-count">---</span>
-                    <span class="visit-counter-icon">🐾</span>
-                </div>
                 <p class="footer-cat" aria-hidden="true">🐾 ∧,,,∧  (  ̳• · • ̳)  /    づ♡ 🐾</p>
             </div>
         </div>
@@ -468,18 +466,12 @@
     <script src="js/firebase-config.js?v=2"></script>
     <script src="js/voting.js?v=2"></script>
     <script>
-    // Visit counter
+    // Visit counter - total page clicks
     (function() {
         var key = 'jcc-visit-count';
-        var todayKey = 'jcc-visit-date';
         var count = parseInt(localStorage.getItem(key)) || 0;
-        var today = new Date().toDateString();
-        var lastVisit = localStorage.getItem(todayKey);
-        if (lastVisit !== today) {
-            count++;
-            localStorage.setItem(key, count);
-            localStorage.setItem(todayKey, today);
-        }
+        count++;
+        localStorage.setItem(key, count);
         var el = document.getElementById('visit-count');
         if (el) el.textContent = count;
     })();

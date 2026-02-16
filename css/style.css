@@ -1457,29 +1457,19 @@ body::after {
     animation: sakuraSway 6s ease-in-out infinite;
 }
 
-/* Footer cat text art */
-.visit-counter {
-    margin-top: 12px;
-    display: inline-flex;
+/* Nav visit counter */
+.nav-visit-counter {
+    display: flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    padding: 6px 18px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'Patrick Hand', cursive;
-    letter-spacing: 0.5px;
+    gap: 5px;
+    margin-left: 10px;
+    padding-left: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.visit-counter-icon {
-    font-size: 1rem;
+.nav-visit-icon {
+    font-size: 0.8rem;
     animation: pawBounce 2s ease-in-out infinite;
-}
-
-.visit-counter-icon:last-child {
-    animation-delay: 1s;
 }
 
 @keyframes pawBounce {
@@ -1488,11 +1478,11 @@ body::after {
 }
 
 #visit-count {
+    font-family: 'Patrick Hand', cursive;
     font-weight: bold;
-    color: #FFD1DC;
-    font-size: 1rem;
-    min-width: 30px;
-    text-align: center;
+    color: var(--pink);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .footer-cat {
@@ -1840,6 +1830,14 @@ body::after {
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         padding-top: 15px;
         margin-left: 0;
+    }
+
+    .nav-visit-counter {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+        justify-content: center;
+        padding-top: 8px;
     }
 
     .hero-title {
