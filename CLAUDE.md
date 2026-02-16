@@ -74,6 +74,9 @@ yuki/
 **YouTube動画:**
 - `<iframe src="https://www.youtube.com/embed/VIDEO_ID">` で直接埋込
 - `<img>` サムネイル方式は表示問題があったため廃止
+- 各 `.video-embed` divに `data-video-section` / `data-video-index` 属性付き
+- localStorage (`jcc-videos`) にデータがあれば動的にiframe srcとラベルを上書き
+- 管理画面（admin.html）のVideo Managerで動画ID・ラベルを変更可能
 
 **三語切替 (i18n):**
 - `data-i18n="key"` 属性でHTML要素にキーを設定
@@ -89,10 +92,11 @@ yuki/
 - 自己完結型（CSS/JS全てインライン）
 
 **ダッシュボードパネル:**
-1. **Overview** — 統計表示（活動数、投票オープン数、クイズ問題数）
+1. **Overview** — 統計表示（活動数、投票オープン数、クイズ問題数、動画数）
 2. **Activities** — 活動CRUD（作成・ステータス切替・削除）
 3. **Quiz Manager** — クイズ問題管理（詳細は下記）
-4. **Settings** — Firebase接続状況、データエクスポート/クリア
+4. **Video Manager** — YouTube動画管理（詳細は下記）
+5. **Settings** — Firebase接続状況、データエクスポート/クリア
 
 **Quiz Manager (クイズ管理):**
 - クイズ問題の一覧表示（カテゴリ/レベルフィルター + キーワード検索）
@@ -102,6 +106,17 @@ yuki/
 - JSONエクスポート機能（ダウンロード → リポジトリにコミットで反映）
 - 編集データはlocalStorage (`jcc-quiz-data`) に保存
 - japan-quiz.html はlocalStorageを優先的に読むため、管理画面の編集が即反映
+
+**Video Manager (動画管理):**
+- 全5セクション（Festivals/Anime/J-Pop/Japanese/Travel）の動画を一覧管理
+- サムネイルプレビュー付きの動画リスト表示
+- 動画の追加・編集・削除（Festivalsは編集のみ）
+- YouTube Video ID入力時にリアルタイムサムネプレビュー
+- ラベル3言語入力（EN/JA/ZH）
+- セクションフィルター機能
+- JSONエクスポート機能
+- データはlocalStorage (`jcc-videos`) に保存
+- index.html はlocalStorageを優先的に読むため、管理画面の編集が即反映
 
 ### 3. japanese-test.html — 日本語テストページ
 - **レベル**: 初級 / 中級 / 上級
@@ -210,6 +225,7 @@ Firebase Realtime Database は未設定。使用する場合:
 |------|------|------|
 | `jcc-activities` | 活動データ | localStorage |
 | `jcc-quiz-data` | クイズ問題（管理画面の編集） | localStorage |
+| `jcc-videos` | YouTube動画データ（管理画面の編集） | localStorage |
 | `jcc-admin-session` | 管理者セッション | sessionStorage |
 | `quizSeenIds` | クイズ出題済みID配列 | sessionStorage |
 | `jcc-lang` | 言語設定 | localStorage |

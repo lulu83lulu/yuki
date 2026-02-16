@@ -274,7 +274,7 @@
         /* Stats Cards */
         .stats-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin-bottom: 25px;
         }
@@ -629,6 +629,35 @@
         .choice-row input { flex: 1; padding: 8px 10px; }
         .choice-row .choice-num { font-size: .8rem; color: #888; min-width: 20px; }
 
+        /* Video Manager */
+        .vid-section-group { margin-bottom: 18px; }
+        .vid-section-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 10px 15px; background: #E8D5F5; border-radius: 8px;
+            margin-bottom: 8px; border: 1px solid #333;
+        }
+        .vid-section-header h4 { font-size: 0.95rem; color: #333; margin: 0; }
+        .vid-section-header .vid-count {
+            font-size: 0.75rem; color: #666; background: #fff;
+            padding: 2px 10px; border-radius: 10px; border: 1px solid #ddd;
+        }
+        .vid-item {
+            display: flex; align-items: center; gap: 15px;
+            background: #fff; border: 1px solid #ddd; border-radius: 12px;
+            padding: 12px 15px; margin-bottom: 8px; transition: all 0.2s;
+        }
+        .vid-item:hover { box-shadow: 4px 4px 0px #333; }
+        .vid-thumb {
+            width: 120px; min-width: 120px; border-radius: 8px;
+            overflow: hidden; border: 1.5px solid #333;
+        }
+        .vid-thumb img { width: 100%; height: auto; display: block; }
+        .vid-info { flex: 1; min-width: 0; }
+        .vid-info .vid-id { font-size: 0.72rem; color: #aaa; font-family: monospace; }
+        .vid-info .vid-label { font-size: 0.9rem; color: #222; margin-top: 2px; }
+        .vid-info .vid-langs { font-size: 0.72rem; color: #888; margin-top: 2px; }
+        .vid-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
         /* Responsive */
         @media (max-width: 768px) {
             .dash-grid {
@@ -661,6 +690,10 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
+            .vid-item { flex-direction: column; align-items: flex-start; }
+            .vid-thumb { width: 100%; min-width: 0; }
+            .vid-actions { align-self: flex-end; }
 
             /* Table scroll wrapper */
             #activityTableContainer {
@@ -824,6 +857,7 @@
                         <button class="active" data-panel="overview">📊 Overview</button>
                         <button data-panel="activities">🗳️ Activities</button>
                         <button data-panel="quiz">🧠 Quiz Manager</button>
+                        <button data-panel="videos">🎬 Videos</button>
                         <button data-panel="settings">⚙️ Settings</button>
                     </nav>
                     <div class="sidebar-user">
@@ -850,6 +884,10 @@
                             <div class="stat-card gold">
                                 <div class="stat-number" id="statQuizQ">0</div>
                                 <div class="stat-label">Quiz Questions</div>
+                            </div>
+                            <div class="stat-card" style="border-top:4px solid #E8D5F5">
+                                <div class="stat-number" id="statVideos">0</div>
+                                <div class="stat-label">Videos 動画</div>
                             </div>
                         </div>
 
@@ -1034,6 +1072,92 @@
                             <div class="modal-btns">
                                 <button class="modal-cancel" onclick="closeModal()">Cancel</button>
                                 <button class="modal-save" onclick="saveQuestion()">Save 保存</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Manager Panel -->
+                    <div class="dash-panel" id="panel-videos">
+                        <h2>🎬 Video Manager — 動画管理</h2>
+
+                        <div class="quiz-stats">
+                            <div class="quiz-stat">
+                                <div class="qs-num" id="vidTotal">0</div>
+                                <div class="qs-label">Total Videos 動画数</div>
+                            </div>
+                            <div class="quiz-stat">
+                                <div class="qs-num" id="vidSections">5</div>
+                                <div class="qs-label">Sections セクション</div>
+                            </div>
+                            <div class="quiz-stat">
+                                <div class="qs-num" id="vidDataSrc">—</div>
+                                <div class="qs-label">Data Source</div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-toolbar">
+                            <select id="vidFilterSection">
+                                <option value="">All Sections 全セクション</option>
+                                <option value="festivals">🎌 Festivals 祭り</option>
+                                <option value="anime">🎬 Anime アニメ</option>
+                                <option value="jpop">🎵 J-Pop</option>
+                                <option value="japanese">🈁 Japanese 日本語</option>
+                                <option value="travel">✈️ Travel 旅行</option>
+                            </select>
+                            <div style="flex:1"></div>
+                            <button class="btn-add" onclick="openVideoAddModal()">+ Add Video 動画追加</button>
+                            <button class="btn-export-quiz" onclick="exportVideoJSON()">⬇ Export JSON</button>
+                        </div>
+
+                        <div id="videoList" class="quiz-list">
+                            <div class="q-no-items">Loading video data...</div>
+                        </div>
+                    </div>
+
+                    <!-- Video Edit/Add Modal -->
+                    <div class="modal-overlay" id="vidModal">
+                        <div class="modal">
+                            <h3 id="vidModalTitle">Add Video 動画追加</h3>
+                            <input type="hidden" id="vidEditSection" value="">
+                            <input type="hidden" id="vidEditIndex" value="-1">
+
+                            <div class="modal-row">
+                                <div class="modal-field">
+                                    <label>Section セクション</label>
+                                    <select id="vmSection">
+                                        <option value="festivals">🎌 Festivals</option>
+                                        <option value="anime">🎬 Anime</option>
+                                        <option value="jpop">🎵 J-Pop</option>
+                                        <option value="japanese">🈁 Japanese</option>
+                                        <option value="travel">✈️ Travel</option>
+                                    </select>
+                                </div>
+                                <div class="modal-field">
+                                    <label>YouTube Video ID</label>
+                                    <input type="text" id="vmVideoId" placeholder="e.g. SFFpyYg-Wlc">
+                                </div>
+                            </div>
+
+                            <div id="vmPreview" style="text-align:center;margin:10px 0;min-height:20px;"></div>
+
+                            <div class="modal-field">
+                                <label>Label (English)</label>
+                                <input type="text" id="vmLabelEn" placeholder="Video label in English">
+                            </div>
+                            <div class="modal-row">
+                                <div class="modal-field">
+                                    <label>Label (日本語)</label>
+                                    <input type="text" id="vmLabelJa" placeholder="日本語のラベル">
+                                </div>
+                                <div class="modal-field">
+                                    <label>Label (中文)</label>
+                                    <input type="text" id="vmLabelZh" placeholder="中文标签">
+                                </div>
+                            </div>
+
+                            <div class="modal-btns">
+                                <button class="modal-cancel" onclick="closeVideoModal()">Cancel</button>
+                                <button class="modal-save" onclick="saveVideo()">Save 保存</button>
                             </div>
                         </div>
                     </div>
@@ -1246,6 +1370,7 @@
         document.getElementById('statTotal').textContent = ids.length;
         document.getElementById('statOpen').textContent = openCount;
         document.getElementById('statQuizQ').textContent = countQuestions();
+        document.getElementById('statVideos').textContent = countVideos();
 
         // Recent Activities (overview)
         const recentDiv = document.getElementById('recentActivities');
@@ -1676,9 +1801,205 @@
         showToast('Quiz data exported! Replace data/quiz-questions.json and commit.', 'success');
     }
 
+    /* === Video Manager === */
+    const VIDEO_KEY = 'jcc-videos';
+    const SECTION_NAMES = {
+        festivals: '🎌 Festivals 祭り',
+        anime: '🎬 Anime アニメ',
+        jpop: '🎵 J-Pop',
+        japanese: '🈁 Japanese 日本語',
+        travel: '✈️ Travel 旅行'
+    };
+    const DEFAULT_VIDEOS = {
+        festivals: [
+            {videoId:'SFFpyYg-Wlc',label:{en:'New Year',ja:'お正月',zh:'新年'}},
+            {videoId:'l4HIRUmhEas',label:{en:'Setsubun',ja:'節分',zh:'节分'}},
+            {videoId:'AtzBCtCrOMA',label:{en:'Doll Festival',ja:'ひな祭り',zh:'女儿节'}},
+            {videoId:'-Jp2VGSA6rM',label:{en:'Cherry Blossom',ja:'花見',zh:'赏樱花'}},
+            {videoId:'lfQnv5_rQq4',label:{en:"Children's Day",ja:'こどもの日',zh:'儿童节'}},
+            {videoId:'A0ct4JZfiSc',label:{en:'Star Festival',ja:'七夕',zh:'七夕'}},
+            {videoId:'M61v6Lz6VuQ',label:{en:'Obon Festival',ja:'お盆',zh:'盂兰盆节'}},
+            {videoId:'IqXJTj1xgHQ',label:{en:'Moon Viewing',ja:'お月見',zh:'赏月'}},
+            {videoId:'oNnnAOsgns8',label:{en:'Seven-Five-Three',ja:'七五三',zh:'七五三'}},
+            {videoId:'mZua8mGYSdE',label:{en:'Year End',ja:'年末',zh:'年末'}}
+        ],
+        anime: [
+            {videoId:'ByXuk9QqQkk',label:{en:'Spirited Away',ja:'千と千尋の神隠し',zh:'千与千寻'}},
+            {videoId:'x8VYWazR5mE',label:{en:'YOASOBI - Racing into the Night',ja:'YOASOBI - 夜に駆ける',zh:'YOASOBI - 夜に駆ける'}},
+            {videoId:'1FliVTcX8bQ',label:{en:'Ado - New Genesis',ja:'Ado - 新時代',zh:'Ado - 新时代'}}
+        ],
+        jpop: [
+            {videoId:'ZRtdQ81jPUQ',label:{en:'YOASOBI - Idol',ja:'YOASOBI - アイドル',zh:'YOASOBI - Idol'}},
+            {videoId:'SX_ViT4Ra7k',label:{en:'Kenshi Yonezu - Lemon',ja:'米津玄師 - Lemon',zh:'米津玄师 - Lemon'}},
+            {videoId:'lRVJuPI5IXI',label:{en:'Fujii Kaze - Shinunoga E-Wa',ja:'藤井風 - 死ぬのがいいわ',zh:'藤井风 - Shinunoga E-Wa'}}
+        ],
+        japanese: [
+            {videoId:'C5fjrag2Fcg',label:{en:'Hiragana AIUEO Song',ja:'あいうえおのうた',zh:'五十音图儿歌'}},
+            {videoId:'7I2Ryji_9Js',label:{en:'Daily Japanese Conversation',ja:'日常日本語会話',zh:'日常日语会话'}},
+            {videoId:'idd9q8zxuNo',label:{en:'Travel Japanese Phrases',ja:'旅行で使える日本語',zh:'旅游日语教学'}}
+        ],
+        travel: [
+            {videoId:'YdiWTYkY1uY',label:{en:'Day in the Life - Tokyo',ja:'東京での一日',zh:'东京的一天'}},
+            {videoId:'M2cckDmNLMI',label:{en:'Beautiful Kyoto',ja:'美しい京都',zh:'美丽的京都'}},
+            {videoId:'dy90tA3TT1c',label:{en:'Mt. Fuji',ja:'富士山',zh:'富士山'}}
+        ]
+    };
+    let videoData = null;
+
+    function loadVideoData() {
+        const stored = localStorage.getItem(VIDEO_KEY);
+        if (stored) {
+            try { videoData = JSON.parse(stored); } catch(e) { videoData = JSON.parse(JSON.stringify(DEFAULT_VIDEOS)); }
+        } else {
+            videoData = JSON.parse(JSON.stringify(DEFAULT_VIDEOS));
+        }
+        renderVideoPanel();
+    }
+
+    function saveVideoLocal() {
+        localStorage.setItem(VIDEO_KEY, JSON.stringify(videoData));
+    }
+
+    function countVideos() {
+        if (!videoData) return 0;
+        let c = 0;
+        Object.keys(videoData).forEach(s => { c += (videoData[s] || []).length; });
+        return c;
+    }
+
+    function renderVideoPanel() {
+        const t = document.getElementById('vidTotal');
+        const d = document.getElementById('vidDataSrc');
+        if (t) t.textContent = countVideos();
+        if (d) d.textContent = localStorage.getItem(VIDEO_KEY) ? 'localStorage' : 'Defaults';
+        renderVideoList();
+    }
+
+    function renderVideoList() {
+        const container = document.getElementById('videoList');
+        if (!container || !videoData) return;
+        const filter = document.getElementById('vidFilterSection').value;
+        let html = '';
+        const sections = filter ? [filter] : Object.keys(SECTION_NAMES);
+        sections.forEach(sec => {
+            const vids = videoData[sec] || [];
+            if (vids.length === 0 && filter) { html += '<div class="q-no-items">No videos in this section</div>'; return; }
+            if (vids.length === 0) return;
+            html += '<div class="vid-section-group">';
+            html += '<div class="vid-section-header"><h4>' + SECTION_NAMES[sec] + '</h4><span class="vid-count">' + vids.length + ' videos</span></div>';
+            vids.forEach((v, i) => {
+                html += '<div class="vid-item">';
+                html += '<div class="vid-thumb"><img src="https://img.youtube.com/vi/' + escapeHtml(v.videoId) + '/mqdefault.jpg" alt="thumb" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2268%22><rect fill=%22%23ddd%22 width=%22120%22 height=%2268%22/><text x=%2260%22 y=%2238%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2212%22>No thumb</text></svg>\'"></div>';
+                html += '<div class="vid-info">';
+                html += '<div class="vid-id">ID: ' + escapeHtml(v.videoId) + '</div>';
+                html += '<div class="vid-label">' + escapeHtml(v.label.en || '') + '</div>';
+                html += '<div class="vid-langs">🇯🇵 ' + escapeHtml(v.label.ja || '—') + ' · 🇨🇳 ' + escapeHtml(v.label.zh || '—') + '</div>';
+                html += '</div>';
+                html += '<div class="vid-actions">';
+                html += '<button class="btn-toggle" onclick="openVideoEditModal(\'' + sec + '\',' + i + ')">✏️ Edit</button>';
+                if (sec !== 'festivals') {
+                    html += '<button class="btn-delete" onclick="deleteVideo(\'' + sec + '\',' + i + ')">🗑</button>';
+                }
+                html += '</div></div>';
+            });
+            html += '</div>';
+        });
+        if (!html) html = '<div class="q-no-items">No videos found</div>';
+        container.innerHTML = html;
+    }
+
+    function openVideoAddModal() {
+        document.getElementById('vidModalTitle').textContent = 'Add Video 動画追加';
+        document.getElementById('vidEditSection').value = '';
+        document.getElementById('vidEditIndex').value = '-1';
+        document.getElementById('vmSection').value = 'anime';
+        document.getElementById('vmSection').disabled = false;
+        document.getElementById('vmVideoId').value = '';
+        document.getElementById('vmLabelEn').value = '';
+        document.getElementById('vmLabelJa').value = '';
+        document.getElementById('vmLabelZh').value = '';
+        document.getElementById('vmPreview').innerHTML = '';
+        document.getElementById('vidModal').classList.add('show');
+    }
+
+    function openVideoEditModal(section, index) {
+        const v = videoData[section][index];
+        if (!v) return;
+        document.getElementById('vidModalTitle').textContent = 'Edit Video 動画編集';
+        document.getElementById('vidEditSection').value = section;
+        document.getElementById('vidEditIndex').value = index;
+        document.getElementById('vmSection').value = section;
+        document.getElementById('vmSection').disabled = (section === 'festivals');
+        document.getElementById('vmVideoId').value = v.videoId;
+        document.getElementById('vmLabelEn').value = v.label.en || '';
+        document.getElementById('vmLabelJa').value = v.label.ja || '';
+        document.getElementById('vmLabelZh').value = v.label.zh || '';
+        document.getElementById('vmPreview').innerHTML = '<img src="https://img.youtube.com/vi/' + escapeHtml(v.videoId) + '/mqdefault.jpg" style="max-width:240px;border-radius:8px;border:1.5px solid #333">';
+        document.getElementById('vidModal').classList.add('show');
+    }
+
+    function closeVideoModal() {
+        document.getElementById('vidModal').classList.remove('show');
+    }
+
+    function saveVideo() {
+        const editSec = document.getElementById('vidEditSection').value;
+        const editIdx = parseInt(document.getElementById('vidEditIndex').value);
+        const section = document.getElementById('vmSection').value;
+        const vid = document.getElementById('vmVideoId').value.trim();
+        const en = document.getElementById('vmLabelEn').value.trim();
+        const ja = document.getElementById('vmLabelJa').value.trim();
+        const zh = document.getElementById('vmLabelZh').value.trim();
+        if (!vid) { showToast('YouTube Video ID is required!', 'error'); return; }
+        if (!en) { showToast('English label is required!', 'error'); return; }
+        const obj = { videoId: vid, label: { en: en, ja: ja || en, zh: zh || en } };
+        if (editIdx >= 0 && editSec) {
+            videoData[editSec][editIdx] = obj;
+        } else {
+            if (!videoData[section]) videoData[section] = [];
+            videoData[section].push(obj);
+        }
+        saveVideoLocal();
+        renderVideoPanel();
+        closeVideoModal();
+        showToast('Video saved! 動画保存完了', 'success');
+    }
+
+    function deleteVideo(section, index) {
+        if (!confirm('Delete this video? この動画を削除しますか？')) return;
+        videoData[section].splice(index, 1);
+        saveVideoLocal();
+        renderVideoPanel();
+        showToast('Video deleted 動画削除完了', 'success');
+    }
+
+    function exportVideoJSON() {
+        const blob = new Blob([JSON.stringify(videoData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'jcc-videos.json'; a.click();
+        URL.revokeObjectURL(url);
+        showToast('Video data exported!', 'success');
+    }
+
+    // Live thumbnail preview
+    document.getElementById('vmVideoId').addEventListener('input', function() {
+        const id = this.value.trim();
+        const preview = document.getElementById('vmPreview');
+        if (id && id.length >= 5) {
+            preview.innerHTML = '<img src="https://img.youtube.com/vi/' + escapeHtml(id) + '/mqdefault.jpg" style="max-width:240px;border-radius:8px;border:1.5px solid #333" onerror="this.parentNode.innerHTML=\'<span style=color:#c66>Invalid Video ID</span>\'">';
+        } else {
+            preview.innerHTML = '';
+        }
+    });
+
+    // Video filter
+    document.getElementById('vidFilterSection').addEventListener('change', renderVideoList);
+
     /* --- Init --- */
     checkSession();
     loadQuizData();
+    loadVideoData();
     </script>
 
     <!-- Firebase config (for status check) -->
