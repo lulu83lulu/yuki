@@ -28,7 +28,23 @@
       "WebFetch(domain:lulu83lulu.github.io)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(git submodule:*)"
+      "Bash(git submodule:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.pinterest.com)",
+      "WebFetch(domain:japaneselevelup.com)",
+      "WebFetch(domain:www.dinolingo.com)",
+      "WebFetch(domain:hiraganamama.wordpress.com)",
+      "WebFetch(domain:modern-japanese.com)",
+      "WebFetch(domain:flexiclasses.com)",
+      "WebFetch(domain:www.tofugu.com)",
+      "WebFetch(domain:nihongo-career.com)",
+      "WebFetch(domain:www.peptalkradio.com)",
+      "WebFetch(domain:www.linguajunkie.com)",
+      "WebFetch(domain:kanji.mochidemy.com)",
+      "WebFetch(domain:www.fluentu.com)",
+      "WebFetch(domain:noembed.com)",
+      "WebFetch(domain:www.japanesepod101.com)",
+      "WebFetch(domain:www.youtube-nocookie.com)"
     ]
   }
 }
