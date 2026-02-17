@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-15",
-    "totalQuestions": 70
+    "lastUpdated": "2026-02-17",
+    "totalQuestions": 71
   },
   "current": {
     "beginner": [
@@ -2036,6 +2036,48 @@
           "zh": "将军从1185年到1868年统治日本。最著名的幕府是德川幕府（1603-1868），带来了250年的和平与锁国。",
           "ja": "将軍は1185年から1868年まで日本を支配。最も有名な徳川幕府（1603-1868）は250年の平和と鎖国をもたらしました。",
           "es": "Los shogunes gobernaron Japón de 1185 a 1868. El más famoso fue el Tokugawa (1603-1868), que trajo 250 años de paz y aislamiento."
+        }
+      },
+      {
+        "id": "history_beginner_gu7878",
+        "q": {
+          "en": "What was the samurai's code of honor called?",
+          "zh": "武士的荣誉准则叫什么？",
+          "ja": "武士の名誉の規範は何と呼ばれた？",
+          "es": "¿Cómo se llamaba el código de honor del samurái?"
+        },
+        "c": [
+          {
+            "en": "Bushido",
+            "zh": "武士道",
+            "ja": "武士道",
+            "es": "Bushido"
+          },
+          {
+            "en": "Karate",
+            "zh": "空手道",
+            "ja": "空手道",
+            "es": "Karate"
+          },
+          {
+            "en": "Judo",
+            "zh": "柔道",
+            "ja": "柔道",
+            "es": "Judo"
+          },
+          {
+            "en": "Aikido",
+            "zh": "合气道",
+            "ja": "合気道",
+            "es": "Aikido"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "Bushido ('way of the warrior') emphasized loyalty, honor, martial arts mastery, and frugal living. It influenced Japanese culture for centuries.",
+          "zh": "武士道（'战士之道'）强调忠诚、荣誉、武术精通和节俭生活。它影响了日本文化几个世纪。",
+          "ja": "武士道は忠義、名誉、武芸の修練、質素な生活を重視しました。何世紀にもわたって日本文化に影響を与えました。",
+          "es": "El bushido ('camino del guerrero') enfatizaba la lealtad, el honor, el dominio de las artes marciales y la vida frugal. Influyó en la cultura japonesa durante siglos."
         }
       }
     ],
