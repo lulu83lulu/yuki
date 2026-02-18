@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-17",
-    "totalQuestions": 71
+    "lastUpdated": "2026-02-18",
+    "totalQuestions": 72
   },
   "current": {
     "beginner": [
@@ -2472,6 +2472,48 @@
           "zh": "《周刊少年Jump》是日本最大的漫画杂志，推出了龙珠、海贼王、火影忍者和鬼灭之刃。每周销售数百万册。",
           "ja": "週刊少年ジャンプは日本最大の漫画雑誌。ドラゴンボール、ワンピース、ナルト、鬼滅の刃を世に送り出しました。",
           "es": "Weekly Shonen Jump es la mayor revista manga, lanzando Dragon Ball, One Piece, Naruto y Demon Slayer."
+        }
+      },
+      {
+        "id": "manga_beginner_vaypxu",
+        "q": {
+          "en": "Who created the manga 'Dragon Ball'?",
+          "zh": "谁创作了漫画《龙珠》？",
+          "ja": "漫画『ドラゴンボール』の作者は？",
+          "es": "¿Quién creó el manga 'Dragon Ball'?"
+        },
+        "c": [
+          {
+            "en": "Eiichiro Oda",
+            "zh": "尾田荣一郎",
+            "ja": "尾田栄一郎",
+            "es": "Eiichiro Oda"
+          },
+          {
+            "en": "Akira Toriyama",
+            "zh": "鸟山明",
+            "ja": "鳥山明",
+            "es": "Akira Toriyama"
+          },
+          {
+            "en": "Masashi Kishimoto",
+            "zh": "岸本�的士",
+            "ja": "岸本斉史",
+            "es": "Masashi Kishimoto"
+          },
+          {
+            "en": "Osamu Tezuka",
+            "zh": "手冢治虫",
+            "ja": "手塚治虫",
+            "es": "Osamu Tezuka"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Akira Toriyama's Dragon Ball has sold over 260 million copies worldwide. His art style influenced countless manga and anime creators.",
+          "zh": "鸟山明的龙珠全球销量超过2.6亿册。他的画风影响了无数漫画和动画创作者。",
+          "ja": "鳥山明の『ドラゴンボール』は世界で2億6千万部以上売れています。彼の画風は無数の漫画家やアニメ制作者に影響を与えました。",
+          "es": "Dragon Ball de Akira Toriyama ha vendido más de 260 millones de copias en todo el mundo. Su estilo artístico influyó en innumerables creadores de manga y anime."
         }
       }
     ],
