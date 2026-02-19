@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-18",
-    "totalQuestions": 72
+    "lastUpdated": "2026-02-19",
+    "totalQuestions": 75
   },
   "current": {
     "beginner": [
@@ -2167,6 +2167,48 @@
           "ja": "220年間、日本はほぼすべての外国との交流を断ちました。オランダと中国のみが長崎の出島で限定的な貿易を許されました。",
           "es": "Durante 220 años, Japón cortó casi todo contacto extranjero. Solo holandeses y chinos podían comerciar limitadamente en Dejima, Nagasaki."
         }
+      },
+      {
+        "id": "history_advanced_1hg358",
+        "q": {
+          "en": "Who was the first shogun of the Tokugawa shogunate?",
+          "zh": "德川幕府的第一代将军是谁？",
+          "ja": "徳川幕府の初代将軍は？",
+          "es": "¿Quién fue el primer shogun del shogunato Tokugawa?"
+        },
+        "c": [
+          {
+            "en": "Tokugawa Ieyasu",
+            "zh": "德川家康",
+            "ja": "徳川家康",
+            "es": "Tokugawa Ieyasu"
+          },
+          {
+            "en": "Oda Nobunaga",
+            "zh": "织田信长",
+            "ja": "織田信長",
+            "es": "Oda Nobunaga"
+          },
+          {
+            "en": "Toyotomi Hideyoshi",
+            "zh": "丰臣秀吉",
+            "ja": "豊臣秀吉",
+            "es": "Toyotomi Hideyoshi"
+          },
+          {
+            "en": "Minamoto Yoritomo",
+            "zh": "源赖朝",
+            "ja": "源頼朝",
+            "es": "Minamoto Yoritomo"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "Tokugawa Ieyasu established the shogunate in 1603 after winning the Battle of Sekigahara. The Tokugawa era lasted 265 years of relative peace.",
+          "zh": "德川家康在关原之战获胜后于1603年建立了幕府。德川时代持续了265年的相对和平。",
+          "ja": "徳川家康は関ヶ原の戦いに勝利した後、1603年に幕府を開きました。徳川時代は265年間の比較的平和な時代でした。",
+          "es": "Tokugawa Ieyasu estableció el shogunato en 1603 después de ganar la Batalla de Sekigahara. La era Tokugawa duró 265 años de relativa paz."
+        }
       }
     ]
   },
@@ -2859,6 +2901,48 @@
           "ja": "本わさびは非常に高価（1kg約3万円）で、すりおろして15分で風味が消えます。多くの店の'わさび'は実はホースラディッシュです！",
           "es": "El wasabi real es carísimo ($250/kg) y pierde sabor en 15 minutos. ¡La mayoría del 'wasabi' en restaurantes es rábano picante con colorante!"
         }
+      },
+      {
+        "id": "food_beginner_nh1n6b",
+        "q": {
+          "en": "What Japanese dish consists of vinegared rice with raw fish?",
+          "zh": "哪种日本菜是用醋饭配生鱼片做成的？",
+          "ja": "酢飯に生魚を乗せた日本料理は？",
+          "es": "¿Qué plato japonés consiste en arroz avinagrado con pescado crudo?"
+        },
+        "c": [
+          {
+            "en": "Ramen",
+            "zh": "拉面",
+            "ja": "ラーメン",
+            "es": "Ramen"
+          },
+          {
+            "en": "Sushi",
+            "zh": "寿司",
+            "ja": "寿司",
+            "es": "Sushi"
+          },
+          {
+            "en": "Tempura",
+            "zh": "天妇罗",
+            "ja": "天ぷら",
+            "es": "Tempura"
+          },
+          {
+            "en": "Udon",
+            "zh": "乌冬面",
+            "ja": "うどん",
+            "es": "Udon"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Sushi originally started as a way to preserve fish using fermented rice. Modern nigiri sushi was invented in Tokyo in the early 1800s.",
+          "zh": "寿司最初是用发酵米饭来保存鱼的方式。现代握寿司于19世纪初在东京发明。",
+          "ja": "寿司はもともと発酵米を使って魚を保存する方法でした。現代の握り寿司は1800年代初頭に東京で発明されました。",
+          "es": "El sushi comenzó originalmente como una forma de conservar el pescado usando arroz fermentado. El nigiri sushi moderno fue inventado en Tokio a principios del siglo XIX."
+        }
       }
     ],
     "intermediate": [
@@ -3072,6 +3156,48 @@
           "zh": "河豚含有河豚毒素，毒性是氰化物的1200倍。厨师需要3年以上培训并通过严格考试。日本天皇被禁止食用！",
           "ja": "フグにはシアン化物の1,200倍の毒性を持つテトロドトキシンが含まれます。調理師は3年以上の修行と厳しい試験が必要。天皇陛下は食べることが禁じられています！",
           "es": "El fugu contiene tetrodotoxina, 1,200 veces más venenosa que el cianuro. Los chefs necesitan 3+ años de entrenamiento. ¡Al emperador de Japón le está prohibido comerlo!"
+        }
+      },
+      {
+        "id": "food_advanced_k0obnm",
+        "q": {
+          "en": "What is 'kaiseki' in Japanese cuisine?",
+          "zh": "日本料理中的'怀石料理'是什么？",
+          "ja": "「懐石料理」とは？",
+          "es": "¿Qué es 'kaiseki' en la cocina japonesa?"
+        },
+        "c": [
+          {
+            "en": "Street food style",
+            "zh": "街头小吃风格",
+            "ja": "屋台スタイル",
+            "es": "Estilo de comida callejera"
+          },
+          {
+            "en": "Traditional multi-course haute cuisine",
+            "zh": "传统多道高级料理",
+            "ja": "伝統的な多品コースの高級料理",
+            "es": "Alta cocina tradicional de varios platos"
+          },
+          {
+            "en": "Fast food chain",
+            "zh": "快餐连锁",
+            "ja": "ファストフードチェーン",
+            "es": "Cadena de comida rápida"
+          },
+          {
+            "en": "Vegetarian temple food",
+            "zh": "素食寺院料理",
+            "ja": "精進料理",
+            "es": "Comida vegetariana de templo"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Kaiseki originated from tea ceremony cuisine and is considered the pinnacle of Japanese cooking. A full kaiseki course can have 12-15 dishes.",
+          "zh": "怀石料理起源于茶道料理，被认为是日本烹饪的巅峰。一套完整的怀石料理可以有12-15道菜。",
+          "ja": "懐石料理は茶道の料理から発展し、日本料理の最高峰とされています。フルコースでは12〜15品が出されます。",
+          "es": "El kaiseki se originó en la cocina de la ceremonia del té y se considera la cumbre de la cocina japonesa. Un curso completo de kaiseki puede tener 12-15 platos."
         }
       }
     ]
