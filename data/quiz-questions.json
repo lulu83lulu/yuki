@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-19",
-    "totalQuestions": 75
+    "lastUpdated": "2026-02-20",
+    "totalQuestions": 76
   },
   "current": {
     "beginner": [
@@ -1268,6 +1268,48 @@
           "zh": "第9条规定日本放弃战争，不维持军事力量。但日本有'自卫队'。该条款的修改是重大政治辩论。",
           "ja": "第9条は戦争放棄と戦力不保持を規定。しかし日本には自衛隊があります。改憲は大きな政治的議論となっています。",
           "es": "El Artículo 9 establece que Japón renuncia a la guerra. Sin embargo, tiene 'Fuerzas de Autodefensa'. Su revisión es un gran debate político."
+        }
+      },
+      {
+        "id": "current_advanced_hz46ww",
+        "q": {
+          "en": "What is Japan's debt-to-GDP ratio approximately?",
+          "zh": "日本的债务与GDP比率大约是多少？",
+          "ja": "日本の債務対GDP比率は約何%？",
+          "es": "¿Cuál es aproximadamente la relación deuda/PIB de Japón?"
+        },
+        "c": [
+          {
+            "en": "About 100%",
+            "zh": "约100%",
+            "ja": "約100%",
+            "es": "Aproximadamente 100%"
+          },
+          {
+            "en": "About 150%",
+            "zh": "约150%",
+            "ja": "約150%",
+            "es": "Aproximadamente 150%"
+          },
+          {
+            "en": "About 260%",
+            "zh": "约260%",
+            "ja": "約260%",
+            "es": "Aproximadamente 260%"
+          },
+          {
+            "en": "About 200%",
+            "zh": "约200%",
+            "ja": "約200%",
+            "es": "Aproximadamente 200%"
+          }
+        ],
+        "a": 2,
+        "trivia": {
+          "en": "Japan has the highest debt-to-GDP ratio among developed nations (~260%), yet it remains stable because most debt is held domestically.",
+          "zh": "日本在发达国家中债务与GDP比率最高（约260%），但由于大部分债务由国内持有，因此保持稳定。",
+          "ja": "日本は先進国中最も高い債務対GDP比率（約260%）を持っていますが、大部分が国内で保有されているため安定しています。",
+          "es": "Japón tiene la mayor relación deuda/PIB entre los países desarrollados (~260%), pero se mantiene estable porque la mayoría de la deuda es interna."
         }
       }
     ]
