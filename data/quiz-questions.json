@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-20",
-    "totalQuestions": 76
+    "lastUpdated": "2026-02-21",
+    "totalQuestions": 78
   },
   "current": {
     "beginner": [
@@ -1735,6 +1735,48 @@
           "ja": "旅館には畳、布団、浴衣、懐石料理があります。最も古い旅館、西山温泉慶雲館は705年から営業しています！",
           "es": "Los ryokan tienen pisos de tatami, camas futon, yukatas y comida kaiseki. ¡El ryokan más antiguo, Nishiyama Onsen, opera desde 705 d.C.!"
         }
+      },
+      {
+        "id": "tourism_beginner_l364tt",
+        "q": {
+          "en": "What is the tallest mountain in Japan?",
+          "zh": "日本最高的山是什么？",
+          "ja": "日本で一番高い山は？",
+          "es": "¿Cuál es la montaña más alta de Japón?"
+        },
+        "c": [
+          {
+            "en": "Mount Fuji",
+            "zh": "富士山",
+            "ja": "富士山",
+            "es": "Monte Fuji"
+          },
+          {
+            "en": "Mount Aso",
+            "zh": "阿苏山",
+            "ja": "阿蘇山",
+            "es": "Monte Aso"
+          },
+          {
+            "en": "Mount Kita",
+            "zh": "北岳",
+            "ja": "北岳",
+            "es": "Monte Kita"
+          },
+          {
+            "en": "Mount Hotaka",
+            "zh": "�的高岳",
+            "ja": "穂高岳",
+            "es": "Monte Hotaka"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "Mount Fuji stands at 3,776 meters. It last erupted in 1707 and is an active volcano. About 300,000 people climb it every year.",
+          "zh": "富士山高3776米。最后一次喷发是1707年，是一座活火山。每年约有30万人攀登。",
+          "ja": "富士山は標高3,776m。最後に噴火したのは1707年で、活火山です。毎年約30万人が登山します。",
+          "es": "El Monte Fuji tiene 3,776 metros. Su última erupción fue en 1707 y es un volcán activo. Aproximadamente 300,000 personas lo escalan cada año."
+        }
       }
     ],
     "intermediate": [
@@ -1990,6 +2032,48 @@
           "zh": "熊野古道和西班牙的圣地亚哥之路是仅有的两条被列为联合国教科文组织世界遗产的朝圣路线。它们有双朝圣印章计划！",
           "ja": "熊野古道とスペインのサンティアゴ巡礼路は、UNESCO世界遺産に登録された唯一の2つの巡礼路。双方の巡礼スタンプ制度があります！",
           "es": "Kumano Kodo y el Camino de Santiago son las únicas rutas de peregrinación Patrimonio UNESCO. ¡Tienen un programa de sello dual!"
+        }
+      },
+      {
+        "id": "tourism_advanced_m5pkmg",
+        "q": {
+          "en": "Which Japanese island is known for its wild cats and is called 'Cat Island'?",
+          "zh": "哪个日本岛屿以野猫闻名，被称为'猫岛'？",
+          "ja": "野良猫で有名で「猫島」と呼ばれる日本の島は？",
+          "es": "¿Qué isla japonesa es conocida por sus gatos salvajes y se llama 'Isla de los Gatos'?"
+        },
+        "c": [
+          {
+            "en": "Aoshima",
+            "zh": "青岛",
+            "ja": "青島",
+            "es": "Aoshima"
+          },
+          {
+            "en": "Miyako-jima",
+            "zh": "宫古岛",
+            "ja": "宮古島",
+            "es": "Miyako-jima"
+          },
+          {
+            "en": "Sado Island",
+            "zh": "佐渡岛",
+            "ja": "佐渡島",
+            "es": "Isla Sado"
+          },
+          {
+            "en": "Yakushima",
+            "zh": "屋久岛",
+            "ja": "屋久島",
+            "es": "Yakushima"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "Aoshima island in Ehime Prefecture has about 6 times more cats than people. Originally brought to deal with mice on fishing boats, the cats multiplied.",
+          "zh": "爱媛县的青岛上的猫是人的6倍左右。最初是为了对付渔船上的老鼠而引进的，后来猫大量繁殖。",
+          "ja": "愛媛県の青島は人口の約6倍の猫がいます。元々は漁船のネズミ対策で持ち込まれた猫が繁殖しました。",
+          "es": "La isla de Aoshima en la Prefectura de Ehime tiene aproximadamente 6 veces más gatos que personas. Originalmente traídos para lidiar con ratones en barcos pesqueros, los gatos se multiplicaron."
         }
       }
     ]
