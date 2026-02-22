@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-21",
-    "totalQuestions": 78
+    "lastUpdated": "2026-02-22",
+    "totalQuestions": 80
   },
   "current": {
     "beginner": [
@@ -2249,6 +2249,48 @@
           "ja": "わずか50年で日本は封建社会から工業大国へ変貌。鉄道建設、西洋式教育の導入、近代軍の創設を実現しました。",
           "es": "En solo 50 años, Japón pasó de sociedad feudal a potencia industrial. Construyeron ferrocarriles y adoptaron educación occidental."
         }
+      },
+      {
+        "id": "history_intermediate_72owdr",
+        "q": {
+          "en": "During which period did Japan isolate itself from most foreign trade (sakoku)?",
+          "zh": "日本在哪个时期实行闭关锁国（锁国）？",
+          "ja": "鎖国政策が行われた時代は？",
+          "es": "¿Durante qué período Japón se aisló del comercio exterior (sakoku)?"
+        },
+        "c": [
+          {
+            "en": "Heian Period",
+            "zh": "平安时代",
+            "ja": "平安時代",
+            "es": "Período Heian"
+          },
+          {
+            "en": "Edo Period",
+            "zh": "江户时代",
+            "ja": "江戸時代",
+            "es": "Período Edo"
+          },
+          {
+            "en": "Meiji Period",
+            "zh": "明治时代",
+            "ja": "明治時代",
+            "es": "Período Meiji"
+          },
+          {
+            "en": "Kamakura Period",
+            "zh": "镰仓时代",
+            "ja": "鎌倉時代",
+            "es": "Período Kamakura"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Sakoku lasted from 1633 to 1853 — over 200 years. Only limited trade with the Dutch and Chinese was allowed through Dejima in Nagasaki.",
+          "zh": "锁国从1633年持续到1853年——超过200年。只有通过长崎的出岛与荷兰和中国进行有限的贸易。",
+          "ja": "鎖国は1633年から1853年まで200年以上続きました。長崎の出島を通じたオランダと中国との限定的な貿易のみが許可されました。",
+          "es": "El sakoku duró desde 1633 hasta 1853, más de 200 años. Solo se permitió comercio limitado con los holandeses y chinos a través de Dejima en Nagasaki."
+        }
       }
     ],
     "advanced": [
@@ -2812,6 +2854,48 @@
           "zh": "漫画喫茶按小时收费（200-500日元），提供无限量漫画、免费饮料和带躺椅的包间。很多人把它当作经济型旅馆。",
           "ja": "漫画喫茶は時間制（200〜500円）で漫画読み放題、ドリンク無料、リクライニングシート付き個室あり。ネットカフェ難民という社会問題も。",
           "es": "Los manga kissa cobran por hora (¥200-500) y ofrecen manga ilimitado, bebidas gratis y cabinas privadas. Muchos los usan como hoteles económicos."
+        }
+      },
+      {
+        "id": "manga_advanced_p865vw",
+        "q": {
+          "en": "What is 'doujinshi' in Japanese manga culture?",
+          "zh": "日本漫画文化中的'同人志'是什么？",
+          "ja": "漫画文化における「同人誌」とは？",
+          "es": "¿Qué es 'doujinshi' en la cultura del manga japonés?"
+        },
+        "c": [
+          {
+            "en": "Official manga sequels",
+            "zh": "官方漫画续集",
+            "ja": "公式漫画の続編",
+            "es": "Secuelas oficiales de manga"
+          },
+          {
+            "en": "Self-published fan-made works",
+            "zh": "自出版的粉丝作品",
+            "ja": "自費出版のファン作品",
+            "es": "Obras autopublicadas hechas por fans"
+          },
+          {
+            "en": "Manga award ceremonies",
+            "zh": "漫画颁奖典礼",
+            "ja": "漫画の授賞式",
+            "es": "Ceremonias de premios de manga"
+          },
+          {
+            "en": "Digital-only manga",
+            "zh": "仅限数字版漫画",
+            "ja": "デジタル限定漫画",
+            "es": "Manga solo digital"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Comiket (Comic Market) in Tokyo is the world's largest doujinshi fair, attracting over 750,000 attendees. Many professional manga artists started with doujinshi.",
+          "zh": "东京的Comic Market是世界上最大的同人志展销会，吸引超过75万人参加。许多专业漫画家是从同人志起步的。",
+          "ja": "東京のコミケ（コミックマーケット）は世界最大の同人誌即売会で、75万人以上が参加します。多くのプロの漫画家が同人誌からスタートしました。",
+          "es": "El Comiket (Comic Market) en Tokio es la feria de doujinshi más grande del mundo, atrayendo a más de 750,000 asistentes. Muchos artistas profesionales de manga comenzaron con doujinshi."
         }
       }
     ]
