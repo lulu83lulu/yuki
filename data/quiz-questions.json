@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-22",
-    "totalQuestions": 80
+    "lastUpdated": "2026-02-23",
+    "totalQuestions": 83
   },
   "current": {
     "beginner": [
@@ -2465,6 +2465,48 @@
           "ja": "日本のアイドル文化はユニーク。AKB48は100人以上のメンバー！ファンは推しに会う'握手券'のためにCDを複数枚買います。",
           "es": "La cultura idol japonesa es única — ¡grupos como AKB48 tienen más de 100 miembros! Los fans compran múltiples CDs por 'boletos de apretón de manos'."
         }
+      },
+      {
+        "id": "entertainment_beginner_5obito",
+        "q": {
+          "en": "What is the traditional Japanese form of comic theater called?",
+          "zh": "日本传统的喜剧表演形式叫什么？",
+          "ja": "日本の伝統的な喜劇は何と呼ばれる？",
+          "es": "¿Cómo se llama la forma tradicional japonesa de teatro cómico?"
+        },
+        "c": [
+          {
+            "en": "Kabuki",
+            "zh": "歌舞伎",
+            "ja": "歌舞伎",
+            "es": "Kabuki"
+          },
+          {
+            "en": "Noh",
+            "zh": "能",
+            "ja": "能",
+            "es": "Noh"
+          },
+          {
+            "en": "Rakugo",
+            "zh": "落语",
+            "ja": "落語",
+            "es": "Rakugo"
+          },
+          {
+            "en": "Bunraku",
+            "zh": "文乐",
+            "ja": "文楽",
+            "es": "Bunraku"
+          }
+        ],
+        "a": 2,
+        "trivia": {
+          "en": "Rakugo is a 400-year-old art form where a single performer sits on stage and portrays all characters using only a fan and a small cloth.",
+          "zh": "落语是有400年历史的艺术形式，一位表演者坐在舞台上，只用扇子和小手帕来演绎所有角色。",
+          "ja": "落語は400年の歴史がある芸能で、一人の演者が扇子と手ぬぐいだけを使って全ての登場人物を演じ分けます。",
+          "es": "El rakugo es una forma de arte de 400 años donde un solo artista se sienta en el escenario y representa todos los personajes usando solo un abanico y un pequeño paño."
+        }
       }
     ],
     "intermediate": [
@@ -2509,6 +2551,48 @@
           "ja": "日本には年間30万以上の祭りがあります！祇園祭（京都）、ねぶた（青森）、阿波踊り（徳島）が有名。重い神輿を担ぐものも多いです。",
           "es": "¡Japón tiene más de 300,000 matsuri al año! Los principales incluyen Gion Matsuri (Kioto), Nebuta (Aomori) y Awa Odori (Tokushima)."
         }
+      },
+      {
+        "id": "entertainment_intermediate_xteo1b",
+        "q": {
+          "en": "What is Japan's famous robot competition that has been held since 1988?",
+          "zh": "自1988年以来举办的日本著名机器人大赛是什么？",
+          "ja": "1988年から開催されている日本の有名なロボット大会は？",
+          "es": "¿Cuál es la famosa competencia de robots de Japón que se celebra desde 1988?"
+        },
+        "c": [
+          {
+            "en": "Robocon",
+            "zh": "Robocon",
+            "ja": "ロボコン",
+            "es": "Robocon"
+          },
+          {
+            "en": "RobotWars",
+            "zh": "RobotWars",
+            "ja": "ロボットウォーズ",
+            "es": "RobotWars"
+          },
+          {
+            "en": "BattleBots",
+            "zh": "BattleBots",
+            "ja": "バトルボッツ",
+            "es": "BattleBots"
+          },
+          {
+            "en": "MechaFight",
+            "zh": "MechaFight",
+            "ja": "メカファイト",
+            "es": "MechaFight"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "NHK Robocon (Robot Contest) started in 1988 as a university competition. It expanded to high schools and now has an international version.",
+          "zh": "NHK Robocon（机器人大赛）始于1988年的大学比赛。后来扩展到高中，现在有国际版本。",
+          "ja": "NHKロボコンは1988年に大学対抗として始まりました。高専にも広がり、現在は国際大会もあります。",
+          "es": "NHK Robocon (Concurso de Robots) comenzó en 1988 como una competencia universitaria. Se expandió a escuelas secundarias y ahora tiene una versión internacional."
+        }
       }
     ],
     "advanced": [
@@ -2552,6 +2636,48 @@
           "zh": "落语表演者坐在垫子上，只用扇子和小布作为道具，通过声音和手势变化扮演所有角色。可追溯到1600年代。",
           "ja": "落語家は座布団に座り、扇子と手ぬぐいだけで全ての登場人物を演じ分けます。1600年代に遡る伝統芸能です。",
           "es": "Los artistas de rakugo se sientan en un cojín usando solo un abanico y un paño, interpretando todos los personajes con voz y gestos. Data del siglo XVII."
+        }
+      },
+      {
+        "id": "entertainment_advanced_8smt1h",
+        "q": {
+          "en": "What is 'Takarazuka Revue'?",
+          "zh": "'宝冢歌剧团'是什么？",
+          "ja": "「宝塚歌劇団」とは？",
+          "es": "¿Qué es la 'Revista Takarazuka'?"
+        },
+        "c": [
+          {
+            "en": "An all-male kabuki troupe",
+            "zh": "全男性歌舞伎剧团",
+            "ja": "男性のみの歌舞伎劇団",
+            "es": "Una compañía de kabuki masculina"
+          },
+          {
+            "en": "An all-female musical theater",
+            "zh": "全女性音乐剧团",
+            "ja": "女性のみのミュージカル劇団",
+            "es": "Un teatro musical exclusivamente femenino"
+          },
+          {
+            "en": "A mixed martial arts show",
+            "zh": "综合格斗表演",
+            "ja": "総合格闘技ショー",
+            "es": "Un espectáculo de artes marciales mixtas"
+          },
+          {
+            "en": "A traditional dance festival",
+            "zh": "传统舞蹈节",
+            "ja": "伝統的な踊りの祭り",
+            "es": "Un festival de danza tradicional"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Founded in 1914, the Takarazuka Revue is an all-female theater company where women play both male and female roles. It has a massive devoted fanbase.",
+          "zh": "宝冢歌剧团成立于1914年，是一个全女性剧团，女性同时扮演男性和女性角色。它拥有大量忠实粉丝。",
+          "ja": "1914年創設の宝塚歌劇団は、女性が男役も女役も演じる女性だけの劇団です。熱狂的なファンが多いことで有名です。",
+          "es": "Fundada en 1914, la Revista Takarazuka es una compañía de teatro exclusivamente femenina donde las mujeres interpretan tanto roles masculinos como femeninos. Tiene una enorme base de fans devotos."
         }
       }
     ]
