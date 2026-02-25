@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-24",
-    "totalQuestions": 85
+    "lastUpdated": "2026-02-25",
+    "totalQuestions": 87
   },
   "current": {
     "beginner": [
@@ -1861,6 +1861,48 @@
           "ja": "富士山は標高3,776m。最後に噴火したのは1707年で、活火山です。毎年約30万人が登山します。",
           "es": "El Monte Fuji tiene 3,776 metros. Su última erupción fue en 1707 y es un volcán activo. Aproximadamente 300,000 personas lo escalan cada año."
         }
+      },
+      {
+        "id": "tourism_beginner_2jzwd6",
+        "q": {
+          "en": "Which city is known as Japan's ancient capital?",
+          "zh": "哪座城市被称为日本的古都？",
+          "ja": "日本の古都として知られる都市は？",
+          "es": "¿Qué ciudad es conocida como la antigua capital de Japón?"
+        },
+        "c": [
+          {
+            "en": "Osaka",
+            "zh": "大阪",
+            "ja": "大阪",
+            "es": "Osaka"
+          },
+          {
+            "en": "Tokyo",
+            "zh": "东京",
+            "ja": "東京",
+            "es": "Tokio"
+          },
+          {
+            "en": "Kyoto",
+            "zh": "京都",
+            "ja": "京都",
+            "es": "Kioto"
+          },
+          {
+            "en": "Nagoya",
+            "zh": "名古屋",
+            "ja": "名古屋",
+            "es": "Nagoya"
+          }
+        ],
+        "a": 2,
+        "trivia": {
+          "en": "Kyoto was Japan's capital for over 1,000 years (794-1868). It has 17 UNESCO World Heritage Sites and over 2,000 temples and shrines.",
+          "zh": "京都是日本超过1000年的首都（794-1868）。它有17处联合国教科文组织世界遗产和超过2000座寺庙和神社。",
+          "ja": "京都は1000年以上日本の首都でした（794-1868年）。17の世界遺産と2000以上の寺社があります。",
+          "es": "Kioto fue la capital de Japón durante más de 1,000 años (794-1868). Tiene 17 sitios del Patrimonio Mundial de la UNESCO y más de 2,000 templos y santuarios."
+        }
       }
     ],
     "intermediate": [
@@ -2072,6 +2114,48 @@
           "zh": "长野的日本猕猴是世界上唯一已知会泡温泉的猴子。始于1963年一只小猴跳入露天温泉。",
           "ja": "長野のニホンザルは世界で唯一温泉に入ることで知られています。1963年に若いサルが露天温泉に飛び込んだのが始まりです。",
           "es": "Los macacos japoneses en Nagano son los únicos monos que se bañan en aguas termales. Empezaron en 1963 cuando un mono joven saltó a un onsen."
+        }
+      },
+      {
+        "id": "tourism_intermediate_hwa2w0",
+        "q": {
+          "en": "What is the famous bamboo grove in Kyoto called?",
+          "zh": "京都著名的竹林叫什么？",
+          "ja": "京都の有名な竹林は何と呼ばれる？",
+          "es": "¿Cómo se llama el famoso bosque de bambú en Kioto?"
+        },
+        "c": [
+          {
+            "en": "Sagano Bamboo Forest",
+            "zh": "嵯峨野竹林",
+            "ja": "嵯峨野の竹林",
+            "es": "Bosque de Bambú de Sagano"
+          },
+          {
+            "en": "Nara Bamboo Park",
+            "zh": "奈良竹子公园",
+            "ja": "奈良竹林公園",
+            "es": "Parque de Bambú de Nara"
+          },
+          {
+            "en": "Kamakura Bamboo Temple",
+            "zh": "镰仓竹寺",
+            "ja": "鎌倉竹寺",
+            "es": "Templo de Bambú de Kamakura"
+          },
+          {
+            "en": "Hakone Bamboo Road",
+            "zh": "箱根竹之路",
+            "ja": "箱根竹の道",
+            "es": "Camino de Bambú de Hakone"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "The Sagano Bamboo Forest in Arashiyama is one of Kyoto's most photographed spots. The sound of wind through bamboo was voted one of Japan's '100 Soundscapes'.",
+          "zh": "位于岚山的嵯峨野竹林是京都最受拍摄的景点之一。竹林风声被评为日本'100种声音风景'之一。",
+          "ja": "嵐山の嵯峨野竹林は京都で最も写真に撮られるスポットのひとつ。竹林を通る風の音は「日本の音風景100選」に選ばれています。",
+          "es": "El Bosque de Bambú de Sagano en Arashiyama es uno de los lugares más fotografiados de Kioto. El sonido del viento entre los bambúes fue votado como uno de los '100 Paisajes Sonoros' de Japón."
         }
       }
     ],
