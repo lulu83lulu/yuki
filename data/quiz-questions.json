@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-25",
-    "totalQuestions": 87
+    "lastUpdated": "2026-02-26",
+    "totalQuestions": 90
   },
   "current": {
     "beginner": [
@@ -424,6 +424,48 @@
           "zh": "招财猫被认为能带来好运。举右爪招财，举左爪招客。",
           "ja": "招き猫は幸運を招くとされています。右手を上げるとお金を、左手を上げるとお客さんを招くと言われています。",
           "es": "El Maneki-neko atrae buena suerte. La pata derecha levantada atrae dinero, la izquierda atrae clientes."
+        }
+      },
+      {
+        "id": "current_beginner_9xj1cn",
+        "q": {
+          "en": "What is the population of Japan approximately?",
+          "zh": "日本的人口大约是多少？",
+          "ja": "日本の人口は約何人？",
+          "es": "¿Cuál es la población aproximada de Japón?"
+        },
+        "c": [
+          {
+            "en": "About 65 million",
+            "zh": "约6500万",
+            "ja": "約6500万人",
+            "es": "Aproximadamente 65 millones"
+          },
+          {
+            "en": "About 125 million",
+            "zh": "约1.25亿",
+            "ja": "約1億2500万人",
+            "es": "Aproximadamente 125 millones"
+          },
+          {
+            "en": "About 200 million",
+            "zh": "约2亿",
+            "ja": "約2億人",
+            "es": "Aproximadamente 200 millones"
+          },
+          {
+            "en": "About 90 million",
+            "zh": "约9000万",
+            "ja": "約9000万人",
+            "es": "Aproximadamente 90 millones"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Japan's population has been declining since 2008. It's one of the most rapidly aging societies in the world.",
+          "zh": "日本人口自2008年以来一直在下降。它是世界上老龄化最快的社会之一。",
+          "ja": "日本の人口は2008年から減少しています。世界で最も急速に高齢化が進んでいる社会のひとつです。",
+          "es": "La población de Japón ha estado disminuyendo desde 2008. Es una de las sociedades que envejecen más rápidamente en el mundo."
         }
       }
     ],
@@ -888,6 +930,48 @@
           "zh": "日本约67%的国土被森林覆盖，使其成为森林最茂密的发达国家之一。考虑到日本的庞大人口，这令人惊叹。",
           "ja": "日本の国土の約67%が森林に覆われており、先進国の中でも最も森林率が高い国のひとつです。人口の多さを考えると驚くべきことです。",
           "es": "Aproximadamente el 67% de Japón está cubierto de bosques, lo que lo convierte en uno de los países desarrollados con más bosques. Esto es notable dada la gran población de Japón."
+        }
+      },
+      {
+        "id": "current_intermediate_sf6p7i",
+        "q": {
+          "en": "What is the Maglev train's top speed record in Japan?",
+          "zh": "日本磁悬浮列车的最高速度记录是多少？",
+          "ja": "日本のリニアモーターカーの最高速度記録は？",
+          "es": "¿Cuál es el récord de velocidad del tren Maglev en Japón?"
+        },
+        "c": [
+          {
+            "en": "443 km/h",
+            "zh": "443公里/时",
+            "ja": "443km/h",
+            "es": "443 km/h"
+          },
+          {
+            "en": "503 km/h",
+            "zh": "503公里/时",
+            "ja": "503km/h",
+            "es": "503 km/h"
+          },
+          {
+            "en": "603 km/h",
+            "zh": "603公里/时",
+            "ja": "603km/h",
+            "es": "603 km/h"
+          },
+          {
+            "en": "350 km/h",
+            "zh": "350公里/时",
+            "ja": "350km/h",
+            "es": "350 km/h"
+          }
+        ],
+        "a": 2,
+        "trivia": {
+          "en": "Japan's SCMaglev set a world record of 603 km/h in 2015. The Chuo Shinkansen maglev line is planned to connect Tokyo to Osaka.",
+          "zh": "日本的超导磁悬浮在2015年创下了603公里/时的世界纪录。中央新干线磁悬浮线计划连接东京和大阪。",
+          "ja": "日本の超電導リニアは2015年に603km/hの世界記録を達成。中央新幹線は東京と大阪を結ぶ予定です。",
+          "es": "El SCMaglev de Japón estableció un récord mundial de 603 km/h en 2015. La línea maglev Chuo Shinkansen está planeada para conectar Tokio con Osaka."
         }
       }
     ],
@@ -3446,6 +3530,48 @@
           "zh": "寿司最初是用发酵米饭来保存鱼的方式。现代握寿司于19世纪初在东京发明。",
           "ja": "寿司はもともと発酵米を使って魚を保存する方法でした。現代の握り寿司は1800年代初頭に東京で発明されました。",
           "es": "El sushi comenzó originalmente como una forma de conservar el pescado usando arroz fermentado. El nigiri sushi moderno fue inventado en Tokio a principios del siglo XIX."
+        }
+      },
+      {
+        "id": "food_beginner_2om4zy",
+        "q": {
+          "en": "What is the traditional Japanese alcoholic drink made from rice?",
+          "zh": "什么是用大米酿造的日本传统酒？",
+          "ja": "米から作られる日本の伝統的なお酒は？",
+          "es": "¿Cuál es la bebida alcohólica tradicional japonesa hecha de arroz?"
+        },
+        "c": [
+          {
+            "en": "Sake",
+            "zh": "清酒",
+            "ja": "日本酒",
+            "es": "Sake"
+          },
+          {
+            "en": "Soju",
+            "zh": "烧酒",
+            "ja": "焼酎",
+            "es": "Soju"
+          },
+          {
+            "en": "Baijiu",
+            "zh": "白酒",
+            "ja": "白酒",
+            "es": "Baijiu"
+          },
+          {
+            "en": "Whiskey",
+            "zh": "威士忌",
+            "ja": "ウィスキー",
+            "es": "Whiskey"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "Sake brewing has a history of over 2,000 years in Japan. There are about 1,400 sake breweries across the country.",
+          "zh": "日本的清酒酿造有超过2000年的历史。全国约有1400家清酒酿造厂。",
+          "ja": "日本酒の醸造は2000年以上の歴史があります。全国に約1400の酒蔵があります。",
+          "es": "La elaboración de sake tiene una historia de más de 2,000 años en Japón. Hay aproximadamente 1,400 cervecerías de sake en todo el país."
         }
       }
     ],
