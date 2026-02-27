@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-26",
-    "totalQuestions": 90
+    "lastUpdated": "2026-02-27",
+    "totalQuestions": 92
   },
   "current": {
     "beginner": [
@@ -466,6 +466,48 @@
           "zh": "日本人口自2008年以来一直在下降。它是世界上老龄化最快的社会之一。",
           "ja": "日本の人口は2008年から減少しています。世界で最も急速に高齢化が進んでいる社会のひとつです。",
           "es": "La población de Japón ha estado disminuyendo desde 2008. Es una de las sociedades que envejecen más rápidamente en el mundo."
+        }
+      },
+      {
+        "id": "current_beginner_589hlu",
+        "q": {
+          "en": "What is Japan's national flower?",
+          "zh": "日本的国花是什么？",
+          "ja": "日本の国花は？",
+          "es": "¿Cuál es la flor nacional de Japón?"
+        },
+        "c": [
+          {
+            "en": "Rose",
+            "zh": "玫瑰",
+            "ja": "バラ",
+            "es": "Rosa"
+          },
+          {
+            "en": "Cherry Blossom",
+            "zh": "樱花",
+            "ja": "桜",
+            "es": "Flor de cerezo"
+          },
+          {
+            "en": "Lotus",
+            "zh": "莲花",
+            "ja": "蓮",
+            "es": "Loto"
+          },
+          {
+            "en": "Chrysanthemum",
+            "zh": "菊花",
+            "ja": "菊",
+            "es": "Crisantemo"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "While cherry blossom (sakura) is the most popular symbol, chrysanthemum is actually the Imperial seal. Both are considered national flowers.",
+          "zh": "虽然樱花是最受欢迎的象征，但菊花实际上是皇室纹章。两者都被视为国花。",
+          "ja": "桜が最も人気のある象徴ですが、菊は実は皇室の紋章です。どちらも国花とされています。",
+          "es": "Aunque la flor de cerezo (sakura) es el símbolo más popular, el crisantemo es en realidad el sello imperial. Ambas se consideran flores nacionales."
         }
       }
     ],
@@ -972,6 +1014,48 @@
           "zh": "日本的超导磁悬浮在2015年创下了603公里/时的世界纪录。中央新干线磁悬浮线计划连接东京和大阪。",
           "ja": "日本の超電導リニアは2015年に603km/hの世界記録を達成。中央新幹線は東京と大阪を結ぶ予定です。",
           "es": "El SCMaglev de Japón estableció un récord mundial de 603 km/h en 2015. La línea maglev Chuo Shinkansen está planeada para conectar Tokio con Osaka."
+        }
+      },
+      {
+        "id": "current_intermediate_hh7rq1",
+        "q": {
+          "en": "What year did Japan host its first Olympics?",
+          "zh": "日本第一次举办奥运会是哪一年？",
+          "ja": "日本が初めてオリンピックを開催した年は？",
+          "es": "¿En qué año Japón fue sede de sus primeros Juegos Olímpicos?"
+        },
+        "c": [
+          {
+            "en": "1960",
+            "zh": "1960年",
+            "ja": "1960年",
+            "es": "1960"
+          },
+          {
+            "en": "1964",
+            "zh": "1964年",
+            "ja": "1964年",
+            "es": "1964"
+          },
+          {
+            "en": "1972",
+            "zh": "1972年",
+            "ja": "1972年",
+            "es": "1972"
+          },
+          {
+            "en": "1968",
+            "zh": "1968年",
+            "ja": "1968年",
+            "es": "1968"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "The 1964 Tokyo Olympics was a landmark event showcasing Japan's post-war recovery. It introduced the Shinkansen bullet train to the world.",
+          "zh": "1964年东京奥运会是一个标志性事件，展示了日本战后的复兴。它向世界介绍了新干线高速列车。",
+          "ja": "1964年の東京オリンピックは、日本の戦後復興を世界に示す画期的なイベントでした。新幹線もこの時に開業しました。",
+          "es": "Los Juegos Olímpicos de Tokio de 1964 fueron un evento emblemático que mostró la recuperación de Japón después de la guerra. Introdujo el tren bala Shinkansen al mundo."
         }
       }
     ],
