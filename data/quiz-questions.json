@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-27",
-    "totalQuestions": 92
+    "lastUpdated": "2026-02-28",
+    "totalQuestions": 94
   },
   "current": {
     "beginner": [
@@ -508,6 +508,48 @@
           "zh": "虽然樱花是最受欢迎的象征，但菊花实际上是皇室纹章。两者都被视为国花。",
           "ja": "桜が最も人気のある象徴ですが、菊は実は皇室の紋章です。どちらも国花とされています。",
           "es": "Aunque la flor de cerezo (sakura) es el símbolo más popular, el crisantemo es en realidad el sello imperial. Ambas se consideran flores nacionales."
+        }
+      },
+      {
+        "id": "current_beginner_b1dy6e",
+        "q": {
+          "en": "What currency does Japan use?",
+          "zh": "日本使用什么货币？",
+          "ja": "日本の通貨は？",
+          "es": "¿Qué moneda usa Japón?"
+        },
+        "c": [
+          {
+            "en": "Yuan",
+            "zh": "元",
+            "ja": "元",
+            "es": "Yuan"
+          },
+          {
+            "en": "Won",
+            "zh": "韩元",
+            "ja": "ウォン",
+            "es": "Won"
+          },
+          {
+            "en": "Yen",
+            "zh": "日元",
+            "ja": "円",
+            "es": "Yen"
+          },
+          {
+            "en": "Dollar",
+            "zh": "美元",
+            "ja": "ドル",
+            "es": "Dólar"
+          }
+        ],
+        "a": 2,
+        "trivia": {
+          "en": "The yen (¥) became Japan's official currency in 1871. Unlike many currencies, it doesn't use decimal units — the smallest coin is 1 yen.",
+          "zh": "日元（¥）于1871年成为日本的官方货币。与许多货币不同，它不使用小数单位——最小的硬币是1日元。",
+          "ja": "円は1871年に日本の公式通貨になりました。多くの通貨と違い、小数単位を使わず、最小の硬貨は1円です。",
+          "es": "El yen (¥) se convirtió en la moneda oficial de Japón en 1871. A diferencia de muchas monedas, no utiliza unidades decimales: la moneda más pequeña es de 1 yen."
         }
       }
     ],
@@ -3272,6 +3314,48 @@
           "zh": "《鬼灭之刃：无限列车》（2020）票房超过400亿日元，超过了千与千寻。在新冠疫情期间上映，成为文化现象。",
           "ja": "鬼滅の刃 無限列車編（2020）は興収400億円超で千と千尋を超えました。コロナ禍での公開にもかかわらず社会現象となりました。",
           "es": "Demon Slayer: Mugen Train (2020) recaudó más de ¥40 mil millones, superando a El Viaje de Chihiro."
+        }
+      },
+      {
+        "id": "manga_intermediate_vazmyx",
+        "q": {
+          "en": "What manga magazine has serialized One Piece, Naruto, and Dragon Ball?",
+          "zh": "哪本漫画杂志连载了《海贼王》、《火影忍者》和《龙珠》？",
+          "ja": "ワンピース、ナルト、ドラゴンボールを連載した漫画雑誌は？",
+          "es": "¿Qué revista de manga ha serializado One Piece, Naruto y Dragon Ball?"
+        },
+        "c": [
+          {
+            "en": "Shonen Sunday",
+            "zh": "少年Sunday",
+            "ja": "少年サンデー",
+            "es": "Shonen Sunday"
+          },
+          {
+            "en": "Shonen Jump",
+            "zh": "少年Jump",
+            "ja": "少年ジャンプ",
+            "es": "Shonen Jump"
+          },
+          {
+            "en": "Shonen Magazine",
+            "zh": "少年Magazine",
+            "ja": "少年マガジン",
+            "es": "Shonen Magazine"
+          },
+          {
+            "en": "Monthly Comic",
+            "zh": "月刊Comic",
+            "ja": "月刊コミック",
+            "es": "Monthly Comic"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Weekly Shonen Jump has been Japan's best-selling manga magazine since 1968. At its peak in 1995, it sold 6.53 million copies per week.",
+          "zh": "《周刊少年Jump》自1968年以来一直是日本最畅销的漫画杂志。1995年巅峰时期每周销量达653万册。",
+          "ja": "『週刊少年ジャンプ』は1968年以来日本で最も売れている漫画雑誌です。1995年のピーク時には週653万部を記録しました。",
+          "es": "La Weekly Shonen Jump ha sido la revista de manga más vendida de Japón desde 1968. En su punto máximo en 1995, vendía 6.53 millones de copias por semana."
         }
       }
     ],
