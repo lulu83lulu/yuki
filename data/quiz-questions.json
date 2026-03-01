@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-02-28",
-    "totalQuestions": 94
+    "lastUpdated": "2026-03-01",
+    "totalQuestions": 95
   },
   "current": {
     "beginner": [
@@ -550,6 +550,48 @@
           "zh": "日元（¥）于1871年成为日本的官方货币。与许多货币不同，它不使用小数单位——最小的硬币是1日元。",
           "ja": "円は1871年に日本の公式通貨になりました。多くの通貨と違い、小数単位を使わず、最小の硬貨は1円です。",
           "es": "El yen (¥) se convirtió en la moneda oficial de Japón en 1871. A diferencia de muchas monedas, no utiliza unidades decimales: la moneda más pequeña es de 1 yen."
+        }
+      },
+      {
+        "id": "current_beginner_7lcwbf",
+        "q": {
+          "en": "What is the name of Japan's bullet train system?",
+          "zh": "日本的高速列车系统叫什么？",
+          "ja": "日本の高速鉄道の名前は？",
+          "es": "¿Cómo se llama el sistema de tren bala de Japón?"
+        },
+        "c": [
+          {
+            "en": "Shinkansen",
+            "zh": "新干线",
+            "ja": "新幹線",
+            "es": "Shinkansen"
+          },
+          {
+            "en": "Metro",
+            "zh": "地铁",
+            "ja": "メトロ",
+            "es": "Metro"
+          },
+          {
+            "en": "Monorail",
+            "zh": "单轨",
+            "ja": "モノレール",
+            "es": "Monorraíl"
+          },
+          {
+            "en": "Maglev",
+            "zh": "磁悬浮",
+            "ja": "リニア",
+            "es": "Maglev"
+          }
+        ],
+        "a": 0,
+        "trivia": {
+          "en": "The Shinkansen launched in 1964 for the Tokyo Olympics. It has an incredible safety record with zero passenger fatalities from derailment or collision.",
+          "zh": "新干线于1964年东京奥运会时开通。它有着令人难以置信的安全记录，从未因脱轨或碰撞造成乘客死亡。",
+          "ja": "新幹線は1964年の東京オリンピックに合わせて開業。脱線や衝突による乗客の死亡事故はゼロという驚異的な安全記録を持っています。",
+          "es": "El Shinkansen se inauguró en 1964 para los Juegos Olímpicos de Tokio. Tiene un increíble récord de seguridad sin muertes de pasajeros por descarrilamiento o colisión."
         }
       }
     ],
