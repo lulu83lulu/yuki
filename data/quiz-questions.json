@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": 1,
-    "lastUpdated": "2026-03-01",
-    "totalQuestions": 95
+    "lastUpdated": "2026-03-02",
+    "totalQuestions": 96
   },
   "current": {
     "beginner": [
@@ -592,6 +592,48 @@
           "zh": "新干线于1964年东京奥运会时开通。它有着令人难以置信的安全记录，从未因脱轨或碰撞造成乘客死亡。",
           "ja": "新幹線は1964年の東京オリンピックに合わせて開業。脱線や衝突による乗客の死亡事故はゼロという驚異的な安全記録を持っています。",
           "es": "El Shinkansen se inauguró en 1964 para los Juegos Olímpicos de Tokio. Tiene un increíble récord de seguridad sin muertes de pasajeros por descarrilamiento o colisión."
+        }
+      },
+      {
+        "id": "current_beginner_7jzobd",
+        "q": {
+          "en": "What does 'kawaii' mean in Japanese?",
+          "zh": "'kawaii'在日语中是什么意思？",
+          "ja": "「かわいい」の英語の意味は？",
+          "es": "¿Qué significa 'kawaii' en japonés?"
+        },
+        "c": [
+          {
+            "en": "Scary",
+            "zh": "可怕",
+            "ja": "怖い",
+            "es": "Aterrador"
+          },
+          {
+            "en": "Cute",
+            "zh": "可爱",
+            "ja": "かわいい",
+            "es": "Lindo"
+          },
+          {
+            "en": "Cool",
+            "zh": "酷",
+            "ja": "かっこいい",
+            "es": "Genial"
+          },
+          {
+            "en": "Strong",
+            "zh": "强壮",
+            "ja": "強い",
+            "es": "Fuerte"
+          }
+        ],
+        "a": 1,
+        "trivia": {
+          "en": "Kawaii culture is a huge part of Japanese pop culture, influencing fashion, entertainment, food, and even government mascots.",
+          "zh": "可爱文化是日本流行文化的重要组成部分，影响了时尚、娱乐、美食，甚至政府吉祥物。",
+          "ja": "かわいい文化は日本のポップカルチャーの大きな部分を占め、ファッション、エンタメ、食べ物、さらには自治体のマスコットにまで影響しています。",
+          "es": "La cultura kawaii es una gran parte de la cultura pop japonesa, influyendo en la moda, el entretenimiento, la comida e incluso las mascotas del gobierno."
         }
       }
     ],
